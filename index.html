@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script type="module" src="./assets/js/animation.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="main-wrapper">
+        <nav>
+            <ul>
+                <li><a href="#hero-section">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="hero-section">
+            <div class="hero-infos">
+                <span class="my-name anim-at">Saran Baral</span>
+                <h1 class="ml12 anim-at">
+                    <span>Frontend'Enthusiats</span>
+                </h1>
+            </div>
+
+        </div>
+        <section id="about">
+            <div class="about-container">
+                <div class="about-me-text anim-at">A little about me</div>
+                <div class="about-me-desc anim-at">I'm a seasoned frontend React developer with 4 years of experience in
+                    designing and building innovative web applications. My expertise spans the entire web development
+                    lifecycle, from collaborating with designers to create intuitive user interfaces to optimizing code
+                    for performance and scalability. I'm proficient in using React's core concepts, state management
+                    libraries (like Redux or Context API), and popular tools like TypeScript, Jest, and Webpack. I have
+                    a strong understanding of modern web standards and best practices, ensuring that the applications I
+                    develop are accessible, responsive, and maintainable. My passion for continuous learning drives me
+                    to stay updated with the latest advancements in frontend technologies and explore new frameworks and
+                    libraries.</div>
+            </div>
+        </section>
+        <section id="project">
+            project
+        </section>
+    </main>
+    <script>
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml12');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({ loop: true })
+            .add({
+                targets: '.ml12 .letter',
+                translateX: [40, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 1000,
+                delay: (el, i) => 500 + 30 * i
+            }).add({
+                targets: '.ml12 .letter',
+                translateX: [0, -30],
+                opacity: [1, 0],
+                easing: "easeInExpo",
+                duration: 1100,
+                delay: (el, i) => 100 + 30 * i
+            });
+    </script>
+
+</body>
+
+</html>

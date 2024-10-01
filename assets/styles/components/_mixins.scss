@@ -1,0 +1,13 @@
+@mixin all-body-styles {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+@mixin section-styles {
+  height: 100vh;
+}

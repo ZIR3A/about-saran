@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #D2D0BA;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.anim-at {
+  opacity: 0 !important;
+  transform: translateY(100px);
+  transition: all 1s;
+}
+.anim-at.show {
+  transform: translateY(0);
+  opacity: 1 !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url("../images/navy_blue.png");
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.main-wrapper .flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-wrapper .flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-wrapper nav {
+  position: sticky;
+  display: inline;
+  top: 30px;
+  z-index: 2;
+}
+.main-wrapper nav ul {
+  max-width: -moz-max-content;
+  max-width: max-content;
+  background: #414040;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.main-wrapper nav ul li a {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #D2D0BA;
+}
+.main-wrapper nav ul li a:hover {
+  text-decoration: underline;
+  color: #D2D0BA;
+}
+@media (max-width: 768px) {
+  .main-wrapper nav {
+    display: none;
+  }
+}
+.main-wrapper #hero-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -78px;
+}
+.main-wrapper #hero-section .hero-infos {
+  position: relative;
+  width: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-wrapper #hero-section .hero-infos .my-name {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 8rem;
+  font-weight: 600;
+  color: #D2D0BA;
+  letter-spacing: 0.8rem;
+  margin-bottom: 1.75rem;
+  text-wrap: nowrap;
+}
+@media (max-width: 960px) {
+  .main-wrapper #hero-section .hero-infos .my-name {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 480px) {
+  .main-wrapper #hero-section .hero-infos .my-name {
+    font-size: 1.5rem;
+  }
+}
+.main-wrapper #hero-section .hero-infos .ml12 {
+  position: absolute;
+  top: 0;
+  margin-top: 20px;
+  text-wrap: nowrap;
+}
+.main-wrapper #hero-section .hero-infos .ml12 .letter {
+  font-size: 4.5rem;
+  letter-spacing: 0.5rem;
+  color: #414040;
+}
+@media (max-width: 960px) {
+  .main-wrapper #hero-section .hero-infos .ml12 .letter {
+    font-size: 1rem;
+  }
+}
+.main-wrapper #about {
+  display: flex;
+}
+.main-wrapper #about .about-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 5rem;
+}
+.main-wrapper #about .about-container .about-me-text,
+.main-wrapper #about .about-container .about-me-desc {
+  color: #D2D0BA;
+}
+.main-wrapper #about .about-container .about-me-text {
+  text-wrap: nowrap;
+  font-size: 8rem;
+  height: -moz-min-content;
+  height: min-content;
+}
+.main-wrapper #about .about-container .about-me-desc {
+  padding: 1.75rem;
+  text-wrap: wrap;
+  display: flex;
+  align-items: center;
+  font-size: 1.75rem;
+}
+@media (max-width: 1605px) {
+  .main-wrapper #about .about-container {
+    padding: 2rem;
+    display: inline;
+  }
+  .main-wrapper #about .about-container .about-me-text {
+    font-size: 5rem;
+    text-wrap: wrap;
+  }
+  .main-wrapper #about .about-container .about-me-desc {
+    margin-top: 1.5rem;
+    text-wrap: wrap;
+    padding: 0;
+  }
+}
+@media (max-width: 1280px) {
+  .main-wrapper #about .about-container .about-me-text {
+    font-size: 3rem;
+    text-wrap: wrap;
+  }
+  .main-wrapper #about .about-container .about-me-desc {
+    font-size: 1.5rem;
+    text-wrap: wrap;
+    padding: 0;
+  }
+}
+.main-wrapper #project {
+  border: 1px solid #B8BDB5;
+}/*# sourceMappingURL=index.css.map */

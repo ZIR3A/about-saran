@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import "components/mixins", "variables/variables", "components/global";
+
+* {
+    @include all-body-styles;
+}
+
+body {
+    background-image: url("../images/navy_blue.png");
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.main-wrapper {
+    .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        position: sticky;
+        display: inline;
+        top: 30px;
+        z-index: 2;
+
+        ul {
+            max-width: max-content;
+            background: #414040;
+            padding: $xl;
+            border-radius: $lg;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            gap: $xxxl;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+            li {
+                a {
+                    font-weight: 500;
+                    font-size: $xl;
+                    color: $text-primary;
+
+                    &:hover {
+                        text-decoration: underline;
+                        color: $primary;
+
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $breakpoint-md) {
+            display: none;
+        }
+    }
+
+    #hero-section {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -78px;
+
+
+        .hero-infos {
+            position: relative;
+            width: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .my-name {
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                // border: 1px solid $border;
+                font-size: 8rem;
+                font-weight: 600;
+                color: $primary;
+                letter-spacing: 0.8rem;
+                margin-bottom: $xxl;
+                text-wrap: nowrap;
+
+                @media (max-width: $breakpoint-lg) {
+                    font-size: 4rem;
+                }
+
+                @media (max-width: $breakpoint-sm) {
+                    font-size: 1.5rem;
+                }
+
+            }
+
+            .ml12 {
+                position: absolute;
+                top: 0;
+                margin-top: 20px;
+                text-wrap: nowrap;
+
+                .letter {
+                    font-size: 4.5rem;
+                    letter-spacing: 0.5rem;
+                    color: $secondary;
+
+                    @media (max-width: $breakpoint-lg) {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+    }
+
+    #about {
+        display: flex;
+
+        .about-container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            padding: 5rem;
+
+            .about-me-text,
+            .about-me-desc {
+                color: $text-primary;
+
+            }
+
+            .about-me-text {
+                text-wrap: nowrap;
+                font-size: 8rem;
+                height: min-content;
+
+            }
+
+            .about-me-desc {
+                padding: $xxl;
+                text-wrap: wrap;
+                display: flex;
+                align-items: center;
+                font-size: $xxl;
+            }
+
+            @media (max-width: $breakpoint-xxl) {
+                padding: 2rem;
+                display: inline;
+
+                .about-me-text {
+                    font-size: 5rem;
+                    text-wrap: wrap;
+                }
+
+                .about-me-desc {
+                    margin-top: $xl;
+                    text-wrap: wrap;
+                    padding: 0;
+                }
+            }
+
+            @media (max-width: $breakpoint-xl) {
+                .about-me-text {
+                    font-size: 3rem;
+                    text-wrap: wrap;
+                }
+
+                .about-me-desc {
+                    font-size: $xl;
+                    text-wrap: wrap;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    #project {
+        border: 1px solid $border;
+    }
+
+    // @keyframes name-splash-2 {
+    //     from {
+    //         opacity: 0;
+    //         transform: translateX(50px);
+    //     }
+
+    //     to {
+    //         opacity: 1;
+    //         transform: translateX(0);
+    //     }
+    // }
+
+    // @keyframes name-splash {
+    //     from {
+    //         opacity: 0;
+    //         transform: translateX(-50px);
+    //     }
+
+    //     to {
+    //         transform: translateX(0);
+    //     }
+    // }
+
+    // @keyframes nav-splash {
+    //     from {
+    //         opacity: 0;
+    //         top: 0;
+    //     }
+
+    //     to {
+    //         opacity: 1;
+    //         top: 30px;
+    //     }
+    // }
+}
