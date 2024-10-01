@@ -63,12 +63,12 @@ body {
   margin: auto;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.75rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .main-wrapper nav ul li a {
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #D2D0BA;
 }
 .main-wrapper nav ul li a:hover {

@@ -38,13 +38,13 @@ body {
             margin: auto;
             display: flex;
             justify-content: center;
-            gap: $xxxl;
+            gap: $xxl;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
             li {
                 a {
                     font-weight: 500;
-                    font-size: $xl;
+                    font-size: $lg;
                     color: $text-primary;
 
                     &:hover {
