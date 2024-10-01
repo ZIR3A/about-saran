@@ -99,7 +99,7 @@ body {
   position: absolute;
   bottom: 0;
   text-align: center;
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: 600;
   color: #D2D0BA;
   letter-spacing: 0.8rem;
@@ -108,7 +108,7 @@ body {
 }
 @media (max-width: 960px) {
   .main-wrapper #hero-section .hero-infos .my-name {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 @media (max-width: 480px) {
@@ -148,7 +148,7 @@ body {
 }
 .main-wrapper #about .about-container .about-me-text {
   text-wrap: nowrap;
-  font-size: 8rem;
+  font-size: 7rem;
   height: -moz-min-content;
   height: min-content;
 }
@@ -156,7 +156,7 @@ body {
   padding: 1.75rem;
   text-wrap: wrap;
   display: flex;
-  align-items: center;
+  align-items: end;
   font-size: 1.75rem;
 }
 @media (max-width: 1605px) {

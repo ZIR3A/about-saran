@@ -82,7 +82,7 @@ body {
                 bottom: 0;
                 text-align: center;
                 // border: 1px solid $border;
-                font-size: 8rem;
+                font-size: 7rem;
                 font-weight: 600;
                 color: $primary;
                 letter-spacing: 0.8rem;
@@ -90,7 +90,7 @@ body {
                 text-wrap: nowrap;
 
                 @media (max-width: $breakpoint-lg) {
-                    font-size: 4rem;
+                    font-size: 3rem;
                 }
 
                 @media (max-width: $breakpoint-sm) {
@@ -137,7 +137,7 @@ body {
 
             .about-me-text {
                 text-wrap: nowrap;
-                font-size: 8rem;
+                font-size: 7rem;
                 height: min-content;
 
             }
@@ -146,7 +146,7 @@ body {
                 padding: $xxl;
                 text-wrap: wrap;
                 display: flex;
-                align-items: center;
+                align-items: end;
                 font-size: $xxl;
             }
 
