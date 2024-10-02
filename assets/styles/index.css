@@ -134,7 +134,6 @@ body {
 }
 .main-wrapper #about {
   display: flex;
-  border: 1px solid #B8BDB5;
 }
 .main-wrapper #about .about-container {
   min-height: 100vh;
