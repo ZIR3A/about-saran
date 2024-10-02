@@ -134,6 +134,7 @@ body {
 }
 .main-wrapper #about {
   display: flex;
+  border: 1px solid #B8BDB5;
 }
 .main-wrapper #about .about-container {
   min-height: 100vh;
@@ -187,4 +188,18 @@ body {
 }
 .main-wrapper #project {
   border: 1px solid #B8BDB5;
+}
+.main-wrapper #project .div1, .main-wrapper #project .div2 {
+  height: 100vh;
+}
+.main-wrapper #project .div1 {
+  background-color: pink;
+}
+.main-wrapper #project .div2 {
+  background-color: salmon;
+}
+.main-wrapper #project .div2 .square {
+  height: 150px;
+  width: 150px;
+  background-color: fuchsia;
 }/*# sourceMappingURL=index.css.map */

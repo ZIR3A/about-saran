@@ -121,7 +121,7 @@ body {
 
     #about {
         display: flex;
-
+        border: 1px solid $border;
         .about-container {
             min-height: 100vh;
             display: flex;
@@ -183,6 +183,20 @@ body {
 
     #project {
         border: 1px solid $border;
+        .div1, .div2 {
+            height: 100vh;
+        }
+        .div1 {
+            background-color: pink;
+        }
+        .div2 {
+            background-color: salmon;
+            .square {
+                height: 150px;
+                width: 150px;
+                background-color: fuchsia;
+            }
+        }
     }
 
     // @keyframes name-splash-2 {
