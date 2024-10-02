@@ -21,6 +21,6 @@ gsap.to("#about-desc", {
     scrub: 1,
     start: "-500px",
     end: "top top",
-    markers: true,
+    // markers: true,
   },
 });
