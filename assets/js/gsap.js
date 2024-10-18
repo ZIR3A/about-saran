@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.from("#about-text", {
   x: 400,
-  y: 100,
+  y: 0,
   duration: 3,
   scrollTrigger: {
     trigger: "#hero-section",
@@ -12,7 +12,7 @@ gsap.from("#about-text", {
   },
 });
 gsap.to("#about-text", {
-  y: 50,
+  marginTop: 200,
   duration: 3,
   scrollTrigger: {
     trigger: "#hero-section",
@@ -46,9 +46,6 @@ gsap.to("#about-desc", {
     // markers: true
   },
 });
-
-
-
 
 let sections = gsap.utils.toArray(".panel");
 
