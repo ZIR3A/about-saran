@@ -1,26 +1,65 @@
 gsap.registerPlugin(ScrollTrigger);
-
-gsap.to("#about-text", {
-  x: 450,
+gsap.from("#about-text", {
+  x: 400,
   y: 100,
   duration: 3,
   scrollTrigger: {
-    trigger: "#about",
-    start: "-500px",
-    end: "top top",
+    trigger: "#hero-section",
+    start: "top",
+    end: "bottom",
+    scrub: 1,
+    // markers: true
+  },
+});
+gsap.to("#about-text", {
+  y: 50,
+  duration: 3,
+  scrollTrigger: {
+    trigger: "#hero-section",
+    start: "top",
+    end: "bottom",
+    scrub: 1,
+    // markers: true
+  },
+});
+gsap.from("#about-desc", {
+  x: -400,
+  y: 0,
+  duration: 3,
+  scrollTrigger: {
+    trigger: "#hero-section",
+    start: "top",
+    end: "bottom",
     scrub: 1,
     // markers: true
   },
 });
 gsap.to("#about-desc", {
-  x: -400,
-  y: -50,
+  x: 20,
+  y: 0,
   duration: 3,
   scrollTrigger: {
-    trigger: "#about",
+    trigger: "#hero-section",
+    start: "top",
+    end: "bottom",
     scrub: 1,
-    start: "-500px",
-    end: "top top",
-    // markers: true,
+    // markers: true
+  },
+});
+
+
+
+
+let sections = gsap.utils.toArray(".panel");
+
+gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".container",
+    pin: true,
+    scrub: 1,
+    snap: 1 / (sections.length - 1),
+    end: () => "+=" + document.querySelector(".container").offsetWidth,
   },
 });

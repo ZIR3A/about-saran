@@ -121,11 +121,15 @@ body {
 
     #about {
         display: flex;
+        overflow-x: hidden;
         // border: 1px solid $border;
         .about-container {
             min-height: 100vh;
             display: flex;
-            justify-content: space-evenly;
+            flex-direction: column;
+            // justify-content: center;
+            align-items: center;
+            gap: 100px;
             width: 100%;
             padding: 5rem;
 
@@ -139,15 +143,17 @@ body {
                 text-wrap: nowrap;
                 font-size: 7rem;
                 height: min-content;
+                max-width: 1000px;
 
             }
 
             .about-me-desc {
-                padding: $xxl;
+                // padding: $xxl;
                 text-wrap: wrap;
                 display: flex;
                 align-items: end;
                 font-size: $xxl;
+                max-width: 1000px;
             }
 
             @media (max-width: $breakpoint-xxl) {
@@ -182,55 +188,55 @@ body {
     }
 
     #project {
-        border: 1px solid $border;
-        .div1, .div2 {
+        min-height: 100vh;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow-x: hidden;
+        margin: 0;
+        .project-title {
+            color: $text-primary;
+            text-wrap: nowrap;
+                font-size: 7rem;
+                height: min-content;
+        }
+        .container {
+            width: 500%;
             height: 100vh;
-        }
-        .div1 {
-            background-color: pink;
-        }
-        .div2 {
-            background-color: salmon;
-            .square {
-                height: 150px;
-                width: 150px;
-                background-color: fuchsia;
+            display: flex;
+            flex-wrap: nowrap;
+            .panel {
+                &.description {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                width: 100vw;
+                &.red {
+                   background: red; 
+                }
+                &.orange {
+                   background: orange; 
+                }
+                &.purple {
+                   background: purple; 
+                }
             }
-        }
+          }
+          
+          .firstContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: yellow;
+          }
+          
+          .lastContainer {
+            display: flex;
+            height: 100vh;
+            background: yellow;
+          }
     }
-
-    // @keyframes name-splash-2 {
-    //     from {
-    //         opacity: 0;
-    //         transform: translateX(50px);
-    //     }
-
-    //     to {
-    //         opacity: 1;
-    //         transform: translateX(0);
-    //     }
-    // }
-
-    // @keyframes name-splash {
-    //     from {
-    //         opacity: 0;
-    //         transform: translateX(-50px);
-    //     }
-
-    //     to {
-    //         transform: translateX(0);
-    //     }
-    // }
-
-    // @keyframes nav-splash {
-    //     from {
-    //         opacity: 0;
-    //         top: 0;
-    //     }
-
-    //     to {
-    //         opacity: 1;
-    //         top: 30px;
-    //     }
-    // }
 }
