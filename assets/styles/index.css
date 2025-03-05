@@ -205,38 +205,74 @@ body {
   height: min-content;
 }
 .main-wrapper #project .container {
-  width: 500%;
+  width: 700%;
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
+  gap: 16px;
 }
 .main-wrapper #project .container .panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   width: 100vw;
+  height: 50vh;
+  width: 50vw;
+  min-width: 400px;
 }
 .main-wrapper #project .container .panel.description {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh !important;
+  width: 100vw !important;
 }
-.main-wrapper #project .container .panel.red {
-  background: red;
+.main-wrapper #project .container .panel.project-container {
+  /* From https://css.glass */
+  background: #414040;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
-.main-wrapper #project .container .panel.orange {
-  background: orange;
-}
-.main-wrapper #project .container .panel.purple {
-  background: purple;
-}
-.main-wrapper #project .firstContainer {
+.main-wrapper #project .container .panel.project-container .work-item {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: yellow;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 16px;
 }
-.main-wrapper #project .lastContainer {
-  display: flex;
+.main-wrapper #project .container .panel.project-container .work-item .work-item-info .work-item-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #D2D0BA;
+  margin-bottom: 24px;
+}
+.main-wrapper #project .container .panel.project-container .work-item .work-item-info .work-item-text {
+  font-size: 1.25rem;
+  color: #D2D0BA;
+  margin: 8px auto;
+}
+.main-wrapper #project .container .panel.project-container .work-item .work-item-info .work-item-text .title {
+  font-weight: bold;
+}
+.main-wrapper #project .container .panel.project-container .work-item .work-item-info .work-item-text a {
+  color: #D2D0BA;
+  text-decoration: underline;
+}
+.main-wrapper #project .container .panel.project-container .work-item .work-item-image {
+  border-radius: 8px;
+  border: 1px solid #B8BDB5;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 1280px) {
+  .main-wrapper #project .container .panel.project-container .work-item .work-item-image {
+    display: none;
+  }
+}
+.main-wrapper .sss {
+  background-color: red;
   height: 100vh;
-  background: yellow;
 }/*# sourceMappingURL=index.css.map */

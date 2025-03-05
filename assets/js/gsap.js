@@ -50,7 +50,7 @@ gsap.to("#about-desc", {
 let sections = gsap.utils.toArray(".panel");
 
 gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
+  xPercent: -102 * (sections.length - 1),
   ease: "none",
   scrollTrigger: {
     trigger: ".container",
