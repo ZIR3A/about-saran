@@ -1,47 +1,22 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.from("#about-text", {
-  x: 400,
-  y: 0,
-  duration: 3,
+  y: -800,
+  opacity: 0.1,
+  duration: 1,
   scrollTrigger: {
     trigger: "#hero-section",
-    start: "top",
-    end: "bottom",
-    scrub: 1,
-    // markers: true
-  },
-});
-gsap.to("#about-text", {
-  marginTop: 200,
-  duration: 3,
-  scrollTrigger: {
-    trigger: "#hero-section",
-    start: "top",
-    end: "bottom",
+    start: "middle",
     scrub: 1,
     // markers: true
   },
 });
 gsap.from("#about-desc", {
-  x: -400,
-  y: 0,
-  duration: 3,
+  y: -800,
+  opacity: 0.1,
+  duration: 1,
   scrollTrigger: {
     trigger: "#hero-section",
-    start: "top",
-    end: "bottom",
-    scrub: 1,
-    // markers: true
-  },
-});
-gsap.to("#about-desc", {
-  x: 20,
-  y: 0,
-  duration: 3,
-  scrollTrigger: {
-    trigger: "#hero-section",
-    start: "top",
-    end: "bottom",
+    start: "middle",
     scrub: 1,
     // markers: true
   },
@@ -59,4 +34,17 @@ gsap.to(sections, {
     snap: 1 / (sections.length - 1),
     end: () => "+=" + document.querySelector(".container").offsetWidth,
   },
+});
+
+let scrollIcon = ".scroll-icon";
+gsap.fromTo(scrollIcon, {
+  y: 0, // Start at the original position
+  opacity: 1 // Start at full opacity
+}, {
+  y: -20, // Move up
+  opacity: 0.2, // Fade out
+  duration: 1,
+  repeat: -1,
+  yoyo: true,
+  ease: "power1.inOut"
 });

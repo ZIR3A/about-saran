@@ -86,7 +86,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -78px;
 }
 .main-wrapper #hero-section .hero-infos {
   position: relative;
@@ -131,6 +130,25 @@ body {
   .main-wrapper #hero-section .hero-infos .ml12 .letter {
     font-size: 1rem;
   }
+}
+.main-wrapper #hero-section .hero-infos .wrapper {
+  height: 20px;
+  position: relative;
+  margin: auto;
+  background: #ccc;
+  overflow: hidden;
+  /*   overflow:hidden; */
+}
+.main-wrapper #hero-section .hero-infos .wrapper .boxes .box {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  font-size: 25px;
+  line-height: 50px;
+  text-align: center;
+}
+.main-wrapper #hero-section .hero-infos .wrapper .boxes .box:first-child {
+  color: #414040;
 }
 .main-wrapper #about {
   display: flex;
@@ -201,8 +219,11 @@ body {
   color: #D2D0BA;
   text-wrap: nowrap;
   font-size: 7rem;
-  height: -moz-min-content;
-  height: min-content;
+}
+@media (max-width: 768px) {
+  .main-wrapper #project .project-title {
+    font-size: 3rem;
+  }
 }
 .main-wrapper #project .container {
   width: 700%;
@@ -250,7 +271,7 @@ body {
   margin-bottom: 24px;
 }
 .main-wrapper #project .container .panel.project-container .work-item .work-item-info .work-item-text {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #D2D0BA;
   margin: 8px auto;
 }

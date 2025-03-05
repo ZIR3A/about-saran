@@ -67,7 +67,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: -78px;
+        // margin-top: -78px;
 
 
         .hero-infos {
@@ -113,6 +113,33 @@ body {
                     @media (max-width: $breakpoint-lg) {
                         font-size: 1rem;
                     }
+                }
+            }
+
+            .wrapper {
+                height: 20px;
+                // width: 550px;
+                position: relative;
+                margin: auto;
+                background: #ccc;
+                overflow: hidden;
+
+                /*   overflow:hidden; */
+                .boxes {
+                    // position: relative;
+                    // bottom: -50px;
+                    .box {
+                        height: 30px;
+                        width: 30px;
+                        position: absolute;
+                        font-size: 25px;
+                        line-height: 50px;
+                        text-align: center;
+                        &:first-child {
+                            color: $secondary
+                        }
+                    }
+
                 }
             }
         }
@@ -200,7 +227,13 @@ body {
             color: $text-primary;
             text-wrap: nowrap;
             font-size: 7rem;
-            height: min-content;
+
+            // .scroll-icon {
+            //     font-size: $xxl !important;
+            // }
+            @media (max-width: $breakpoint-md) {
+                font-size: 3rem;
+            }
         }
 
         .container {
@@ -254,7 +287,7 @@ body {
                             }
 
                             .work-item-text {
-                                font-size: $lg;
+                                font-size: $md;
                                 color: $text-primary;
                                 margin: 8px auto;
 
@@ -274,6 +307,7 @@ body {
                             border-radius: 8px;
                             border: 1px solid $border;
                             object-fit: cover;
+
                             @media (max-width: $breakpoint-xl) {
                                 display: none;
                             }
