@@ -239,8 +239,8 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  height: 50vh;
-  width: 50vw;
+  height: 55vh;
+  width: 55vw;
   min-width: 400px;
 }
 .main-wrapper #project .container .panel.description {
@@ -249,6 +249,11 @@ body {
   align-items: center;
   height: 100vh !important;
   width: 100vw !important;
+}
+@media (max-width: 768px) {
+  .main-wrapper #project .container .panel {
+    height: 60vh;
+  }
 }
 .main-wrapper #project .container .panel.project-container {
   /* From https://css.glass */

@@ -260,9 +260,12 @@ body {
                     width: 100vw !important;
                 }
 
-                height: 50vh;
-                width: 50vw;
+                height: 55vh;
+                width: 55vw;
                 min-width: 400px;
+                @media (max-width: $breakpoint-md) {
+                    height: 60vh;
+                }
 
                 &.project-container {
                     /* From https://css.glass */
@@ -299,6 +302,7 @@ body {
                                     color: $text-primary;
                                     text-decoration: underline;
                                 }
+                               
                             }
 
                         }
