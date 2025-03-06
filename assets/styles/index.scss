@@ -1,344 +1,448 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
 @import "components/mixins", "variables/variables", "components/global";
 
 * {
-    @include all-body-styles;
+  @include all-body-styles;
 }
 
 body {
-    background-image: url("../images/navy_blue.png");
-    background-attachment: fixed;
-    height: 100vh;
+  background-image: url("../images/navy_blue.png");
+  background-attachment: fixed;
+  height: 100vh;
 
-    &::-webkit-scrollbar {
-        width: 0.5em;
-    }
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
 
-    &::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
 
-    &::-webkit-scrollbar-thumb {
-        background-color: rgb(90, 90, 90);
-        outline: 1px solid slategrey;
-        border-radius: 8px;
-    }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(90, 90, 90);
+    outline: 1px solid slategrey;
+    border-radius: 8px;
+  }
 }
 
 .main-wrapper {
-    .flex-center {
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    position: sticky;
+    display: inline;
+    top: 30px;
+    z-index: 2;
+
+    ul {
+      max-width: max-content;
+      background: #414040;
+      padding: $xl;
+      border-radius: $lg;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: $xxl;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      li {
+        a {
+          font-weight: 500;
+          font-size: $lg;
+          color: $text-primary;
+
+          &:hover {
+            text-decoration: underline;
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  #hero-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin-top: -78px;
+
+    .hero-infos {
+      position: relative;
+      width: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .my-name {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        // border: 1px solid $border;
+        font-size: 7rem;
+        font-weight: 600;
+        color: $primary;
+        letter-spacing: 0.8rem;
+        margin-bottom: $xxl;
+        text-wrap: nowrap;
+
+        @media (max-width: $breakpoint-lg) {
+          font-size: 3rem;
+        }
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .ml12 {
+        position: absolute;
+        top: 0;
+        margin-top: 20px;
+        text-wrap: nowrap;
+
+        .letter {
+          font-size: 4.5rem;
+          letter-spacing: 0.5rem;
+          color: $secondary;
+
+          @media (max-width: $breakpoint-lg) {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .wrapper {
+        height: 20px;
+        // width: 550px;
+        position: relative;
+        margin: auto;
+        background: #ccc;
+        overflow: hidden;
+
+        /*   overflow:hidden; */
+        .boxes {
+          // position: relative;
+          // bottom: -50px;
+          .box {
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            font-size: 25px;
+            line-height: 50px;
+            text-align: center;
+
+            &:first-child {
+              color: $secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #about {
+    display: flex;
+    overflow-x: hidden;
+
+    // border: 1px solid $border;
+    .about-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+      gap: 100px;
+      width: 100%;
+      padding: 5rem;
+
+      .about-me-text,
+      .about-me-desc {
+        color: $text-primary;
+      }
+
+      .about-me-text {
+        text-wrap: nowrap;
+        font-size: 7rem;
+        height: min-content;
+        max-width: 1000px;
+      }
+
+      .about-me-desc {
+        // padding: $xxl;
+        text-wrap: wrap;
+        display: flex;
+        align-items: end;
+        font-size: $xxl;
+        max-width: 1000px;
+      }
+
+      @media (max-width: $breakpoint-xxl) {
+        padding: 2rem;
+        display: inline;
+
+        .about-me-text {
+          font-size: 5rem;
+          text-wrap: wrap;
+        }
+
+        .about-me-desc {
+          margin-top: $xl;
+          text-wrap: wrap;
+          padding: 0;
+        }
+      }
+
+      @media (max-width: $breakpoint-xl) {
+        .about-me-text {
+          font-size: 3rem;
+          text-wrap: wrap;
+        }
+
+        .about-me-desc {
+          font-size: $xl;
+          text-wrap: wrap;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  #project {
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+
+    .project-title {
+      color: $text-primary;
+      text-wrap: nowrap;
+      font-size: 7rem;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 3rem;
+      }
+    }
+
+    .container {
+      width: 700%; // must be multiple of items of scrollable * 100 %
+      height: 100vh;
+      display: flex;
+      flex-wrap: nowrap;
+      // justify-content: center;
+      align-items: center;
+      gap: 16px;
+
+      .panel {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+        height: 100vh;
+        width: 100vw;
 
-    .flex-between {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    nav {
-        position: sticky;
-        display: inline;
-        top: 30px;
-        z-index: 2;
-
-        ul {
-            max-width: max-content;
-            background: #414040;
-            padding: $xl;
-            border-radius: $lg;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            gap: $xxl;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-            li {
-                a {
-                    font-weight: 500;
-                    font-size: $lg;
-                    color: $text-primary;
-
-                    &:hover {
-                        text-decoration: underline;
-                        color: $primary;
-
-                    }
-                }
-            }
+        &.description {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh !important;
+          width: 100vw !important;
         }
+
+        height: 55vh;
+        width: 55vw;
+        min-width: 400px;
 
         @media (max-width: $breakpoint-md) {
-            display: none;
-        }
-    }
-
-    #hero-section {
-        min-height: 100vh;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        // margin-top: -78px;
-
-
-        .hero-infos {
-            position: relative;
-            width: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            .my-name {
-                position: absolute;
-                bottom: 0;
-                text-align: center;
-                // border: 1px solid $border;
-                font-size: 7rem;
-                font-weight: 600;
-                color: $primary;
-                letter-spacing: 0.8rem;
-                margin-bottom: $xxl;
-                text-wrap: nowrap;
-
-                @media (max-width: $breakpoint-lg) {
-                    font-size: 3rem;
-                }
-
-                @media (max-width: $breakpoint-sm) {
-                    font-size: 1.5rem;
-                }
-
-            }
-
-            .ml12 {
-                position: absolute;
-                top: 0;
-                margin-top: 20px;
-                text-wrap: nowrap;
-
-                .letter {
-                    font-size: 4.5rem;
-                    letter-spacing: 0.5rem;
-                    color: $secondary;
-
-                    @media (max-width: $breakpoint-lg) {
-                        font-size: 1rem;
-                    }
-                }
-            }
-
-            .wrapper {
-                height: 20px;
-                // width: 550px;
-                position: relative;
-                margin: auto;
-                background: #ccc;
-                overflow: hidden;
-
-                /*   overflow:hidden; */
-                .boxes {
-                    // position: relative;
-                    // bottom: -50px;
-                    .box {
-                        height: 30px;
-                        width: 30px;
-                        position: absolute;
-                        font-size: 25px;
-                        line-height: 50px;
-                        text-align: center;
-                        &:first-child {
-                            color: $secondary
-                        }
-                    }
-
-                }
-            }
+          height: 60vh;
         }
 
-    }
+        &.project-container {
+          /* From https://css.glass */
+          background: #414040;
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-    #about {
-        display: flex;
-        overflow-x: hidden;
-
-        // border: 1px solid $border;
-        .about-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            // justify-content: center;
-            align-items: center;
-            gap: 100px;
+          .work-item {
             width: 100%;
-            padding: 5rem;
-
-            .about-me-text,
-            .about-me-desc {
-                color: $text-primary;
-
-            }
-
-            .about-me-text {
-                text-wrap: nowrap;
-                font-size: 7rem;
-                height: min-content;
-                max-width: 1000px;
-
-            }
-
-            .about-me-desc {
-                // padding: $xxl;
-                text-wrap: wrap;
-                display: flex;
-                align-items: end;
-                font-size: $xxl;
-                max-width: 1000px;
-            }
-
-            @media (max-width: $breakpoint-xxl) {
-                padding: 2rem;
-                display: inline;
-
-                .about-me-text {
-                    font-size: 5rem;
-                    text-wrap: wrap;
-                }
-
-                .about-me-desc {
-                    margin-top: $xl;
-                    text-wrap: wrap;
-                    padding: 0;
-                }
-            }
-
-            @media (max-width: $breakpoint-xl) {
-                .about-me-text {
-                    font-size: 3rem;
-                    text-wrap: wrap;
-                }
-
-                .about-me-desc {
-                    font-size: $xl;
-                    text-wrap: wrap;
-                    padding: 0;
-                }
-            }
-        }
-    }
-
-    #project {
-        min-height: 100vh;
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow-x: hidden;
-        margin: 0;
-
-        .project-title {
-            color: $text-primary;
-            text-wrap: nowrap;
-            font-size: 7rem;
-
-            // .scroll-icon {
-            //     font-size: $xxl !important;
-            // }
-            @media (max-width: $breakpoint-md) {
-                font-size: 3rem;
-            }
-        }
-
-        .container {
-            width: 700%; // must be multiple of items of scrollable * 100 %
-            height: 100vh;
+            height: 100%;
             display: flex;
-            flex-wrap: nowrap;
-            // justify-content: center;
-            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
             gap: 16px;
 
-            .panel {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                width: 100vw;
+            .work-item-info {
+              .work-item-title {
+                font-size: $xxxl;
+                font-weight: bold;
+                color: $text-primary;
+                margin-bottom: 24px;
+              }
 
-                &.description {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh !important;
-                    width: 100vw !important;
+              .work-item-text {
+                font-size: $md;
+                color: $text-primary;
+                margin: 8px auto;
+
+                .title {
+                  font-weight: bold;
                 }
 
-                height: 55vh;
-                width: 55vw;
-                min-width: 400px;
-                @media (max-width: $breakpoint-md) {
-                    height: 60vh;
+                a {
+                  color: $text-primary;
+                  text-decoration: underline;
                 }
-
-                &.project-container {
-                    /* From https://css.glass */
-                    background: #414040;
-                    border-radius: 16px;
-                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
-                    .work-item {
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        padding: 30px;
-                        gap: 16px;
-
-                        .work-item-info {
-                            .work-item-title {
-                                font-size: $xxxl;
-                                font-weight: bold;
-                                color: $text-primary;
-                                margin-bottom: 24px;
-                            }
-
-                            .work-item-text {
-                                font-size: $md;
-                                color: $text-primary;
-                                margin: 8px auto;
-
-                                .title {
-                                    font-weight: bold;
-                                }
-
-                                a {
-                                    color: $text-primary;
-                                    text-decoration: underline;
-                                }
-                               
-                            }
-
-                        }
-
-                        .work-item-image {
-                            border-radius: 8px;
-                            border: 1px solid $border;
-                            object-fit: cover;
-
-                            @media (max-width: $breakpoint-xl) {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-
+              }
             }
+
+            .work-item-image {
+              border-radius: 8px;
+              border: 1px solid $border;
+              object-fit: cover;
+
+              @media (max-width: $breakpoint-xl) {
+                display: none;
+              }
+            }
+          }
         }
+      }
+    }
+  }
+
+  #experience {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+
+    .experience-main-title {
+      text-align: center;
+      width: 100vw !important;
+
+      .experience-title {
+        text-align: center;
+        color: $text-primary;
+        text-wrap: nowrap;
+        font-size: 7rem;
+
+        @media (max-width: $breakpoint-md) {
+          font-size: 3rem;
+        }
+      }
     }
 
-    .sss {
-        background-color: red;
+    .experience-main-container {
+    //   width: 200%; // must be multiple of items of scrollable * 100 %
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 16px;
+
+      .experience-panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
         height: 100vh;
+
+        height: 55vh;
+        width: 55vw;
+        min-width: 400px;
+
+        @media (max-width: $breakpoint-md) {
+          height: 60vh;
+        }
+
+        &.experience-container {
+          background: #414040;
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+          .experience-item {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            gap: 16px;
+
+            .experience-item-info {
+              .experience-item-title {
+                font-size: $xxxl;
+                font-weight: bold;
+                color: $text-primary;
+                margin-bottom: 24px;
+              }
+
+              .experience-item-company-title {
+                color: $text-primary;
+                font-weight: bold;
+                font-size: 1.5rem;
+              }
+
+              .experience-item-text {
+                font-size: $md;
+                color: $text-primary;
+                margin: 8px auto;
+
+                .title {
+                  font-weight: bold;
+                }
+
+                a {
+                  color: $text-primary;
+                  text-decoration: underline;
+                }
+              }
+            }
+
+            .experience-item-image {
+              border-radius: 8px;
+              border: 1px solid $border;
+              object-fit: cover;
+
+              @media (max-width: $breakpoint-xl) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
     }
+  }
+
+  .sss {
+    background-color: red;
+    height: 100vh;
+  }
+
+  #floating-div {
+    position: fixed; /* Keeps the div fixed on the screen */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    .scroll-icon {
+        font-size: $fourxl !important;
+        color: $text-primary;
+    }
+  }
 }

@@ -22,6 +22,19 @@ gsap.from("#about-desc", {
   },
 });
 
+let experienceSection = gsap.utils.toArray(".experience-panel");
+
+gsap.from(experienceSection, {
+  xPercent: -120 * (experienceSection.length - 1),
+ ase: "power1.inOut",
+  scrollTrigger: {
+    trigger: ".experience-horizontal-scroll",
+    pin: true,
+    scrub: 1,
+    // snap: 1 / (experienceSection.length - 1),
+    end: () => "+=" + document.querySelector(".experience-main-container").offsetWidth,
+  },
+});
 let sections = gsap.utils.toArray(".panel");
 
 gsap.to(sections, {
@@ -47,4 +60,18 @@ gsap.fromTo(scrollIcon, {
   repeat: -1,
   yoyo: true,
   ease: "power1.inOut"
+});
+
+
+
+gsap.from(".experience-main-title", {
+  x: -800,
+  opacity: 0.1,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#about",
+    start: "start",
+    scrub: 1,
+     ease: "power1.inOut"
+  },
 });
