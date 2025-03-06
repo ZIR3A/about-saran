@@ -401,14 +401,43 @@ body::-webkit-scrollbar-thumb {
     display: none;
   }
 }
-.main-wrapper .sss {
-  background-color: red;
+.main-wrapper #contact {
   height: 100vh;
 }
+.main-wrapper #contact .contact-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #D2D0BA;
+}
+.main-wrapper #contact .contact-container .contact-animator-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-text {
+  font-size: 3rem;
+}
+.main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-desc {
+  font-size: 1.75rem;
+  margin-top: 42px;
+}
+.main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-desc .send-mail-button {
+  color: #D2D0BA;
+  border-radius: 8px;
+  border: 1px solid #B8BDB5;
+  padding: 8px;
+}
 .main-wrapper #floating-div {
-  position: fixed; /* Keeps the div fixed on the screen */
-  bottom: 20px; /* Distance from the bottom */
-  right: 20px; /* Distance from the right */
+  position: fixed;
+  /* Keeps the div fixed on the screen */
+  bottom: 20px;
+  /* Distance from the bottom */
+  right: 20px;
+  /* Distance from the right */
 }
 .main-wrapper #floating-div .scroll-icon {
   font-size: 4rem !important;

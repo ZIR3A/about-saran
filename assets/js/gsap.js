@@ -44,7 +44,7 @@ gsap.to(sections, {
     trigger: ".container",
     pin: true,
     scrub: 1,
-    snap: 1 / (sections.length - 1),
+    // snap: 1 / (sections.length - 1),
     end: () => "+=" + document.querySelector(".container").offsetWidth,
   },
 });
@@ -73,5 +73,18 @@ gsap.from(".experience-main-title", {
     start: "start",
     scrub: 1,
      ease: "power1.inOut"
+  },
+});
+
+gsap.from(".contact-animator-wrapper", {
+  opacity: 0.1, // Start invisible
+  y: 1000, // Start 50px below
+  duration: 1, // Animation duration
+  ease: "power2.out", // Smooth easing
+  scrollTrigger: {
+    trigger: ".contact-container", // Element to trigger the animation
+    start: "top 80%", // Start animation when the top of the element hits 80% of the viewport
+    end: "bottom 20%", // End animation when the bottom of the element hits 20% of the viewport
+    scrub: 1,
   },
 });
