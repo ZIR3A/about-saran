@@ -26,7 +26,7 @@ let experienceSection = gsap.utils.toArray(".experience-panel");
 
 gsap.from(experienceSection, {
   xPercent: -120 * (experienceSection.length - 1),
- ase: "power1.inOut",
+  ease: "none",
   scrollTrigger: {
     trigger: ".experience-horizontal-scroll",
     pin: true,
@@ -45,6 +45,7 @@ gsap.to(sections, {
     pin: true,
     scrub: 1,
     // snap: 1 / (sections.length - 1),
+    duration: 1,
     end: () => "+=" + document.querySelector(".container").offsetWidth,
   },
 });
@@ -82,9 +83,9 @@ gsap.from(".contact-animator-wrapper", {
   duration: 1, // Animation duration
   ease: "power2.out", // Smooth easing
   scrollTrigger: {
-    trigger: ".contact-container", // Element to trigger the animation
-    start: "top 80%", // Start animation when the top of the element hits 80% of the viewport
-    end: "bottom 20%", // End animation when the bottom of the element hits 20% of the viewport
+    trigger: "#contact", // Element to trigger the animation
+    // start: "top 80%", // Start animation when the top of the element hits 80% of the viewport
+    // end: "bottom 20%", // End animation when the bottom of the element hits 20% of the viewport
     scrub: 1,
   },
 });

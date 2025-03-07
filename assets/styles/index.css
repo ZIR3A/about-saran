@@ -327,6 +327,7 @@ body::-webkit-scrollbar-thumb {
   color: #D2D0BA;
   text-wrap: nowrap;
   font-size: 7rem;
+  margin-left: 40px;
 }
 @media (max-width: 768px) {
   .main-wrapper #experience .experience-main-title .experience-title {

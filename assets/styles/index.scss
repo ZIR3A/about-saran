@@ -345,6 +345,7 @@ body {
                 color: $text-primary;
                 text-wrap: nowrap;
                 font-size: 7rem;
+                margin-left: 40px;
 
                 @media (max-width: $breakpoint-md) {
                     font-size: 3rem;
