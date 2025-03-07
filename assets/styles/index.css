@@ -135,7 +135,7 @@ body::-webkit-scrollbar-thumb {
 .main-wrapper #hero-section .hero-infos .ml12 .letter {
   font-size: 4.5rem;
   letter-spacing: 0.5rem;
-  color: #414040;
+  color: #D2D0BA;
 }
 @media (max-width: 960px) {
   .main-wrapper #hero-section .hero-infos .ml12 .letter {
@@ -261,9 +261,9 @@ body::-webkit-scrollbar-thumb {
   height: 100vh !important;
   width: 100vw !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 1605px) {
   .main-wrapper #project .container .panel {
-    height: 60vh;
+    height: 65vh;
   }
 }
 .main-wrapper #project .container .panel.project-container {
@@ -350,9 +350,9 @@ body::-webkit-scrollbar-thumb {
   width: 55vw;
   min-width: 400px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1605px) {
   .main-wrapper #experience .experience-main-container .experience-panel {
-    height: 60vh;
+    height: 65vh;
   }
 }
 .main-wrapper #experience .experience-main-container .experience-panel.experience-container {
