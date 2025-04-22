@@ -286,8 +286,8 @@ body {
                 width: 55vw;
                 min-width: 400px;
 
-                @media (max-width: $breakpoint-xxl) {
-                    height: 65vh;
+                @media (max-width: $breakpoint-xl) {
+                    height: 40vh;
                 }
 
                 &.project-container {
@@ -403,7 +403,7 @@ body {
                 min-width: 400px;
 
                 @media (max-width: $breakpoint-xxl) {
-                    height: 65vh;
+                    height: 40vh;
                 }
 
                 &.experience-container {
