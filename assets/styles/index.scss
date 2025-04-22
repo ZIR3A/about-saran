@@ -163,7 +163,7 @@ body {
 
         // border: 1px solid $border;
         .about-container {
-            min-height: 50vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             // justify-content: center;
@@ -196,7 +196,7 @@ body {
             @media (max-width: $breakpoint-xxl) {
                 padding: 2rem;
                 display: inline;
-
+            
                 .about-me-text {
                     font-size: 5rem;
                     text-wrap: wrap;
@@ -211,12 +211,24 @@ body {
 
             @media (max-width: $breakpoint-xl) {
                 .about-me-text {
-                    font-size: 3rem;
+                    font-size: $threexl;
                     text-wrap: wrap;
                 }
 
                 .about-me-desc {
                     font-size: $xl;
+                    text-wrap: wrap;
+                    padding: 0;
+                }
+            }
+            @media (max-width: $breakpoint-md) {
+                .about-me-text {
+                    font-size: $xl;
+                    text-wrap: wrap;
+                }
+
+                .about-me-desc {
+                    font-size: $md;
                     text-wrap: wrap;
                     padding: 0;
                 }
@@ -238,7 +250,11 @@ body {
             font-size: 7rem;
 
             @media (max-width: $breakpoint-md) {
-                font-size: 3rem;
+                font-size: $xxxl;
+            }
+
+            @media (max-width: $breakpoint-xl) {
+                font-size: $xl;
             }
         }
 
@@ -294,6 +310,9 @@ body {
                                 font-weight: bold;
                                 color: $text-primary;
                                 margin-bottom: 24px;
+                                @media (max-width: $breakpoint-xl) {
+                                    font-size: $xl;
+                                }
                             }
 
                             .work-item-text {
@@ -308,6 +327,9 @@ body {
                                 a {
                                     color: $text-primary;
                                     text-decoration: underline;
+                                }
+                                @media (max-width: $breakpoint-md) {
+                                    font-size: $sm;
                                 }
                             }
                         }
@@ -349,9 +371,13 @@ body {
                 text-wrap: nowrap;
                 font-size: 7rem;
                 margin-left: 30px;
+                padding-top: 24px;
 
                 @media (max-width: $breakpoint-md) {
-                    font-size: 3rem;
+                    font-size: $xxxl;
+                }
+                @media (max-width: $breakpoint-sm) {
+                    font-size: $xxl;
                 }
             }
         }
@@ -399,12 +425,18 @@ body {
                                 font-weight: bold;
                                 color: $text-primary;
                                 margin-bottom: 24px;
+                                @media (max-width: $breakpoint-xl) {
+                                    font-size: $xl;
+                                }
                             }
 
                             .experience-item-company-title {
                                 color: $text-primary;
                                 font-weight: bold;
                                 font-size: 1.5rem;
+                                @media (max-width: $breakpoint-xl) {
+                                    font-size: $lg;
+                                }
                             }
 
                             .experience-item-text {
@@ -419,6 +451,12 @@ body {
                                 a {
                                     color: $text-primary;
                                     text-decoration: underline;
+                                }
+                                @media (max-width: $breakpoint-xl) {
+                                    font-size: $md;
+                                }
+                                @media (max-width: $breakpoint-md) {
+                                    font-size: $sm;
                                 }
                             }
                         }
@@ -460,6 +498,9 @@ body {
 
                 .contact-me-text {
                     font-size: $threexl;
+                    @media (max-width: $breakpoint-md) {
+                        font-size: $xl;
+                    }
                 }
 
                 .contact-me-desc {
@@ -470,7 +511,11 @@ body {
                         color: $text-primary;
                         border-radius: 8px;
                         border: 1px solid $border;
-                        padding: 8px
+                        padding: 8px;
+                        @media (max-width: $breakpoint-md) {
+                            font-size: $xl;
+                        }
+                        
                     }
                 }
             }
@@ -488,6 +533,10 @@ body {
         .scroll-icon {
             font-size: $fourxl !important;
             color: $text-primary;
+
+            @media (max-width: $breakpoint-sm) {
+                font-size: $xxxl !important;
+            }
         }
     }
 }

@@ -2,22 +2,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
   gsap.from("#about-text", {
-    y: -800,
-    opacity: 0.1,
+    x: 800,
+    opacity: 0,
+    color:"#414040",
     duration: 1,
     scrollTrigger: {
       trigger: "#hero-section",
+      snap: 1,
       start: "middle",
       scrub: 1,
       // markers: true
     },
   });
   gsap.from("#about-desc", {
-    y: -800,
-    opacity: 0.1,
+    x: -800,
+    opacity: 0,
+    color:"#414040",
     duration: 1,
     scrollTrigger: {
       trigger: "#hero-section",
+      snap: 1,
       start: "middle",
       scrub: 1,
       // markers: true
@@ -29,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // const panels = gsap.utils.toArray(".experience-main-container");
   const totalWidth = (experienceSection[0].offsetWidth * experienceSection.length);
   gsap.from(experienceSection, {
-    xPercent: -161 * (experienceSection.length - 1),
+    xPercent: -135 * (experienceSection.length - 1),
     ease: "none",
     scrollTrigger: {
       trigger: ".experience-horizontal-scroll",
@@ -37,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: 1,
       pin: true,
       duration: 1,
+      snap: 1 / (experienceSection.length - 0.5),
       end: () => `+=${totalWidth}`, // Ends at full width
     },
   });
@@ -46,10 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
     xPercent: -115 * (sections.length - 1),
     ease: "none",
     scrollTrigger: {
-      trigger: ".container",
+      trigger: ".project-horizontal-scroll",
       pin: true,
       scrub: 1,
-      // snap: 1 / (sections.length - 1),
+      snap: 1 / (sections.length - 0.5),
       duration: 1,
       end: () => "+=" + document.querySelector(".container").offsetWidth,
     },
@@ -78,7 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: "#about",
       start: "start",
       scrub: 1,
-      ease: "power1.inOut"
+      ease: "power1.inOut",
+      snap: 1
     },
   });
 
@@ -92,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // start: "top 80%", // Start animation when the top of the element hits 80% of the viewport
       // end: "bottom 20%", // End animation when the bottom of the element hits 20% of the viewport
       scrub: 1,
+      snap: 1
     },
   });
 

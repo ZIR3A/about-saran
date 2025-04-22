@@ -166,7 +166,7 @@ body::-webkit-scrollbar-thumb {
   overflow-x: hidden;
 }
 .main-wrapper #about .about-container {
-  min-height: 50vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -218,6 +218,17 @@ body::-webkit-scrollbar-thumb {
     padding: 0;
   }
 }
+@media (max-width: 768px) {
+  .main-wrapper #about .about-container .about-me-text {
+    font-size: 1.5rem;
+    text-wrap: wrap;
+  }
+  .main-wrapper #about .about-container .about-me-desc {
+    font-size: 1rem;
+    text-wrap: wrap;
+    padding: 0;
+  }
+}
 .main-wrapper #project {
   min-height: 100vh;
   width: 100%;
@@ -233,7 +244,12 @@ body::-webkit-scrollbar-thumb {
 }
 @media (max-width: 768px) {
   .main-wrapper #project .project-title {
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1280px) {
+  .main-wrapper #project .project-title {
+    font-size: 1.5rem;
   }
 }
 .main-wrapper #project .container {
@@ -286,6 +302,11 @@ body::-webkit-scrollbar-thumb {
   color: #D2D0BA;
   margin-bottom: 24px;
 }
+@media (max-width: 1280px) {
+  .main-wrapper #project .container .panel.project-container .work-item .work-item-info .work-item-title {
+    font-size: 1.5rem;
+  }
+}
 .main-wrapper #project .container .panel.project-container .work-item .work-item-info .work-item-text {
   font-size: 1rem;
   color: #D2D0BA;
@@ -297,6 +318,11 @@ body::-webkit-scrollbar-thumb {
 .main-wrapper #project .container .panel.project-container .work-item .work-item-info .work-item-text a {
   color: #D2D0BA;
   text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .main-wrapper #project .container .panel.project-container .work-item .work-item-info .work-item-text {
+    font-size: 0.75rem;
+  }
 }
 .main-wrapper #project .container .panel.project-container .work-item .work-item-image {
   border-radius: 8px;
@@ -331,10 +357,16 @@ body::-webkit-scrollbar-thumb {
   text-wrap: nowrap;
   font-size: 7rem;
   margin-left: 30px;
+  padding-top: 24px;
 }
 @media (max-width: 768px) {
   .main-wrapper #experience .experience-main-title .experience-title {
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .main-wrapper #experience .experience-main-title .experience-title {
+    font-size: 1.75rem;
   }
 }
 .main-wrapper #experience .experience-main-container {
@@ -379,10 +411,20 @@ body::-webkit-scrollbar-thumb {
   color: #D2D0BA;
   margin-bottom: 24px;
 }
+@media (max-width: 1280px) {
+  .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-title {
+    font-size: 1.5rem;
+  }
+}
 .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-company-title {
   color: #D2D0BA;
   font-weight: bold;
   font-size: 1.5rem;
+}
+@media (max-width: 1280px) {
+  .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-company-title {
+    font-size: 1.25rem;
+  }
 }
 .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-text {
   font-size: 1rem;
@@ -395,6 +437,16 @@ body::-webkit-scrollbar-thumb {
 .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-text a {
   color: #D2D0BA;
   text-decoration: underline;
+}
+@media (max-width: 1280px) {
+  .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-text {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-text {
+    font-size: 0.75rem;
+  }
 }
 .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-image {
   border-radius: 8px;
@@ -428,6 +480,11 @@ body::-webkit-scrollbar-thumb {
 .main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-text {
   font-size: 3rem;
 }
+@media (max-width: 768px) {
+  .main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-text {
+    font-size: 1.5rem;
+  }
+}
 .main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-desc {
   font-size: 1.75rem;
   margin-top: 42px;
@@ -437,6 +494,11 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
   border: 1px solid #B8BDB5;
   padding: 8px;
+}
+@media (max-width: 768px) {
+  .main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-desc .send-mail-button {
+    font-size: 1.5rem;
+  }
 }
 .main-wrapper #floating-div {
   position: fixed;
@@ -449,4 +511,9 @@ body::-webkit-scrollbar-thumb {
 .main-wrapper #floating-div .scroll-icon {
   font-size: 4rem !important;
   color: #D2D0BA;
+}
+@media (max-width: 480px) {
+  .main-wrapper #floating-div .scroll-icon {
+    font-size: 2rem !important;
+  }
 }/*# sourceMappingURL=index.css.map */
