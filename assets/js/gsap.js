@@ -23,22 +23,25 @@ gsap.from("#about-desc", {
 });
 
 let experienceSection = gsap.utils.toArray(".experience-panel");
-
+// Calculate total width
+// const panels = gsap.utils.toArray(".experience-main-container");
+const totalWidth = (experienceSection[0].offsetWidth * experienceSection.length);
 gsap.from(experienceSection, {
-  xPercent: -120 * (experienceSection.length - 1),
+  xPercent: -161 * (experienceSection.length - 1),
   ease: "none",
   scrollTrigger: {
     trigger: ".experience-horizontal-scroll",
-    pin: true,
+    start: "left left",
     scrub: 1,
-    // snap: 1 / (experienceSection.length - 1),
-    end: () => "+=" + document.querySelector(".experience-main-container").offsetWidth,
+    pin: true,
+    duration: 1,
+    end: () => `+=${totalWidth}`, // Ends at full width
   },
 });
 let sections = gsap.utils.toArray(".panel");
 
 gsap.to(sections, {
-  xPercent: -102 * (sections.length - 1),
+  xPercent: -115 * (sections.length - 1),
   ease: "none",
   scrollTrigger: {
     trigger: ".container",
@@ -73,7 +76,7 @@ gsap.from(".experience-main-title", {
     trigger: "#about",
     start: "start",
     scrub: 1,
-     ease: "power1.inOut"
+    ease: "power1.inOut"
   },
 });
 

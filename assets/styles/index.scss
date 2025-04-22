@@ -163,7 +163,7 @@ body {
 
         // border: 1px solid $border;
         .about-container {
-            min-height: 100vh;
+            min-height: 50vh;
             display: flex;
             flex-direction: column;
             // justify-content: center;
@@ -339,6 +339,9 @@ body {
         .experience-main-title {
             text-align: center;
             width: 100vw !important;
+            height: 135px;
+            display: flex;
+            justify-content: center;
 
             .experience-title {
                 text-align: center;
@@ -355,10 +358,12 @@ body {
 
         .experience-main-container {
             //   width: 200%; // must be multiple of items of scrollable * 100 %
+            width: 400%; // must be multiple of items of scrollable * 100 %
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
             gap: 16px;
+            padding: 18px;
 
             .experience-panel {
                 display: flex;
@@ -451,6 +456,7 @@ body {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                text-align: center;
 
                 .contact-me-text {
                     font-size: $threexl;
