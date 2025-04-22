@@ -9,6 +9,7 @@ body {
     background-image: url("../images/navy_blue.png");
     background-attachment: fixed;
     height: 100vh;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar {
         width: 0.5em;
@@ -274,6 +275,8 @@ body {
                 height: 100vh;
                 width: 100vw;
 
+               
+
                 &.description {
                     display: flex;
                     justify-content: center;
@@ -282,35 +285,33 @@ body {
                     width: 100vw !important;
                 }
 
-                height: 55vh;
+                height: 60vh;
                 width: 55vw;
                 min-width: 400px;
 
-                @media (max-width: $breakpoint-xl) {
-                    height: 40vh;
+                @media (max-width: $breakpoint-lg) {
+                    height: 50vh;
                 }
-
+               
                 &.project-container {
-                    /* From https://css.glass */
-                    background: #414040;
-                    border-radius: 16px;
-                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
                     .work-item {
+                        background: #414040;
+                        border-radius: 16px;
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
                         width: 100%;
                         height: 100%;
                         display: flex;
                         justify-content: space-between;
                         padding: 30px;
                         gap: 16px;
-
+                        
                         .work-item-info {
                             .work-item-title {
                                 font-size: $xxxl;
                                 font-weight: bold;
                                 color: $text-primary;
                                 margin-bottom: 24px;
-                                @media (max-width: $breakpoint-xl) {
+                                @media (max-width: $breakpoint-xxl) {
                                     font-size: $xl;
                                 }
                             }
@@ -332,6 +333,8 @@ body {
                                     font-size: $sm;
                                 }
                             }
+
+                            
                         }
 
                         .work-item-image {
@@ -398,12 +401,12 @@ body {
                 width: 100vw;
                 height: 100vh;
 
-                height: 55vh;
+                height: 60vh;
                 width: 55vw;
                 min-width: 400px;
 
-                @media (max-width: $breakpoint-xxl) {
-                    height: 40vh;
+                @media (max-width: $breakpoint-lg) {
+                    height: 50vh;
                 }
 
                 &.experience-container {
@@ -478,16 +481,15 @@ body {
 
     #contact {
         height: 100vh;
-
         .contact-container {
-            // height: 100vh;
-            // max-width: 500px;
+            width: 100vw;
             margin: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: $text-primary;
+            padding-top: 24px;
 
             .contact-animator-wrapper {
                 display: flex;
