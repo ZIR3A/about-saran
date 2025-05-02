@@ -13,7 +13,6 @@ body {
     background-image: url("../images/navy_blue.png");
     background-attachment: fixed;
     padding: 0px 16px;
-    overflow-x: hidden;
     &::-webkit-scrollbar {
         width: 0.5em;
     }
@@ -30,6 +29,7 @@ body {
 }
 
 .main-wrapper {
+    overflow-x: hidden;
     .flex-center {
         display: flex;
         justify-content: center;
@@ -164,6 +164,9 @@ body {
                 text-wrap: nowrap;
                 font-size: 4vw;
                 max-width: 1000px;
+                @media (max-width: $breakpoint-md) {
+                    font-size: 10vw;
+                }
             }
 
             .about-me-desc {
@@ -173,6 +176,9 @@ body {
                 align-items: end;
                 font-size: 1vw;
                 max-width: 1000px;
+                @media (max-width: $breakpoint-md) {
+                    font-size: 3vw;
+                }
             }   
     }
 
@@ -188,6 +194,10 @@ body {
             color: $text-primary;
             margin: 60px auto;
             text-align: center;
+
+            @media (max-width: $breakpoint-md) {
+                font-size: 10vw;
+            }
         }
 
         .project-container {
@@ -243,9 +253,9 @@ body {
                     border: 1px solid $border;
                     object-fit: cover;
 
-                    @media (max-width: $breakpoint-xl) {
-                        display: none;
-                    }
+                    // @media (max-width: $breakpoint-xl) {
+                    //     display: none;
+                    // }
                 }
             }
         }
@@ -262,6 +272,9 @@ body {
             color: $text-primary;
             margin: 60px auto;
             text-align: center;
+            @media (max-width: $breakpoint-md) {
+                font-size: 10vw;
+            }
         }
 
         .experience-main-container {
@@ -345,16 +358,12 @@ body {
     }
 
     #contact {
-        height: 100vh;
+        height: 30vh;
         .contact-container {
-            width: 100vw;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             color: $text-primary;
-            padding-top: 24px;
+            width: 100vw;
+            display: grid;
+            place-items: center;
 
             .contact-animator-wrapper {
                 display: flex;

@@ -40,7 +40,6 @@ body {
   background-image: url("../images/navy_blue.png");
   background-attachment: fixed;
   padding: 0px 16px;
-  overflow-x: hidden;
 }
 body::-webkit-scrollbar {
   width: 0.5em;
@@ -54,6 +53,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
 }
 
+.main-wrapper {
+  overflow-x: hidden;
+}
 .main-wrapper .flex-center {
   display: flex;
   justify-content: center;
@@ -170,12 +172,22 @@ body::-webkit-scrollbar-thumb {
   font-size: 4vw;
   max-width: 1000px;
 }
+@media (max-width: 768px) {
+  .main-wrapper #about .about-me-text {
+    font-size: 10vw;
+  }
+}
 .main-wrapper #about .about-me-desc {
   text-wrap: wrap;
   display: flex;
   align-items: end;
   font-size: 1vw;
   max-width: 1000px;
+}
+@media (max-width: 768px) {
+  .main-wrapper #about .about-me-desc {
+    font-size: 3vw;
+  }
 }
 .main-wrapper #project {
   height: 80vh;
@@ -189,6 +201,11 @@ body::-webkit-scrollbar-thumb {
   color: #D2D0BA;
   margin: 60px auto;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .main-wrapper #project .project-title {
+    font-size: 10vw;
+  }
 }
 .main-wrapper #project .project-container {
   display: flex;
@@ -240,11 +257,6 @@ body::-webkit-scrollbar-thumb {
   -o-object-fit: cover;
      object-fit: cover;
 }
-@media (max-width: 1280px) {
-  .main-wrapper #project .project-container .work-item .work-item-image {
-    display: none;
-  }
-}
 .main-wrapper #experience {
   height: 80vh;
   display: flex;
@@ -257,6 +269,11 @@ body::-webkit-scrollbar-thumb {
   color: #D2D0BA;
   margin: 60px auto;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .main-wrapper #experience .experience-header {
+    font-size: 10vw;
+  }
 }
 .main-wrapper #experience .experience-main-container {
   display: flex;
@@ -331,17 +348,13 @@ body::-webkit-scrollbar-thumb {
      object-fit: cover;
 }
 .main-wrapper #contact {
-  height: 100vh;
+  height: 30vh;
 }
 .main-wrapper #contact .contact-container {
-  width: 100vw;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   color: #D2D0BA;
-  padding-top: 24px;
+  width: 100vw;
+  display: grid;
+  place-items: center;
 }
 .main-wrapper #contact .contact-container .contact-animator-wrapper {
   display: flex;

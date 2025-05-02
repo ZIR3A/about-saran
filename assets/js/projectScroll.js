@@ -4,7 +4,6 @@ function scrollContent() {
   const _scrollContent = gsap.utils.toArray(".work-item");
   let _mainWIdth = window.innerWidth
   let _containerScrollWidth = _scrollContainer.scrollWidth
-  console.log(_scrollContent[0].offsetWidth * _scrollContent.length, _mainWIdth, "@@@");
 
   function getScrollWidth() {
     return ((_containerScrollWidth) - _mainWIdth) + 42
