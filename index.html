@@ -11,6 +11,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script type="module" src="assets/js/animation.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/experienceScroll.js"></script>
+    <script type="module" src="assets/js/projectScroll.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1933988685009702"
         crossorigin="anonymous"></script>
     <title>Saran Baral-(@zirea)</title>
@@ -23,39 +26,37 @@
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1933988685009702"
                 data-ad-slot="5545892600" data-ad-format="auto" data-full-width-responsive="true"></ins>
         </div>
-        <section id="hero-section">
-            <div class="hero-infos">
-                <span class="my-name" id="common-anim">Saran Baral</span>
-                <h1 class="ml12" id="common-anim">
-                    <span>Frontend'Enthusiasts</span>
-                </h1>
-        </section>
 
-        </div>
+        <section id="section-one">
+            <div class="name-container">
+                <img src="./assets/images/js.webp" alt="saran-js" id="js">
+                <img src="./assets/images/html2.png" alt="saran-js" id="html">
+                <img src="./assets/images/css3.png" alt="saran-js" id="css">
+                <img src="./assets/images/React.webp" alt="saran-js" id="react">
+                <img src="./assets/images/node2.png" alt="saran-js" id="node">
+            </div>
+            <div class="description">Frontend'Enthusiasts</div>
+        </section>
         <section id="about">
-            <div class="about-container">
-                <div class="about-me-text" id="about-text">A little about me</div>
-                <div class="about-me-desc" id="about-desc">
-                    I'm a seasoned frontend React developer experience in designing and building innovative web
-                    applications. My expertise spans the entire web development lifecycle, from collaborating with
-                    designers to create intuitive user interfaces to optimizing code for performance and scalability.
-                    I'm proficient in using React's core concepts, state management libraries (like Redux or Context
-                    API), and popular tools like TypeScript, Jest, and Webpack. I have a strong understanding of modern
-                    web
-                    standards and best practices, ensuring that the applications I develop are accessible, responsive,
-                    and maintainable. My passion for continuous learning drives me to stay updated with the latest
-                    advancements in frontend technologies and explore new frameworks and libraries.
-                </div>
+            <div class="about-me-text" id="about-text">A little about me</div>
+            <div class="about-me-desc" id="about-desc">
+                I'm a seasoned frontend React developer experience in designing and building innovative web
+                applications. My expertise spans the entire web development lifecycle, from collaborating with
+                designers to create intuitive user interfaces to optimizing code for performance and scalability.
+                I'm proficient in using React's core concepts, state management libraries (like Redux or Context
+                API), and popular tools like TypeScript, Jest, and Webpack. I have a strong understanding of modern
+                web
+                standards and best practices, ensuring that the applications I develop are accessible, responsive,
+                and maintainable. My passion for continuous learning drives me to stay updated with the latest
+                advancements in frontend technologies and explore new frameworks and libraries.
             </div>
         </section>
         <section id="experience" class="experience-horizontal-scroll">
-            <div class="experience-main-title">
-                <span class="experience-title">
-                    My Experiences
-                </span>
+            <div class="experience-header">
+                My Experiences
             </div>
             <div class="experience-main-container">
-                <section class="experience-panel experience-container">
+                <div class="experience-panel experience-container">
                     <div class="experience-item">
                         <div class="experience-item-info">
                             <h4 class="experience-item-title">Software Engineer (React JS)</h4>
@@ -75,8 +76,8 @@
                         <img class="experience-item-image" src="/assets/images/experience.png" alt="plat"
                             width="350px" />
                     </div>
-                </section>
-                <section class="experience-panel experience-container">
+                </div>
+                <div class="experience-panel experience-container">
                     <div class="experience-item">
                         <div class="experience-item-info">
                             <h4 class="experience-item-title">Frontend Developer (React JS)</h4>
@@ -97,8 +98,8 @@
                         <img class="experience-item-image" src="/assets/images/experience.png" alt="plat"
                             width="350px" />
                     </div>
-                </section>
-                <section class="experience-panel experience-container">
+                </div>
+                <div class="experience-panel experience-container">
                     <div class="experience-item">
                         <div class="experience-item-info">
                             <h4 class="experience-item-title">Fullstack Developer | JavaScript (Feelance-Remote)</h4>
@@ -119,8 +120,8 @@
                         <img class="experience-item-image" src="/assets/images/experience.png" alt="plat"
                             width="350px" />
                     </div>
-                </section>
-                <section class="experience-panel experience-container">
+                </div>
+                <div class="experience-panel experience-container">
                     <div class="experience-item">
                         <div class="experience-item-info">
                             <h4 class="experience-item-title">Intern (Frontend)</h4>
@@ -138,129 +139,116 @@
                         <img class="experience-item-image" src="/assets/images/experience.png" alt="plat"
                             width="350px" />
                     </div>
-                </section>
+                </div>
             </div>
         </section>
         <section id="project" class="project-horizontal-scroll">
-            <div class="container">
-                <div class="description panel">
-                    <span class="project-title">
-                        My Projects
-                    </span>
+            <div class="project-title">
+                My Projects
+            </div>
+            <div class="project-container">
+                <div class="work-item">
+                    <div class="work-item-info">
+                        <h4 class="work-item-title">Dashboard Template With Google Auth</h4>
+                        <p class="work-item-text"><span class="title">Tools Used :</span> React Js, Tailwind CSS,
+                            Google Auth</p>
+                        <p class="work-item-text"><span class="title">Github Link :</span> <a
+                                href="https://gitlab.com/dev.saran/react-dashboard"
+                                target="_blank">https://gitlab.com/dev.saran/react-dashboard</a></p>
+                        <p class="work-item-text"><span class="title">Link :</span> <a
+                                href="https://react-dashboard-two-gamma.vercel.app"
+                                target="_blank">https://react-dashboard-two-gamma.vercel.app</a></p>
+                        <p class="work-item-text"><span class="title">Description :</span> This project is a sleek
+                            and responsive Dashboard Template built with React.js and styled using Tailwind CSS. It
+                            integrates Google Authentication for secure and seamless user login, ensuring a safe and
+                            user-friendly experience. Designed for flexibility, the template is perfect for admin
+                            panels, analytics dashboards, or project management tools. It features a modern UI with
+                            smooth animations and is fully responsive across devices.
+                        </p>
+                    </div>
+                    <img class="work-item-image" src="/assets/images/react-auth-dashboard-temlate.png" alt="plat"
+                        width="350px" />
                 </div>
-
-                <section class="panel project-container">
-                    <div class="work-item">
-                        <div class="work-item-info">
-                            <h4 class="work-item-title">Dashboard Template With Google Auth</h4>
-                            <p class="work-item-text"><span class="title">Tools Used :</span> React Js, Tailwind CSS,
-                                Google Auth</p>
-                            <p class="work-item-text"><span class="title">Github Link :</span> <a
-                                    href="https://gitlab.com/dev.saran/react-dashboard"
-                                    target="_blank">https://gitlab.com/dev.saran/react-dashboard</a></p>
-                            <p class="work-item-text"><span class="title">Link :</span> <a
-                                    href="https://react-dashboard-two-gamma.vercel.app"
-                                    target="_blank">https://react-dashboard-two-gamma.vercel.app</a></p>
-                            <p class="work-item-text"><span class="title">Description :</span> This project is a sleek
-                                and responsive Dashboard Template built with React.js and styled using Tailwind CSS. It
-                                integrates Google Authentication for secure and seamless user login, ensuring a safe and
-                                user-friendly experience. Designed for flexibility, the template is perfect for admin
-                                panels, analytics dashboards, or project management tools. It features a modern UI with
-                                smooth animations and is fully responsive across devices.
-                            </p>
-                        </div>
-                        <img class="work-item-image" src="/assets/images/react-auth-dashboard-temlate.png" alt="plat"
-                            width="350px" />
+                <div class="work-item">
+                    <div class="work-item-info">
+                        <h4 class="work-item-title">E-Commerce Homepage/Search Products</h4>
+                        <p class="work-item-text"><span class="title">Tools Used :</span> Next Js, Tailwind CSS, SSR
+                        </p>
+                        <p class="work-item-text"><span class="title">Github Link :</span> <a
+                                href="https://github.com/ZIR3A/brainy-ecom"
+                                target="_blank">https://github.com/ZIR3A/brainy-ecom</a></p>
+                        <p class="work-item-text"><span class="title">Link :</span> <a
+                                href="https://new-ecom-kappa.vercel.app"
+                                target="_blank">https://new-ecom-kappa.vercel.app</a></p>
+                        <p class="work-item-text"><span class="title">Description :</span> This project is a modern
+                            E-Commerce Homepage built with Next.js and styled using Tailwind CSS. It features a
+                            product search functionality and leverages Server-Side Rendering (SSR) for enhanced
+                            performance and SEO. The homepage is designed to provide a seamless user experience,
+                            with a clean and responsive layout suitable for online stores.
+                        </p>
                     </div>
-                </section>
-                <section class="panel project-container">
-                    <div class="work-item">
-                        <div class="work-item-info">
-                            <h4 class="work-item-title">E-Commerce Homepage/Search Products</h4>
-                            <p class="work-item-text"><span class="title">Tools Used :</span> Next Js, Tailwind CSS, SSR
-                            </p>
-                            <p class="work-item-text"><span class="title">Github Link :</span> <a
-                                    href="https://github.com/ZIR3A/brainy-ecom"
-                                    target="_blank">https://github.com/ZIR3A/brainy-ecom</a></p>
-                            <p class="work-item-text"><span class="title">Link :</span> <a
-                                    href="https://new-ecom-kappa.vercel.app"
-                                    target="_blank">https://new-ecom-kappa.vercel.app</a></p>
-                            <p class="work-item-text"><span class="title">Description :</span> This project is a modern
-                                E-Commerce Homepage built with Next.js and styled using Tailwind CSS. It features a
-                                product search functionality and leverages Server-Side Rendering (SSR) for enhanced
-                                performance and SEO. The homepage is designed to provide a seamless user experience,
-                                with a clean and responsive layout suitable for online stores.
-                            </p>
-                        </div>
-                        <img class="work-item-image" src="/assets/images/ecom.png" alt="plat" width="350px" />
+                    <img class="work-item-image" src="/assets/images/ecom.png" alt="plat" width="350px" />
+                </div>
+                <div class="work-item">
+                    <div class="work-item-info">
+                        <h4 class="work-item-title">Admin Panel Dashboard Template</h4>
+                        <p class="work-item-text"><span class="title">Tools Used :</span> React Js, Tailwind CSS,
+                            Flowbite</p>
+                        <p class="work-item-text"><span class="title">Github Link :</span> <a
+                                href="https://github.com/ZIR3A/jobins-frontend-challenge"
+                                target="_blank">https://github.com/ZIR3A/jobins-frontend-challenge</a></p>
+                        <p class="work-item-text"><span class="title">Link :</span> <a
+                                href="https://jobins-frontend-challenge-beta.vercel.app"
+                                target="_blank">https://jobins-frontend-challenge-beta.vercel.app</a></p>
+                        <p class="work-item-text"><span class="title">Description :</span> This project is a sleek
+                            and responsive Admin Panel Dashboard Template built with React.js and styled using
+                            Tailwind CSS. It incorporates Flowbite, a UI component library, to deliver a modern and
+                            intuitive user interface. The template is designed for ease of use and customization,
+                            making it ideal for managing data, analytics, or backend operations. Fully responsive
+                            and optimized for performance, it ensures a seamless experience across devices.
+                        </p>
                     </div>
-                </section>
-                <section class="panel project-container">
-                    <div class="work-item">
-                        <div class="work-item-info">
-                            <h4 class="work-item-title">Admin Panel Dashboard Template</h4>
-                            <p class="work-item-text"><span class="title">Tools Used :</span> React Js, Tailwind CSS,
-                                Flowbite</p>
-                            <p class="work-item-text"><span class="title">Github Link :</span> <a
-                                    href="https://github.com/ZIR3A/jobins-frontend-challenge"
-                                    target="_blank">https://github.com/ZIR3A/jobins-frontend-challenge</a></p>
-                            <p class="work-item-text"><span class="title">Link :</span> <a
-                                    href="https://jobins-frontend-challenge-beta.vercel.app"
-                                    target="_blank">https://jobins-frontend-challenge-beta.vercel.app</a></p>
-                            <p class="work-item-text"><span class="title">Description :</span> This project is a sleek
-                                and responsive Admin Panel Dashboard Template built with React.js and styled using
-                                Tailwind CSS. It incorporates Flowbite, a UI component library, to deliver a modern and
-                                intuitive user interface. The template is designed for ease of use and customization,
-                                making it ideal for managing data, analytics, or backend operations. Fully responsive
-                                and optimized for performance, it ensures a seamless experience across devices.
-                            </p>
-                        </div>
-                        <img class="work-item-image" src="/assets/images/jobins.png" alt="plat" width="350px" />
+                    <img class="work-item-image" src="/assets/images/jobins.png" alt="plat" width="350px" />
+                </div>
+                <div class="work-item">
+                    <div class="work-item-info">
+                        <h4 class="work-item-title">Greeting Landing Page</h4>
+                        <p class="work-item-text"><span class="title">Tools Used :</span> HTML, CSS, JS</p>
+                        <p class="work-item-text"><span class="title">Github Link :</span> <a
+                                href="https://gitlab.com/dev.saran/dynamic-landingpage-js"
+                                target="_blank">https://gitlab.com/dev.saran/dynamic-landingpage-js</a></p>
+                        <p class="work-item-text"><span class="title">Link :</span> <a
+                                href="https://wizardly-visvesvaraya-bb189f.netlify.app"
+                                target="_blank">https://wizardly-visvesvaraya-bb189f.netlify.app</a></p>
+                        <p class="work-item-text"><span class="title">Description :</span> This project is a
+                            Greeting Landing Page where users can input their name and select their current mood.
+                            The page dynamically displays a personalized greeting, the current time, and a visually
+                            stunning background that changes based on the user's mood. Built with HTML, CSS, and
+                            JavaScript, the project focuses on simplicity and interactivity, offering a delightful
+                            user experience.
+                        </p>
                     </div>
-                </section>
-                <section class="panel project-container">
-                    <div class="work-item">
-                        <div class="work-item-info">
-                            <h4 class="work-item-title">Greeting Landing Page</h4>
-                            <p class="work-item-text"><span class="title">Tools Used :</span> HTML, CSS, JS</p>
-                            <p class="work-item-text"><span class="title">Github Link :</span> <a
-                                    href="https://gitlab.com/dev.saran/dynamic-landingpage-js"
-                                    target="_blank">https://gitlab.com/dev.saran/dynamic-landingpage-js</a></p>
-                            <p class="work-item-text"><span class="title">Link :</span> <a
-                                    href="https://wizardly-visvesvaraya-bb189f.netlify.app"
-                                    target="_blank">https://wizardly-visvesvaraya-bb189f.netlify.app</a></p>
-                            <p class="work-item-text"><span class="title">Description :</span> This project is a
-                                Greeting Landing Page where users can input their name and select their current mood.
-                                The page dynamically displays a personalized greeting, the current time, and a visually
-                                stunning background that changes based on the user's mood. Built with HTML, CSS, and
-                                JavaScript, the project focuses on simplicity and interactivity, offering a delightful
-                                user experience.
-                            </p>
-                        </div>
-                        <img class="work-item-image" src="/assets/images/landingpage.png" alt="plat" width="350px" />
+                    <img class="work-item-image" src="/assets/images/landingpage.png" alt="plat" width="350px" />
+                </div>
+                <div class="work-item">
+                    <div class="work-item-info">
+                        <h4 class="work-item-title">Painting Tool</h4>
+                        <p class="work-item-text"><span class="title">Tools Used :</span> HTML, CSS, JS</p>
+                        <p class="work-item-text"><span class="title">Github Link :</span> <a
+                                href="https://gitlab.com/dev.saran/draw-js"
+                                target="_blank">https://gitlab.com/dev.saran/draw-js</a></p>
+                        <p class="work-item-text"><span class="title">Link :</span> <a
+                                href="https://inspiring-jepsen-092440.netlify.app"
+                                target="_blank">https://inspiring-jepsen-092440.netlify.app</a></p>
+                        <p class="work-item-text"><span class="title">Description :</span> This project is an
+                            interactive Painting Tool built using HTML5 Canvas, CSS, and JavaScript. Users can
+                            choose from a variety of colors and draw freely on the canvas, creating their own
+                            digital artwork. The tool is simple, intuitive, and responsive, making it accessible for
+                            all skill levels.
+                        </p>
                     </div>
-                </section>
-                <section class="panel project-container">
-                    <div class="work-item">
-                        <div class="work-item-info">
-                            <h4 class="work-item-title">Painting Tool</h4>
-                            <p class="work-item-text"><span class="title">Tools Used :</span> HTML, CSS, JS</p>
-                            <p class="work-item-text"><span class="title">Github Link :</span> <a
-                                    href="https://gitlab.com/dev.saran/draw-js"
-                                    target="_blank">https://gitlab.com/dev.saran/draw-js</a></p>
-                            <p class="work-item-text"><span class="title">Link :</span> <a
-                                    href="https://inspiring-jepsen-092440.netlify.app"
-                                    target="_blank">https://inspiring-jepsen-092440.netlify.app</a></p>
-                            <p class="work-item-text"><span class="title">Description :</span> This project is an
-                                interactive Painting Tool built using HTML5 Canvas, CSS, and JavaScript. Users can
-                                choose from a variety of colors and draw freely on the canvas, creating their own
-                                digital artwork. The tool is simple, intuitive, and responsive, making it accessible for
-                                all skill levels.
-                            </p>
-                        </div>
-                        <img class="work-item-image" src="/assets/images/drawing.png" alt="plat" width="350px" />
-                    </div>
-                </section>
+                    <img class="work-item-image" src="/assets/images/drawing.png" alt="plat" width="350px" />
+                </div>
             </div>
         </section>
         <section id="contact">

@@ -1,106 +1,183 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
+
+
+  let sectionOneTL = gsap.timeline();
+
+  sectionOneTL.from(".name-container", {
+    duration: 0.7,
+    y: -80,
+    opacity: 0,
+  })
+
+  sectionOneTL.to(".description", {
+    delay: 1,
+    duration: 0.7,
+    opacity: 0.5,
+  }, "one");
+
+  sectionOneTL.to("#js, #html, #css, #react, #node", {
+    delay: 1,
+    duration: 0.7,
+    opacity: 0.5,
+    rotate: 20,
+  }, "one");
+
+  const names = gsap.utils.toArray(".name");
+  gsap.from(names, {
+    duration: 0.7,
+    y: -80,
+    opacity: 0,
+    stagger: 0.2,
+  });
+
+  gsap.to("#js", {
+    y: 700,
+    x: 100,
+    duration: 1,
+    rotate: 360,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#section-one",
+      start: "50% 50%",
+      scrub: true,
+
+    }
+  })
+  gsap.to("#html", {
+    y: 800,
+    x: 200,
+    duration: 1,
+    rotate: 360,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#section-one",
+      start: "50% 50%",
+      scrub: true,
+
+    }
+  })
+  gsap.to("#css", {
+    y: 1100,
+    x: -150,
+    duration: 1,
+    rotate: 360,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#section-one",
+      start: "50% 50%",
+      scrub: true,
+
+    }
+  })
+  gsap.to("#react", {
+    y: 1000,
+    x: -50,
+    duration: 1,
+    rotate: 360,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#section-one",
+      start: "50% 50%",
+      scrub: true,
+
+    }
+  })
+  gsap.to("#node", {
+    y: 900,
+    x: 100,
+    duration: 1,
+    rotate: 360,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#section-one",
+      start: "50% 50%",
+      scrub: true,
+
+    }
+  })
+
   gsap.from("#about-text", {
-    x: 800,
+    y: 500,
     opacity: 0,
-    color:"#414040",
     duration: 1,
+    ease: "power2",
     scrollTrigger: {
-      trigger: "#hero-section",
-      snap: 1,
-      start: "middle",
-      scrub: 1,
-      // markers: true
-    },
-  });
+      trigger: "#section-one",
+      start: "bottom 80%",
+      endTrigger: "#about",
+      end: "bottom 100%",
+      scrub: true,
+    }
+  })
   gsap.from("#about-desc", {
-    x: -800,
+    y: 500,
     opacity: 0,
-    color:"#414040",
     duration: 1,
+    ease: "power2",
     scrollTrigger: {
-      trigger: "#hero-section",
-      snap: 1,
-      start: "middle",
-      scrub: 1,
+      trigger: "#section-one",
+      start: "bottom 60%",
+      endTrigger: "#about",
+      end: "bottom 100%",
+      scrub: true,
       // markers: true
-    },
-  });
+    }
+  })
 
-  let experienceSection = gsap.utils.toArray(".experience-panel");
-  // Calculate total width
-  // const panels = gsap.utils.toArray(".experience-main-container");
-  const totalWidth = (experienceSection[0].offsetWidth * experienceSection.length);
-  gsap.from(experienceSection, {
-    xPercent: -135 * (experienceSection.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".experience-horizontal-scroll",
-      start: "left left",
-      scrub: 1,
-      pin: true,
-      duration: 1,
-      snap: 1 / (experienceSection.length - 0.5),
-      end: () => `+=${totalWidth}`, // Ends at full width
-    },
-  });
-  let sections = gsap.utils.toArray(".panel");
-
-  gsap.to(sections, {
-    xPercent: -115 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".project-horizontal-scroll",
-      pin: true,
-      scrub: 1,
-      snap: 1 / (sections.length - 0.5),
-      duration: 1,
-      end: () => "+=" + document.querySelector(".container").offsetWidth,
-    },
-  });
-
-  let scrollIcon = ".scroll-icon";
-  gsap.fromTo(scrollIcon, {
-    y: 0, // Start at the original position
-    opacity: 1 // Start at full opacity
-  }, {
-    y: -20, // Move up
-    opacity: 0.2, // Fade out
-    duration: 1,
-    repeat: -1,
-    yoyo: true,
-    ease: "power1.inOut"
-  });
-
-
-
-  gsap.from(".experience-main-title", {
-    x: -800,
-    opacity: 0.1,
-    duration: 1,
+  gsap.from(".experience-header", {
+    y: 400,
+    opacity: 0,
+    ease: "power2",
     scrollTrigger: {
       trigger: "#about",
-      start: "start",
-      scrub: 1,
-      ease: "power1.inOut",
-      snap: 1
-    },
-  });
-
-  gsap.from(".contact-animator-wrapper", {
-    opacity: 0.1, // Start invisible
-    y: 1000, // Start 50px below
-    duration: 1, // Animation duration
-    ease: "power2.out", // Smooth easing
+      start: "bottom 60%",
+      endTrigger: "#experience",
+      end: "top top",
+      scrub: true,
+    }
+  })
+  gsap.from(".experience-main-container", {
+    y: 300,
+    opacity: 0,
+    duration: 3,
+    ease: "power2",
     scrollTrigger: {
-      trigger: "#contact", // Element to trigger the animation
-      // start: "top 80%", // Start animation when the top of the element hits 80% of the viewport
-      // end: "bottom 20%", // End animation when the bottom of the element hits 20% of the viewport
-      scrub: 1,
-      snap: 1
-    },
-  });
+      trigger: "#about",
+      start: "bottom 50%",
+      endTrigger: "#experience",
+      end: "top top",
+      scrub: true,
+    }
+  })
+  gsap.from(".project-title", {
+    y: 400,
+    opacity: 0,
+    ease: "power2",
+    scrollTrigger: {
+      trigger: "#experience",
+      start: "bottom bottom",
+      endTrigger: "#project",
+      end: "top 50%",
+      scrub: true,
+      // markers: true
+    }
+  })
+  gsap.from(".project-container", {
+    y: 300,
+    opacity: 0,
+    duration: 3,
+    ease: "power2",
+    scrollTrigger: {
+      trigger: "#experience",
+      start: "bottom 60%",
+      endTrigger: "#project",
+      end: "top 20%",
+      scrub: true,
+    }
+  })
+
 
 
   // Refresh ScrollTrigger on resize

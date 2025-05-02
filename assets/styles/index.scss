@@ -3,14 +3,17 @@
 
 * {
     @include all-body-styles;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
 }
 
 body {
     background-image: url("../images/navy_blue.png");
     background-attachment: fixed;
-    height: 100vh;
+    padding: 0px 16px;
     overflow-x: hidden;
-
     &::-webkit-scrollbar {
         width: 0.5em;
     }
@@ -75,113 +78,91 @@ body {
         }
     }
 
-    #hero-section {
-        min-height: 100vh;
-        position: relative;
+    #section-one {
+
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        // margin-top: -78px;
-
-        .hero-infos {
+        flex-direction: column;
+        gap:2vh;
+        
+        .name-container {
+            width: 55%;
             position: relative;
-            width: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-
-            .my-name {
+            justify-content: center;
+            border: 1px solid $border;
+            border-radius: 1vw;
+            padding: 1vw;
+            img {
                 position: absolute;
-                bottom: 0;
-                text-align: center;
-                // border: 1px solid $border;
-                font-size: 7rem;
+                width: 9%;
+                top: -21%;
+                width: 9%;
+                opacity: 0;
+            }
+            #js {
+                left: 8%;
+            }
+            #html {
+                left: 25%;
+            }
+            #css {
+                left: 45%;
+            }
+            #react {
+                width: 8%;
+                left: 65%;
+            }
+            #node {
+                width: 7%;
+                left: 85%;
+            }
+            .name {
+                font-size: 7vw;
                 font-weight: 600;
                 color: $primary;
-                letter-spacing: 0.8rem;
-                margin-bottom: $xxl;
                 text-wrap: nowrap;
-
-                @media (max-width: $breakpoint-lg) {
-                    font-size: 3rem;
-                }
-
-                @media (max-width: $breakpoint-sm) {
-                    font-size: 1.5rem;
-                }
-            }
-
-            .ml12 {
-                position: absolute;
-                top: 0;
-                margin-top: 20px;
-                text-wrap: nowrap;
-
-                .letter {
-                    font-size: 4.5rem;
-                    letter-spacing: 0.5rem;
-                    color: $primary;
-
-                    @media (max-width: $breakpoint-lg) {
-                        font-size: 1rem;
-                    }
-                }
-            }
-
-            .wrapper {
-                height: 20px;
-                // width: 550px;
-                position: relative;
-                margin: auto;
-                background: #ccc;
-                overflow: hidden;
-
-                /*   overflow:hidden; */
-                .boxes {
-
-                    // position: relative;
-                    // bottom: -50px;
-                    .box {
-                        height: 30px;
-                        width: 30px;
-                        position: absolute;
-                        font-size: 25px;
-                        line-height: 50px;
-                        text-align: center;
-
-                        &:first-child {
-                            color: $secondary;
-                        }
-                    }
-                }
+                letter-spacing: 1vw;
+                // padding: 1%;
+             
             }
         }
+
+        .description {
+            font-size: 2.5vw;
+            font-weight: 600;
+            color: $primary;
+            letter-spacing: 0.8rem;
+            text-wrap: nowrap;
+            opacity: 0;
+        }
+
+
+
     }
+
+
+    //end of new css
 
     #about {
         display: flex;
-        overflow-x: hidden;
-
+        // justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 50vh;
+        gap: 10%;
         // border: 1px solid $border;
-        .about-container {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            // justify-content: center;
-            align-items: center;
-            gap: 100px;
-            width: 100%;
-            padding: 5rem;
-
-            .about-me-text,
+        .about-me-text,
             .about-me-desc {
+                padding: 0;
                 color: $text-primary;
             }
-
             .about-me-text {
                 text-wrap: nowrap;
-                font-size: 7rem;
-                height: min-content;
+                font-size: 4vw;
                 max-width: 1000px;
             }
 
@@ -190,162 +171,80 @@ body {
                 text-wrap: wrap;
                 display: flex;
                 align-items: end;
-                font-size: $xxl;
+                font-size: 1vw;
                 max-width: 1000px;
-            }
-
-            @media (max-width: $breakpoint-xxl) {
-                padding: 2rem;
-                display: inline;
-            
-                .about-me-text {
-                    font-size: 5rem;
-                    text-wrap: wrap;
-                }
-
-                .about-me-desc {
-                    margin-top: $xl;
-                    text-wrap: wrap;
-                    padding: 0;
-                }
-            }
-
-            @media (max-width: $breakpoint-xl) {
-                .about-me-text {
-                    font-size: $threexl;
-                    text-wrap: wrap;
-                }
-
-                .about-me-desc {
-                    font-size: $xl;
-                    text-wrap: wrap;
-                    padding: 0;
-                }
-            }
-            @media (max-width: $breakpoint-md) {
-                .about-me-text {
-                    font-size: $xl;
-                    text-wrap: wrap;
-                }
-
-                .about-me-desc {
-                    font-size: $md;
-                    text-wrap: wrap;
-                    padding: 0;
-                }
-            }
-        }
+            }   
     }
 
     #project {
-        min-height: 100vh;
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow-x: hidden;
-        margin: 0;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
 
         .project-title {
+            flex-shrink: 0;
+            width: 100%;
+            font-size: 4vw;
             color: $text-primary;
-            text-wrap: nowrap;
-            font-size: 7rem;
-
-            @media (max-width: $breakpoint-md) {
-                font-size: $xxxl;
-            }
-
-            @media (max-width: $breakpoint-xl) {
-                font-size: $xl;
-            }
+            margin: 60px auto;
+            text-align: center;
         }
 
-        .container {
-            width: 700%; // must be multiple of items of scrollable * 100 %
-            height: 100vh;
+        .project-container {
             display: flex;
-            flex-wrap: nowrap;
-            // justify-content: center;
-            align-items: center;
             gap: 16px;
 
-            .panel {
+            .work-item {
+                flex-shrink: 0;
+                background: #414040;
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                width: 1200px;
+                height: 50vh;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                width: 100vw;
+                justify-content: space-between;
+                padding: 30px;
+                gap: 16px;
+                
+                .work-item-info {
+                    .work-item-title {
+                        font-size: $xxxl;
+                        font-weight: bold;
+                        color: $text-primary;
+                        margin-bottom: 24px;
+                        @media (max-width: $breakpoint-xxl) {
+                            font-size: $xl;
+                        }
+                    }
 
-               
+                    .work-item-text {
+                        font-size: $md;
+                        color: $text-primary;
+                        margin: 8px auto;
 
-                &.description {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh !important;
-                    width: 100vw !important;
-                }
-
-                height: 60vh;
-                width: 55vw;
-                min-width: 400px;
-
-                @media (max-width: $breakpoint-lg) {
-                    height: 50vh;
-                }
-               
-                &.project-container {
-                    .work-item {
-                        background: #414040;
-                        border-radius: 16px;
-                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        padding: 30px;
-                        gap: 16px;
-                        
-                        .work-item-info {
-                            .work-item-title {
-                                font-size: $xxxl;
-                                font-weight: bold;
-                                color: $text-primary;
-                                margin-bottom: 24px;
-                                @media (max-width: $breakpoint-xxl) {
-                                    font-size: $xl;
-                                }
-                            }
-
-                            .work-item-text {
-                                font-size: $md;
-                                color: $text-primary;
-                                margin: 8px auto;
-
-                                .title {
-                                    font-weight: bold;
-                                }
-
-                                a {
-                                    color: $text-primary;
-                                    text-decoration: underline;
-                                }
-                                @media (max-width: $breakpoint-md) {
-                                    font-size: $sm;
-                                }
-                            }
-
-                            
+                        .title {
+                            font-weight: bold;
                         }
 
-                        .work-item-image {
-                            border-radius: 8px;
-                            border: 1px solid $border;
-                            object-fit: cover;
-
-                            @media (max-width: $breakpoint-xl) {
-                                display: none;
-                            }
+                        a {
+                            color: $text-primary;
+                            text-decoration: underline;
                         }
+                        @media (max-width: $breakpoint-md) {
+                            font-size: $sm;
+                        }
+                    }
+
+                    
+                }
+
+                .work-item-image {
+                    border-radius: 8px;
+                    border: 1px solid $border;
+                    object-fit: cover;
+
+                    @media (max-width: $breakpoint-xl) {
+                        display: none;
                     }
                 }
             }
@@ -353,68 +252,34 @@ body {
     }
 
     #experience {
-        min-height: 100vh;
-        width: 100%;
-        position: relative;
-        overflow-x: hidden;
-        margin: 0;
-        height: 100vh;
+        height: 80vh;
         display: flex;
-
-        .experience-main-title {
+        flex-direction: column;
+        .experience-header {
+            flex-shrink: 0;
+            width: 100%;
+            font-size: 4vw;
+            color: $text-primary;
+            margin: 60px auto;
             text-align: center;
-            width: 100vw !important;
-            height: 135px;
-            display: flex;
-            justify-content: center;
-
-            .experience-title {
-                text-align: center;
-                color: $text-primary;
-                text-wrap: nowrap;
-                font-size: 7rem;
-                margin-left: 30px;
-                padding-top: 24px;
-
-                @media (max-width: $breakpoint-md) {
-                    font-size: $xxxl;
-                }
-                @media (max-width: $breakpoint-sm) {
-                    font-size: $xxl;
-                }
-            }
         }
 
         .experience-main-container {
-            //   width: 200%; // must be multiple of items of scrollable * 100 %
-            width: 400%; // must be multiple of items of scrollable * 100 %
             display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
             gap: 16px;
-            padding: 18px;
-
             .experience-panel {
+                flex-shrink: 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 100vw;
-                height: 100vh;
-
-                height: 60vh;
-                width: 55vw;
-                min-width: 400px;
-
-                @media (max-width: $breakpoint-lg) {
-                    height: 50vh;
-                }
+                height: 50vh;
+                width: 1200px;
 
                 &.experience-container {
-                    background: #414040;
-                    border-radius: 16px;
-                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
                     .experience-item {
+                        background: #414040;
+                        border-radius: 16px;
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
                         width: 100%;
                         height: 100%;
                         display: flex;
@@ -469,9 +334,9 @@ body {
                             border: 1px solid $border;
                             object-fit: cover;
 
-                            @media (max-width: $breakpoint-xl) {
-                                display: none;
-                            }
+                            // @media (max-width: $breakpoint-xl) {
+                            //     display: none;
+                            // }
                         }
                     }
                 }
@@ -541,4 +406,75 @@ body {
             }
         }
     }
+
+
+    #horizontal-scroll-section {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        .cards-container {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            gap: 40px; /* Space between cards */
+            padding: 0 10vw; /* Horizontal padding */
+          }
+          .card {
+            width: 600px;
+            height: 80vh;
+            flex-shrink: 0;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #333;
+            &:nth-child(odd) {
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+              }
+              &:nth-child(even) {
+                background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+              }  
+          }
+          
+          /* Optional: Add some visual styling to cards */     
+    }
+
+
+    #container {
+        height: 100vh;
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    
+        .header {
+            flex-shrink: 0;
+            width: 100%;
+            font-size: 4vw;
+            color: aliceblue;
+            margin: 50px auto;
+        }
+    
+        .contents {
+            display: flex;
+            gap: 16px;
+    
+            .content {
+    
+                flex-shrink: 0;
+                width: 600px;
+                height: 40vh;
+                background-color: #000;
+                color: aliceblue;
+                display: grid;
+                place-items: center;
+                border: 1px solid #fff;
+            }
+        }
+    }
+    
 }
