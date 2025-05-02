@@ -1,5 +1,5 @@
 
-function scrollContent() {
+function scrollProjectContent() {
   const _scrollContainer = document.querySelector("#project");
   const _scrollContent = gsap.utils.toArray(".work-item");
   let _mainWIdth = window.innerWidth
@@ -21,10 +21,10 @@ function scrollContent() {
     }
   })
 }
-scrollContent();
+scrollProjectContent();
 
 var onresize = function () {
-  scrollContent();
+  scrollProjectContent();
 
 }
 window.addEventListener("resize", onresize);
