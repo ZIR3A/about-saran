@@ -41,6 +41,11 @@ body {
   background-attachment: fixed;
   padding: 0px 16px;
 }
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
 body::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -108,7 +113,7 @@ body::-webkit-scrollbar-thumb {
 }
 .main-wrapper #section-one img {
   position: absolute;
-  width: 8%;
+  width: 6%;
   opacity: 0;
 }
 .main-wrapper #section-one #js {
@@ -157,34 +162,30 @@ body::-webkit-scrollbar-thumb {
   text-wrap: nowrap;
   opacity: 0;
 }
-.main-wrapper #about {
+.main-wrapper #section-two {
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 45vh;
   gap: 10%;
+  padding: 16px;
 }
-@media (max-width: 768px) {
-  .main-wrapper #about {
-    height: 25vh;
-  }
-}
-.main-wrapper #about .about-me-text,
-.main-wrapper #about .about-me-desc {
+.main-wrapper #section-two .about-me-text,
+.main-wrapper #section-two .about-me-desc {
   padding: 0;
   color: #D2D0BA;
 }
-.main-wrapper #about .about-me-text {
+.main-wrapper #section-two .about-me-text {
   text-wrap: nowrap;
   font-size: 4vw;
   max-width: 1000px;
 }
 @media (max-width: 768px) {
-  .main-wrapper #about .about-me-text {
+  .main-wrapper #section-two .about-me-text {
     font-size: 8vw;
   }
 }
-.main-wrapper #about .about-me-desc {
+.main-wrapper #section-two .about-me-desc {
   text-wrap: wrap;
   display: flex;
   align-items: end;
@@ -192,205 +193,8 @@ body::-webkit-scrollbar-thumb {
   max-width: 1000px;
 }
 @media (max-width: 768px) {
-  .main-wrapper #about .about-me-desc {
+  .main-wrapper #section-two .about-me-desc {
     font-size: 3vw;
-  }
-}
-.main-wrapper #project {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-}
-.main-wrapper #project .project-title {
-  flex-shrink: 0;
-  width: 100%;
-  font-size: 4vw;
-  color: #D2D0BA;
-  margin: 60px auto;
-  text-align: center;
-}
-@media (max-width: 768px) {
-  .main-wrapper #project .project-title {
-    font-size: 10vw;
-  }
-}
-.main-wrapper #project .project-container {
-  display: flex;
-  gap: 16px;
-}
-.main-wrapper #project .project-container .work-item {
-  flex-shrink: 0;
-  background: #414040;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  width: 1200px;
-  height: 50vh;
-  display: flex;
-  justify-content: space-between;
-  padding: 30px;
-  gap: 16px;
-}
-.main-wrapper #project .project-container .work-item .work-item-info .work-item-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #D2D0BA;
-  margin-bottom: 24px;
-}
-@media (max-width: 1605px) {
-  .main-wrapper #project .project-container .work-item .work-item-info .work-item-title {
-    font-size: 1.5rem;
-  }
-}
-.main-wrapper #project .project-container .work-item .work-item-info .work-item-text {
-  font-size: 1rem;
-  color: #D2D0BA;
-  margin: 8px auto;
-}
-.main-wrapper #project .project-container .work-item .work-item-info .work-item-text .title {
-  font-weight: bold;
-}
-.main-wrapper #project .project-container .work-item .work-item-info .work-item-text a {
-  color: #D2D0BA;
-  text-decoration: underline;
-}
-@media (max-width: 768px) {
-  .main-wrapper #project .project-container .work-item .work-item-info .work-item-text {
-    font-size: 0.75rem;
-  }
-}
-.main-wrapper #project .project-container .work-item .work-item-image {
-  border-radius: 8px;
-  border: 1px solid #B8BDB5;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.main-wrapper #experience {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-}
-.main-wrapper #experience .experience-header {
-  flex-shrink: 0;
-  width: 100%;
-  font-size: 4vw;
-  color: #D2D0BA;
-  margin: 60px auto;
-  text-align: center;
-}
-@media (max-width: 768px) {
-  .main-wrapper #experience .experience-header {
-    font-size: 10vw;
-  }
-}
-.main-wrapper #experience .experience-main-container {
-  display: flex;
-  gap: 16px;
-}
-.main-wrapper #experience .experience-main-container .experience-panel {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  width: 1200px;
-}
-.main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item {
-  background: #414040;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 30px;
-  gap: 16px;
-}
-.main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #D2D0BA;
-  margin-bottom: 24px;
-}
-@media (max-width: 1280px) {
-  .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-title {
-    font-size: 1.5rem;
-  }
-}
-.main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-company-title {
-  color: #D2D0BA;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-@media (max-width: 1280px) {
-  .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-company-title {
-    font-size: 1.25rem;
-  }
-}
-.main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-text {
-  font-size: 1rem;
-  color: #D2D0BA;
-  margin: 8px auto;
-}
-.main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-text .title {
-  font-weight: bold;
-}
-.main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-text a {
-  color: #D2D0BA;
-  text-decoration: underline;
-}
-@media (max-width: 1280px) {
-  .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-text {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 768px) {
-  .main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-info .experience-item-text {
-    font-size: 0.75rem;
-  }
-}
-.main-wrapper #experience .experience-main-container .experience-panel.experience-container .experience-item .experience-item-image {
-  border-radius: 8px;
-  border: 1px solid #B8BDB5;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.main-wrapper #contact {
-  height: 30vh;
-}
-.main-wrapper #contact .contact-container {
-  color: #D2D0BA;
-  width: 100vw;
-  display: grid;
-  place-items: center;
-}
-.main-wrapper #contact .contact-container .contact-animator-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-text {
-  font-size: 3rem;
-}
-@media (max-width: 768px) {
-  .main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-text {
-    font-size: 1.5rem;
-  }
-}
-.main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-desc {
-  font-size: 1.75rem;
-  margin-top: 42px;
-}
-.main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-desc .send-mail-button {
-  color: #D2D0BA;
-  border-radius: 8px;
-  border: 1px solid #B8BDB5;
-  padding: 8px;
-}
-@media (max-width: 768px) {
-  .main-wrapper #contact .contact-container .contact-animator-wrapper .contact-me-desc .send-mail-button {
-    font-size: 1.5rem;
   }
 }
 .main-wrapper #floating-div {
@@ -410,67 +214,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 2rem !important;
   }
 }
-.main-wrapper #horizontal-scroll-section {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  /* Optional: Add some visual styling to cards */
-}
-.main-wrapper #horizontal-scroll-section .cards-container {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  gap: 40px; /* Space between cards */
-  padding: 0 10vw; /* Horizontal padding */
-}
-.main-wrapper #horizontal-scroll-section .card {
-  width: 600px;
-  height: 80vh;
-  flex-shrink: 0;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: #333;
-}
-.main-wrapper #horizontal-scroll-section .card:nth-child(odd) {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-}
-.main-wrapper #horizontal-scroll-section .card:nth-child(even) {
-  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-}
-.main-wrapper #container {
-  height: 100vh;
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-.main-wrapper #container .header {
-  flex-shrink: 0;
-  width: 100%;
-  font-size: 4vw;
-  color: aliceblue;
-  margin: 50px auto;
-}
-.main-wrapper #container .contents {
-  display: flex;
-  gap: 16px;
-}
-.main-wrapper #container .contents .content {
-  flex-shrink: 0;
-  width: 600px;
-  height: 40vh;
-  background-color: #000;
-  color: aliceblue;
-  display: grid;
-  place-items: center;
-  border: 1px solid #fff;
-}
 .main-wrapper #section-three {
   min-height: 100vh;
   display: flex;
@@ -489,7 +232,10 @@ body::-webkit-scrollbar-thumb {
     font-size: 8vw;
   }
 }
-.main-wrapper #section-three .first-exp, .main-wrapper #section-three .second-exp, .main-wrapper #section-three .third-exp, .main-wrapper #section-three .fourth-exp {
+.main-wrapper #section-three .first-exp,
+.main-wrapper #section-three .second-exp,
+.main-wrapper #section-three .third-exp,
+.main-wrapper #section-three .fourth-exp {
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -498,44 +244,268 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 @media (max-width: 768px) {
-  .main-wrapper #section-three .first-exp, .main-wrapper #section-three .second-exp, .main-wrapper #section-three .third-exp, .main-wrapper #section-three .fourth-exp {
+  .main-wrapper #section-three .first-exp,
+  .main-wrapper #section-three .second-exp,
+  .main-wrapper #section-three .third-exp,
+  .main-wrapper #section-three .fourth-exp {
     flex-wrap: wrap;
+    width: 80vw;
   }
 }
-.main-wrapper #section-three .first-exp .left-exp, .main-wrapper #section-three .first-exp .right-exp, .main-wrapper #section-three .second-exp .left-exp, .main-wrapper #section-three .second-exp .right-exp, .main-wrapper #section-three .third-exp .left-exp, .main-wrapper #section-three .third-exp .right-exp, .main-wrapper #section-three .fourth-exp .left-exp, .main-wrapper #section-three .fourth-exp .right-exp {
-  border: 1px solid #B8BDB5;
+.main-wrapper #section-three .first-exp .left-exp,
+.main-wrapper #section-three .first-exp .right-exp,
+.main-wrapper #section-three .second-exp .left-exp,
+.main-wrapper #section-three .second-exp .right-exp,
+.main-wrapper #section-three .third-exp .left-exp,
+.main-wrapper #section-three .third-exp .right-exp,
+.main-wrapper #section-three .fourth-exp .left-exp,
+.main-wrapper #section-three .fourth-exp .right-exp {
+  background-color: rgba(90, 90, 90, 0.219);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   padding: 16px;
   width: 60vw;
   height: 23vh;
   border-radius: 8px;
 }
 @media (max-width: 768px) {
-  .main-wrapper #section-three .first-exp .left-exp, .main-wrapper #section-three .first-exp .right-exp, .main-wrapper #section-three .second-exp .left-exp, .main-wrapper #section-three .second-exp .right-exp, .main-wrapper #section-three .third-exp .left-exp, .main-wrapper #section-three .third-exp .right-exp, .main-wrapper #section-three .fourth-exp .left-exp, .main-wrapper #section-three .fourth-exp .right-exp {
+  .main-wrapper #section-three .first-exp .left-exp,
+  .main-wrapper #section-three .first-exp .right-exp,
+  .main-wrapper #section-three .second-exp .left-exp,
+  .main-wrapper #section-three .second-exp .right-exp,
+  .main-wrapper #section-three .third-exp .left-exp,
+  .main-wrapper #section-three .third-exp .right-exp,
+  .main-wrapper #section-three .fourth-exp .left-exp,
+  .main-wrapper #section-three .fourth-exp .right-exp {
     height: 12vh;
+    width: 100%;
   }
 }
-.main-wrapper #section-three .first-exp .exp-container, .main-wrapper #section-three .second-exp .exp-container, .main-wrapper #section-three .third-exp .exp-container, .main-wrapper #section-three .fourth-exp .exp-container {
-  display: grid;
-  place-items: center;
+.main-wrapper #section-three .first-exp .exp-container,
+.main-wrapper #section-three .second-exp .exp-container,
+.main-wrapper #section-three .third-exp .exp-container,
+.main-wrapper #section-three .fourth-exp .exp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
-.main-wrapper #section-three .first-exp .exp-container header, .main-wrapper #section-three .second-exp .exp-container header, .main-wrapper #section-three .third-exp .exp-container header, .main-wrapper #section-three .fourth-exp .exp-container header {
+.main-wrapper #section-three .first-exp .exp-container header,
+.main-wrapper #section-three .second-exp .exp-container header,
+.main-wrapper #section-three .third-exp .exp-container header,
+.main-wrapper #section-three .fourth-exp .exp-container header {
   font-size: 1.2vw;
   color: #D2D0BA;
   font-weight: 500;
 }
-.main-wrapper #section-three .first-exp .exp-container .exp-comp, .main-wrapper #section-three .second-exp .exp-container .exp-comp, .main-wrapper #section-three .third-exp .exp-container .exp-comp, .main-wrapper #section-three .fourth-exp .exp-container .exp-comp {
+@media (max-width: 768px) {
+  .main-wrapper #section-three .first-exp .exp-container header,
+  .main-wrapper #section-three .second-exp .exp-container header,
+  .main-wrapper #section-three .third-exp .exp-container header,
+  .main-wrapper #section-three .fourth-exp .exp-container header {
+    font-size: 2.2vw;
+  }
+}
+.main-wrapper #section-three .first-exp .exp-container .exp-comp,
+.main-wrapper #section-three .second-exp .exp-container .exp-comp,
+.main-wrapper #section-three .third-exp .exp-container .exp-comp,
+.main-wrapper #section-three .fourth-exp .exp-container .exp-comp {
   font-size: 1vw;
   color: #D2D0BA;
 }
-.main-wrapper #section-three .first-exp .exp-container .exp-comp span, .main-wrapper #section-three .second-exp .exp-container .exp-comp span, .main-wrapper #section-three .third-exp .exp-container .exp-comp span, .main-wrapper #section-three .fourth-exp .exp-container .exp-comp span {
+@media (max-width: 768px) {
+  .main-wrapper #section-three .first-exp .exp-container .exp-comp,
+  .main-wrapper #section-three .second-exp .exp-container .exp-comp,
+  .main-wrapper #section-three .third-exp .exp-container .exp-comp,
+  .main-wrapper #section-three .fourth-exp .exp-container .exp-comp {
+    font-size: 2vw;
+  }
+}
+.main-wrapper #section-three .first-exp .exp-container .exp-comp span,
+.main-wrapper #section-three .second-exp .exp-container .exp-comp span,
+.main-wrapper #section-three .third-exp .exp-container .exp-comp span,
+.main-wrapper #section-three .fourth-exp .exp-container .exp-comp span {
   font-size: 0.8vw;
   color: #889696;
 }
-.main-wrapper #section-three .first-exp .exp-container .exp-location, .main-wrapper #section-three .second-exp .exp-container .exp-location, .main-wrapper #section-three .third-exp .exp-container .exp-location, .main-wrapper #section-three .fourth-exp .exp-container .exp-location {
+@media (max-width: 768px) {
+  .main-wrapper #section-three .first-exp .exp-container .exp-comp span,
+  .main-wrapper #section-three .second-exp .exp-container .exp-comp span,
+  .main-wrapper #section-three .third-exp .exp-container .exp-comp span,
+  .main-wrapper #section-three .fourth-exp .exp-container .exp-comp span {
+    font-size: 1.8vw;
+  }
+}
+.main-wrapper #section-three .first-exp .exp-container .exp-location,
+.main-wrapper #section-three .second-exp .exp-container .exp-location,
+.main-wrapper #section-three .third-exp .exp-container .exp-location,
+.main-wrapper #section-three .fourth-exp .exp-container .exp-location {
   color: #D2D4C8;
   font-size: 0.8vw;
 }
-.main-wrapper #section-three .first-exp .exp-container .exp-role-desc, .main-wrapper #section-three .second-exp .exp-container .exp-role-desc, .main-wrapper #section-three .third-exp .exp-container .exp-role-desc, .main-wrapper #section-three .fourth-exp .exp-container .exp-role-desc {
+@media (max-width: 768px) {
+  .main-wrapper #section-three .first-exp .exp-container .exp-location,
+  .main-wrapper #section-three .second-exp .exp-container .exp-location,
+  .main-wrapper #section-three .third-exp .exp-container .exp-location,
+  .main-wrapper #section-three .fourth-exp .exp-container .exp-location {
+    font-size: 1.8vw;
+  }
+}
+.main-wrapper #section-three .first-exp .exp-container .exp-role-desc,
+.main-wrapper #section-three .second-exp .exp-container .exp-role-desc,
+.main-wrapper #section-three .third-exp .exp-container .exp-role-desc,
+.main-wrapper #section-three .fourth-exp .exp-container .exp-role-desc {
   color: #B8BDB5;
   font-size: 0.8vw;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-three .first-exp .exp-container .exp-role-desc,
+  .main-wrapper #section-three .second-exp .exp-container .exp-role-desc,
+  .main-wrapper #section-three .third-exp .exp-container .exp-role-desc,
+  .main-wrapper #section-three .fourth-exp .exp-container .exp-role-desc {
+    font-size: 1.6vw;
+  }
+}
+.main-wrapper #section-four {
+  min-height: 50vh;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-four {
+    font-size: 8vw;
+  }
+}
+.main-wrapper #section-four .pro-header {
+  text-align: center;
+  color: #D2D0BA;
+  font-size: 4vw;
+  margin-top: 4vh;
+  margin-bottom: 10vh;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-four .pro-header {
+    font-size: 8vw;
+  }
+}
+.main-wrapper #section-four .pro-container-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 80vw;
+  border-radius: 8px;
+  align-items: center;
+}
+.main-wrapper #section-four .pro-container-wrapper .pro-container {
+  border-radius: 8px;
+  padding: 16px;
+  flex-shrink: 0;
+  width: 45vw;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  gap: 8px;
+  background-color: rgba(90, 90, 90, 0.219);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-four .pro-container-wrapper .pro-container {
+    width: 80vw;
+    height: 20vh;
+  }
+}
+.main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info header {
+  font-size: 1.2vw;
+  color: #D2D0BA;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info header {
+    font-size: 2.2vw;
+  }
+}
+.main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-link {
+  color: #D2D4C8;
+  font-size: 0.8vw;
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-link {
+    font-size: 1.8vw;
+  }
+}
+.main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-comp {
+  font-size: 1vw;
+  color: #D2D0BA;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-comp {
+    font-size: 2vw;
+  }
+}
+.main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-comp span {
+  font-size: 0.8vw;
+  color: #889696;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-comp span {
+    font-size: 1.8vw;
+  }
+}
+.main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-location {
+  color: #D2D4C8;
+  font-size: 0.8vw;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-location {
+    font-size: 1.8vw;
+  }
+}
+.main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-role-desc {
+  color: #B8BDB5;
+  font-size: 0.8vw;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-four .pro-container-wrapper .pro-container .pro-info .pro-role-desc {
+    font-size: 1.6vw;
+  }
+}
+.main-wrapper #section-four .pro-container-wrapper .pro-container img {
+  border-radius: 8px;
+  width: 40%;
+}
+.main-wrapper #contact {
+  height: 50vh;
+  display: grid;
+  place-items: center;
+}
+.main-wrapper #contact .contact-container {
+  color: #D2D0BA;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+.main-wrapper #contact .contact-container .contact-me-text {
+  font-size: 3vw;
+}
+@media (max-width: 768px) {
+  .main-wrapper #contact .contact-container .contact-me-text {
+    font-size: 5vw;
+  }
+}
+.main-wrapper #contact .contact-container .send-mail-button {
+  color: #D2D0BA;
+  border-radius: 8px;
+  border: 1px solid #B8BDB5;
+  padding: 8px;
+  margin-top: 2vh;
+}
+@media (max-width: 768px) {
+  .main-wrapper #contact .contact-container .send-mail-button {
+    font-size: 3.5vw;
+  }
 }/*# sourceMappingURL=index.css.map */

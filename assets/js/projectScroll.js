@@ -1,7 +1,7 @@
 
 function scrollProjectContent() {
-  const _scrollContainer = document.querySelector("#project");
-  const _scrollContent = gsap.utils.toArray(".work-item");
+  const _scrollContainer = document.querySelector("#section-four");
+  const _scrollContent = gsap.utils.toArray(".pro-container");
   let _mainWIdth = window.innerWidth
   let _containerScrollWidth = _scrollContainer.scrollWidth
 
@@ -12,7 +12,7 @@ function scrollProjectContent() {
     x: getScrollWidth() * -1,
     ease: "none",
     scrollTrigger: {
-      trigger: "#project",
+      trigger: "#section-four",
       pin: true,
       scrub: true,
       end: getScrollWidth() + 1000,
