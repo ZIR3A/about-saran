@@ -200,30 +200,30 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: true,
     }
   })
-  gsap.from(".pro-header", {
-    y: 400,
-    opacity: 0,
-    ease: "power2",
-    scrollTrigger: {
-      trigger: "#section-three",
-      start: "bottom 90%",
-      endTrigger: "#section-four",
-      end: "top 20%",
-      scrub: true,
-    }
-  })
-  gsap.from(".pro-container-wrapper", {
-    y: 400,
-    opacity: 0,
-    ease: "power2",
-    scrollTrigger: {
-      trigger: "#section-three",
-      start: "bottom 90%",
-      endTrigger: "#section-four",
-      end: "top 20%",
-      scrub: true,
-    }
-  })
+  // gsap.from(".pro-header", {
+  //   y: 400,
+  //   opacity: 0,
+  //   ease: "power2",
+  //   scrollTrigger: {
+  //     trigger: "#section-three",
+  //     start: "bottom 90%",
+  //     endTrigger: "#section-four",
+  //     end: "top 20%",
+  //     scrub: true,
+  //   }
+  // })
+  // gsap.from(".pro-container-wrapper", {
+  //   y: 400,
+  //   opacity: 0,
+  //   ease: "power2",
+  //   scrollTrigger: {
+  //     trigger: "#section-three",
+  //     start: "bottom 90%",
+  //     endTrigger: "#section-four",
+  //     end: "top 20%",
+  //     scrub: true,
+  //   }
+  // })
 
 
 
