@@ -13,7 +13,7 @@ function scrollProjectContent() {
     ease: "none",
     scrollTrigger: {
       trigger: "#section-four",
-      start: "top 0%",
+      start: "top 5%",
       pin: true,
       scrub: true,
       end: getScrollWidth() + 1000,
