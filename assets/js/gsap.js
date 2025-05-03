@@ -33,66 +33,81 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   gsap.to("#js", {
-    y: 700,
-    x: 100,
+    y: "220vh",
+    x: "24vw",
     duration: 1,
     rotate: 360,
+    width: "4%",
     ease: "none",
     scrollTrigger: {
       trigger: "#section-one",
       start: "50% 50%",
+      endTrigger: "#section-three",
+      end: "bottom bottom",
       scrub: true,
 
     }
   })
   gsap.to("#html", {
-    y: 800,
-    x: 200,
+    y: "179vh",
+    x: "-8vw",
     duration: 1,
     rotate: 360,
+    width: "4%",
     ease: "none",
     scrollTrigger: {
       trigger: "#section-one",
       start: "50% 50%",
+      endTrigger: "#section-three",
+      end: "bottom bottom",
       scrub: true,
 
     }
   })
   gsap.to("#css", {
-    y: 1100,
-    x: -150,
+    y: "161vh",
+    x: "-2vw",
     duration: 1,
     rotate: 360,
+    width: "4%",
     ease: "none",
     scrollTrigger: {
       trigger: "#section-one",
       start: "50% 50%",
+      endTrigger: "#section-three",
+      end: "bottom bottom",
       scrub: true,
 
     }
   })
   gsap.to("#react", {
-    y: 1000,
-    x: -50,
+    y: "210vh",
+    x: "-2vw",
     duration: 1,
     rotate: 360,
+    width: "4%",
     ease: "none",
     scrollTrigger: {
       trigger: "#section-one",
       start: "50% 50%",
+      endTrigger: "#section-three",
+      end: "bottom bottom",
       scrub: true,
 
     }
   })
   gsap.to("#node", {
-    y: 900,
-    x: 100,
+    y: "180vh",
+    x: "-3vw",
     duration: 1,
     rotate: 360,
+    width: "4%",
     ease: "none",
     scrollTrigger: {
       trigger: "#section-one",
       start: "50% 50%",
+      endTrigger: "#section-three",
+      end: "bottom bottom",
       scrub: true,
 
     }
@@ -105,9 +120,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power2",
     scrollTrigger: {
       trigger: "#section-one",
-      start: "bottom 80%",
+      start: "bottom bottom",
       endTrigger: "#about",
-      end: "bottom 100%",
+      end: "top 50%",
       scrub: true,
     }
   })
@@ -174,6 +189,65 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "bottom 60%",
       endTrigger: "#project",
       end: "top 20%",
+      scrub: true,
+    }
+  })
+
+  gsap.from(".exp-header", {
+    y: 600,
+    opacity: 0,
+    ease: "power2",
+    scrollTrigger: {
+      trigger: "#about",
+      start: "bottom 60%",
+      end: "bottom 40%",
+      scrub: true,
+      // markers: true
+    }
+  })
+
+
+  gsap.from(".first-exp", {
+    y: 400,
+    opacity: 0,
+    ease: "power2",
+    scrollTrigger: {
+      trigger: "#section-three",
+      start: "top 40%",
+      end: "top 30%",
+      scrub: true,
+    }
+  })
+  gsap.from(".second-exp", {
+    y: 400,
+    opacity: 0,
+    ease: "power2",
+    scrollTrigger: {
+      trigger: "#section-three",
+      start: "top 30%",
+      end: "top 20%",
+      scrub: true,
+    }
+  })
+  gsap.from(".third-exp", {
+    y: 400,
+    opacity: 0,
+    ease: "power2",
+    scrollTrigger: {
+      trigger: "#section-three",
+      start: "top 20%",
+      end: "top 10%",
+      scrub: true,
+    }
+  })
+  gsap.from(".fourth-exp", {
+    y: 400,
+    opacity: 0,
+    ease: "power2",
+    scrollTrigger: {
+      trigger: "#section-three",
+      start: "top 10%",
+      end: "top 0%",
       scrub: true,
     }
   })

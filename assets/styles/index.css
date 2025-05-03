@@ -54,7 +54,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main-wrapper {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .main-wrapper .flex-center {
   display: flex;
@@ -106,6 +106,32 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   gap: 2vh;
 }
+.main-wrapper #section-one img {
+  position: absolute;
+  width: 8%;
+  opacity: 0;
+}
+.main-wrapper #section-one #js {
+  left: 1%;
+  top: 5%;
+}
+.main-wrapper #section-one #html {
+  left: 15%;
+  top: 55%;
+}
+.main-wrapper #section-one #css {
+  left: 45%;
+  top: 70%;
+}
+.main-wrapper #section-one #react {
+  top: 10%;
+  width: 8%;
+  left: 65%;
+}
+.main-wrapper #section-one #node {
+  width: 7%;
+  left: 85%;
+}
 .main-wrapper #section-one .name-container {
   width: 55%;
   position: relative;
@@ -115,30 +141,6 @@ body::-webkit-scrollbar-thumb {
   border: 1px solid #B8BDB5;
   border-radius: 1vw;
   padding: 1vw;
-}
-.main-wrapper #section-one .name-container img {
-  position: absolute;
-  width: 9%;
-  top: -21%;
-  width: 9%;
-  opacity: 0;
-}
-.main-wrapper #section-one .name-container #js {
-  left: 8%;
-}
-.main-wrapper #section-one .name-container #html {
-  left: 25%;
-}
-.main-wrapper #section-one .name-container #css {
-  left: 45%;
-}
-.main-wrapper #section-one .name-container #react {
-  width: 8%;
-  left: 65%;
-}
-.main-wrapper #section-one .name-container #node {
-  width: 7%;
-  left: 85%;
 }
 .main-wrapper #section-one .name-container .name {
   font-size: 7vw;
@@ -159,8 +161,13 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 50vh;
+  height: 45vh;
   gap: 10%;
+}
+@media (max-width: 768px) {
+  .main-wrapper #about {
+    height: 25vh;
+  }
 }
 .main-wrapper #about .about-me-text,
 .main-wrapper #about .about-me-desc {
@@ -174,7 +181,7 @@ body::-webkit-scrollbar-thumb {
 }
 @media (max-width: 768px) {
   .main-wrapper #about .about-me-text {
-    font-size: 10vw;
+    font-size: 8vw;
   }
 }
 .main-wrapper #about .about-me-desc {
@@ -463,4 +470,72 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   place-items: center;
   border: 1px solid #fff;
+}
+.main-wrapper #section-three {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.main-wrapper #section-three .exp-header {
+  color: #D2D0BA;
+  font-size: 4vw;
+  margin-bottom: 4vh;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-three .exp-header {
+    font-size: 8vw;
+  }
+}
+.main-wrapper #section-three .first-exp, .main-wrapper #section-three .second-exp, .main-wrapper #section-three .third-exp, .main-wrapper #section-three .fourth-exp {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 60vw;
+  border-radius: 8px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-three .first-exp, .main-wrapper #section-three .second-exp, .main-wrapper #section-three .third-exp, .main-wrapper #section-three .fourth-exp {
+    flex-wrap: wrap;
+  }
+}
+.main-wrapper #section-three .first-exp .left-exp, .main-wrapper #section-three .first-exp .right-exp, .main-wrapper #section-three .second-exp .left-exp, .main-wrapper #section-three .second-exp .right-exp, .main-wrapper #section-three .third-exp .left-exp, .main-wrapper #section-three .third-exp .right-exp, .main-wrapper #section-three .fourth-exp .left-exp, .main-wrapper #section-three .fourth-exp .right-exp {
+  border: 1px solid #B8BDB5;
+  padding: 16px;
+  width: 60vw;
+  height: 23vh;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .main-wrapper #section-three .first-exp .left-exp, .main-wrapper #section-three .first-exp .right-exp, .main-wrapper #section-three .second-exp .left-exp, .main-wrapper #section-three .second-exp .right-exp, .main-wrapper #section-three .third-exp .left-exp, .main-wrapper #section-three .third-exp .right-exp, .main-wrapper #section-three .fourth-exp .left-exp, .main-wrapper #section-three .fourth-exp .right-exp {
+    height: 12vh;
+  }
+}
+.main-wrapper #section-three .first-exp .exp-container, .main-wrapper #section-three .second-exp .exp-container, .main-wrapper #section-three .third-exp .exp-container, .main-wrapper #section-three .fourth-exp .exp-container {
+  display: grid;
+  place-items: center;
+}
+.main-wrapper #section-three .first-exp .exp-container header, .main-wrapper #section-three .second-exp .exp-container header, .main-wrapper #section-three .third-exp .exp-container header, .main-wrapper #section-three .fourth-exp .exp-container header {
+  font-size: 1.2vw;
+  color: #D2D0BA;
+  font-weight: 500;
+}
+.main-wrapper #section-three .first-exp .exp-container .exp-comp, .main-wrapper #section-three .second-exp .exp-container .exp-comp, .main-wrapper #section-three .third-exp .exp-container .exp-comp, .main-wrapper #section-three .fourth-exp .exp-container .exp-comp {
+  font-size: 1vw;
+  color: #D2D0BA;
+}
+.main-wrapper #section-three .first-exp .exp-container .exp-comp span, .main-wrapper #section-three .second-exp .exp-container .exp-comp span, .main-wrapper #section-three .third-exp .exp-container .exp-comp span, .main-wrapper #section-three .fourth-exp .exp-container .exp-comp span {
+  font-size: 0.8vw;
+  color: #889696;
+}
+.main-wrapper #section-three .first-exp .exp-container .exp-location, .main-wrapper #section-three .second-exp .exp-container .exp-location, .main-wrapper #section-three .third-exp .exp-container .exp-location, .main-wrapper #section-three .fourth-exp .exp-container .exp-location {
+  color: #D2D4C8;
+  font-size: 0.8vw;
+}
+.main-wrapper #section-three .first-exp .exp-container .exp-role-desc, .main-wrapper #section-three .second-exp .exp-container .exp-role-desc, .main-wrapper #section-three .third-exp .exp-container .exp-role-desc, .main-wrapper #section-three .fourth-exp .exp-container .exp-role-desc {
+  color: #B8BDB5;
+  font-size: 0.8vw;
 }/*# sourceMappingURL=index.css.map */

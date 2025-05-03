@@ -29,7 +29,7 @@ body {
 }
 
 .main-wrapper {
-    overflow-x: hidden;
+    overflow: hidden;
     .flex-center {
         display: flex;
         justify-content: center;
@@ -79,14 +79,38 @@ body {
     }
 
     #section-one {
-
         height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         gap:2vh;
-        
+        img {
+            position: absolute;
+            width: 8%;
+            opacity: 0;
+        }
+        #js {
+            left: 1%;
+            top: 5%;
+        }
+        #html {
+            left: 15%;
+            top: 55%;
+        }
+        #css {
+            left: 45%;
+            top: 70%;
+        }
+        #react {
+            top: 10%;
+            width: 8%;
+            left: 65%;
+        }
+        #node {
+            width: 7%;
+            left: 85%;
+        }
         .name-container {
             width: 55%;
             position: relative;
@@ -96,30 +120,7 @@ body {
             border: 1px solid $border;
             border-radius: 1vw;
             padding: 1vw;
-            img {
-                position: absolute;
-                width: 9%;
-                top: -21%;
-                width: 9%;
-                opacity: 0;
-            }
-            #js {
-                left: 8%;
-            }
-            #html {
-                left: 25%;
-            }
-            #css {
-                left: 45%;
-            }
-            #react {
-                width: 8%;
-                left: 65%;
-            }
-            #node {
-                width: 7%;
-                left: 85%;
-            }
+            
             .name {
                 font-size: 7vw;
                 font-weight: 600;
@@ -148,12 +149,16 @@ body {
     //end of new css
 
     #about {
+        // overflow: hidden;
         display: flex;
         // justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 50vh;
+        height: 45vh;
         gap: 10%;
+        @media (max-width: $breakpoint-md) {
+            height: 25vh;
+        }
         // border: 1px solid $border;
         .about-me-text,
             .about-me-desc {
@@ -165,7 +170,7 @@ body {
                 font-size: 4vw;
                 max-width: 1000px;
                 @media (max-width: $breakpoint-md) {
-                    font-size: 10vw;
+                    font-size: 8vw;
                 }
             }
 
@@ -482,6 +487,79 @@ body {
                 display: grid;
                 place-items: center;
                 border: 1px solid #fff;
+            }
+        }
+    }
+
+    #section-three {
+        min-height: 100vh;
+        // display: felx;
+        // place-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+
+        .exp-header {
+            color: $text-primary;
+            font-size: 4vw;
+            margin-bottom: 4vh;
+            @media (max-width: $breakpoint-md) {
+                font-size: 8vw;
+            }
+        }
+
+        .first-exp, .second-exp, .third-exp, .fourth-exp {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            width: 60vw;
+            border-radius: 8px;
+            align-items: center;
+            @media (max-width: $breakpoint-md) {
+                flex-wrap: wrap;
+            }
+
+            .left-exp, .right-exp {
+                border: 1px solid $border;
+                padding: 16px;
+                width: 60vw;
+                height: 23vh;
+                border-radius: 8px;
+
+                @media (max-width: $breakpoint-md) {
+                    height: 12vh;
+                }
+            }
+
+            .exp-container {
+                display: grid;
+                place-items: center;
+                header {
+                    font-size: 1.2vw;
+                    color: $text-primary;
+                    font-weight: 500;
+                }
+                .exp-comp {
+                    font-size: 1vw;
+                    color: $text-primary;
+                    span {
+                        font-size: 0.8vw;
+                        color: $primary-2;
+                    }
+                }
+                .exp-location {
+                    color: $primary-4;
+                    
+                    font-size: 0.8vw;
+                }
+                .exp-role-desc {
+                    color: $primary-3;
+                    
+                    font-size: 0.8vw;
+                }
+
             }
         }
     }
