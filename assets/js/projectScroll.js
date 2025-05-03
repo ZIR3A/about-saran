@@ -13,11 +13,13 @@ function scrollProjectContent() {
     ease: "none",
     scrollTrigger: {
       trigger: "#section-four",
+      start: "top 0%",
       pin: true,
       scrub: true,
       end: getScrollWidth() + 1000,
       invalidateOnRefresh: true,
-      anticipatePin: 1
+      anticipatePin: 1,
+      markers: true
     }
   })
 }
