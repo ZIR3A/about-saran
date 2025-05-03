@@ -394,6 +394,13 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
   align-items: center;
 }
+@media (max-width: 960px) {
+  .main-wrapper #section-four .pro-container-wrapper {
+    width: 100vw;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
 .main-wrapper #section-four .pro-container-wrapper .pro-container {
   border-radius: 8px;
   padding: 16px;
