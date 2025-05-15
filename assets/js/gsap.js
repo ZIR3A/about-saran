@@ -80,20 +80,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
   })
+
+  const hightlightSection = document.querySelector("#section-four");
+  const highlightCardsContainer = document.querySelector(".pro-container-wrapper");
+
+  function getHightContainerScrollWidth() {
+    let _scrollWidth = highlightCardsContainer.scrollWidth
+    return ((_scrollWidth + 20) - window.innerWidth)
+  }
+  const sections = gsap.utils.toArray("section");
+  const allSectionHeight = sections.reduce((acc, section) => acc + section.offsetHeight, 0);
+
+  // Final animation to last section
+
   gsap.to("#react", {
-    y: "290vh",
+    y: allSectionHeight + getHightContainerScrollWidth() - 800,
     x: "-2vw",
-    duration: 1,
+    duration: 10,
     rotate: 360,
     width: "4%",
     ease: "none",
     scrollTrigger: {
       trigger: "#section-one",
       start: "50% 50%",
-      endTrigger: "#section-four",
+      endTrigger: "#contact",
       end: "bottom bottom",
       scrub: true,
-
+      markers: true
     }
   })
   gsap.to("#node", {
@@ -239,11 +252,4 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: true,
     }
   })
-
-
-
-  // Refresh ScrollTrigger on resize
-  window.addEventListener("resize", () => {
-    ScrollTrigger.refresh();
-  });
 })
