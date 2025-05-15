@@ -113,31 +113,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  gsap.from("#about-text", {
-    y: 500,
-    opacity: 0,
+  gsap.to("#about-text", {
+    y: -200,
     duration: 1,
-    ease: "power2",
+    opacity: 1,
+    ease: "power2.out",
     scrollTrigger: {
       trigger: "#section-one",
       start: "bottom bottom",
-      endTrigger: "#section-two",
-      end: "top 50%",
       scrub: true,
+
     }
   })
-  gsap.from("#about-desc", {
-    y: 500,
-    opacity: 0,
+  gsap.to("#about-desc", {
+    y: -200,
     duration: 1,
-    ease: "power2",
+    opacity: 1,
+    ease: "power2.out",
     scrollTrigger: {
       trigger: "#section-one",
-      start: "bottom 60%",
-      endTrigger: "#section-two",
-      end: "bottom 100%",
+      start: "bottom 80%",
       scrub: true,
-      // markers: true
+      markers: true
+    }
+  })
+  gsap.to("#section-three", {
+    y: -200,
+    duration: 1,
+    opacity: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#section-two",
+      start: "bottom 80%",
+      scrub: true,
+      markers: true
     }
   })
 

@@ -159,15 +159,16 @@ body {
   #section-two {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     flex-direction: column;
     height: 45vh;
     gap: 10%;
     padding: 16px;
-
     .about-me-text,
     .about-me-desc {
       padding: 0;
       color: $text-primary;
+      opacity: 0;
     }
 
     .about-me-text {
@@ -218,7 +219,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-
+    opacity: 0;
     .exp-header {
       color: $text-primary;
       font-size: 4vw;
@@ -321,6 +322,7 @@ body {
 
     @media (max-width: $breakpoint-md) {
       font-size: 8vw;
+      min-height: 20vh;
     }
 
     .pro-header {
@@ -337,18 +339,11 @@ body {
 
     .pro-container-wrapper {
       display: flex;
-      justify-content: space-between;
       gap: 16px;
-      width: 80vw;
       border-radius: 8px;
       align-items: center;
-      @media (max-width: $breakpoint-lg) {
-        width: 100vw;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
+      padding: 10px;
       .pro-container {
-        // border: 1px solid $border;
         border-radius: 8px;
         padding: 16px;
         flex-shrink: 0;
@@ -441,6 +436,9 @@ body {
     height: 50vh;
     display: grid;
     place-items: center;
+    @media (max-width: $breakpoint-md) {
+      height: 50vh;
+    }
 
     .contact-container {
       color: $text-primary;

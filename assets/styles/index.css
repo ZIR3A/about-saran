@@ -165,6 +165,7 @@ body::-webkit-scrollbar-thumb {
 .main-wrapper #section-two {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   flex-direction: column;
   height: 45vh;
   gap: 10%;
@@ -174,6 +175,7 @@ body::-webkit-scrollbar-thumb {
 .main-wrapper #section-two .about-me-desc {
   padding: 0;
   color: #D2D0BA;
+  opacity: 0;
 }
 .main-wrapper #section-two .about-me-text {
   text-wrap: nowrap;
@@ -221,6 +223,7 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  opacity: 0;
 }
 .main-wrapper #section-three .exp-header {
   color: #D2D0BA;
@@ -372,6 +375,7 @@ body::-webkit-scrollbar-thumb {
 @media (max-width: 768px) {
   .main-wrapper #section-four {
     font-size: 8vw;
+    min-height: 20vh;
   }
 }
 .main-wrapper #section-four .pro-header {
@@ -388,18 +392,10 @@ body::-webkit-scrollbar-thumb {
 }
 .main-wrapper #section-four .pro-container-wrapper {
   display: flex;
-  justify-content: space-between;
   gap: 16px;
-  width: 80vw;
   border-radius: 8px;
   align-items: center;
-}
-@media (max-width: 960px) {
-  .main-wrapper #section-four .pro-container-wrapper {
-    width: 100vw;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  padding: 10px;
 }
 .main-wrapper #section-four .pro-container-wrapper .pro-container {
   border-radius: 8px;
@@ -489,6 +485,11 @@ body::-webkit-scrollbar-thumb {
   height: 50vh;
   display: grid;
   place-items: center;
+}
+@media (max-width: 768px) {
+  .main-wrapper #contact {
+    height: 50vh;
+  }
 }
 .main-wrapper #contact .contact-container {
   color: #D2D0BA;
