@@ -24,30 +24,33 @@
 //     })
 //   }
 // }
+document.addEventListener("DOMContentLoaded", () => {
 
-function scrollProjectContent() {
-  const hightlightSection = document.querySelector("#section-four");
-  const highlightCardsContainer = document.querySelector(".pro-container-wrapper");
 
-  function getHightContainerScrollWidth() {
-      let _scrollWidth = highlightCardsContainer.scrollWidth
-      return -((_scrollWidth + 50) - window.innerWidth)
-  }
+    function scrollProjectContent() {
+        const hightlightSection = document.querySelector("#section-four");
+        const highlightCardsContainer = document.querySelector(".pro-container-wrapper");
 
-  const animate = gsap.to(highlightCardsContainer, {
-      x: getHightContainerScrollWidth,
-  })
+        function getHightContainerScrollWidth() {
+            let _scrollWidth = highlightCardsContainer.scrollWidth
+            return -((_scrollWidth + 20) - window.innerWidth)
+        }
 
-  ScrollTrigger.create({
-      trigger: hightlightSection,
-      start: "top top",
-      end: () => `+=${getHightContainerScrollWidth() * -1}`,
-      scrub: true,
-      pin: true,
-      invalidateOnRefresh: true,
-      // markers: true,
-      animation: animate
-  })
-}
+        const animate = gsap.to(highlightCardsContainer, {
+            x: getHightContainerScrollWidth,
+        })
 
-scrollProjectContent();
+        ScrollTrigger.create({
+            trigger: hightlightSection,
+            start: "top top",
+            end: () => `+=${getHightContainerScrollWidth() * -1}`,
+            scrub: true,
+            pin: true,
+            animation: animate,
+            invalidateOnRefresh: true,
+            // markers: true,
+        })
+    }
+
+    scrollProjectContent();
+})
