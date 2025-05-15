@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       endTrigger: "#contact",
       end: "bottom bottom",
       scrub: true,
-      markers: true
+      // markers: true
     }
   })
   gsap.to("#node", {
