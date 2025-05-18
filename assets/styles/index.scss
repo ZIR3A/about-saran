@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "components/mixins", "variables/variables", "components/global";
 
 * {
@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // font-family: 'Courier New', Courier, monospace;
 }
 
 body {
@@ -157,27 +158,29 @@ body {
   //end of new css
 
   #section-two {
+    // border: 1px solid red;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: column;
-    height: 45vh;
+    height: 100vh;
     gap: 10%;
     padding: 16px;
+
     @media (max-width: $breakpoint-md) {
-      height: max-content
+      padding: 8px;
     }
-    .about-me-text,
-    .about-me-desc {
+
+    .about-me-text {
       padding: 0;
       color: $text-primary;
-      opacity: 0;
     }
 
     .about-me-text {
       text-wrap: nowrap;
       font-size: 4vw;
       max-width: 1000px;
+      font-weight: 500;
 
       @media (max-width: $breakpoint-md) {
         font-size: 8vw;
@@ -185,11 +188,31 @@ body {
     }
 
     .about-me-desc {
-      text-wrap: wrap;
+      // text-wrap: wrap;
+      max-width: 100%;
       display: flex;
-      align-items: end;
-      font-size: 1vw;
-      max-width: 50vw;
+      flex-wrap: wrap;
+      text-align: center;
+
+      span {
+        color: rgba($text-primary, 0.1);
+        margin-left: 1rem;
+        font-size: 1.5vw;
+        font-weight: 500;
+        line-height: 3.5rem;
+
+        @media (max-width: $breakpoint-lg) {
+          margin-left: 0.2rem;
+          font-size: 2.5vw;
+          line-height: 2.5rem;
+        }
+
+        @media (max-width: $breakpoint-md) {
+          margin-left: 0.2rem;
+          font-size: 2.5vw;
+          line-height: 2.5rem;
+        }
+      }
 
       @media (max-width: $breakpoint-md) {
         font-size: 2vw;
@@ -217,22 +240,25 @@ body {
   }
 
   #section-three {
+    // border: 1px solid blue;
     height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    opacity: 0;
+    // opacity: 0;
+
     @media (max-width: $breakpoint-md) {
       padding: 16px auto;
       height: max-content
     }
+
     .exp-header {
       color: $text-primary;
       font-size: 4vw;
       margin-bottom: 4vh;
-
+      font-weight: 500;
       @media (max-width: $breakpoint-md) {
         font-size: 8vw;
       }
@@ -260,7 +286,7 @@ body {
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         padding: 16px;
         width: 60vw;
-        height: 23vh;
+        height: 27vh;
         border-radius: 8px;
 
         @media (max-width: $breakpoint-md) {
@@ -278,10 +304,15 @@ body {
         header {
           font-size: 1.2vw;
           color: $text-primary;
-          font-weight: 500;
-
+          font-weight: 600;
+          border-bottom: 1px solid $border;
+          padding-bottom: 8px;
+          margin-bottom: 8px;
           @media (max-width: $breakpoint-md) {
             font-size: 2.2vw;
+          }
+          @media (max-width: $breakpoint-sm) {
+            font-size: 3vw;
           }
         }
 
@@ -292,6 +323,9 @@ body {
           @media (max-width: $breakpoint-md) {
             font-size: 2vw;
           }
+          @media (max-width: $breakpoint-sm) {
+            font-size: 2.5vw;
+          }
 
           span {
             font-size: 0.8vw;
@@ -299,6 +333,9 @@ body {
 
             @media (max-width: $breakpoint-md) {
               font-size: 1.8vw;
+            }
+            @media (max-width: $breakpoint-sm) {
+              font-size: 2vw;
             }
           }
         }
@@ -310,6 +347,9 @@ body {
           @media (max-width: $breakpoint-md) {
             font-size: 1.8vw;
           }
+          @media (max-width: $breakpoint-sm) {
+            font-size: 2vw;
+          }
         }
 
         .exp-role-desc {
@@ -319,6 +359,9 @@ body {
           @media (max-width: $breakpoint-md) {
             font-size: 1.6vw;
           }
+          @media (max-width: $breakpoint-sm) {
+            font-size: 2vw;
+          }
         }
       }
     }
@@ -327,6 +370,7 @@ body {
   #section-four {
     min-height: 50vh;
     overflow: hidden;
+
     @media (max-width: $breakpoint-md) {
       font-size: 8vw;
       min-height: 20vh;
@@ -336,6 +380,7 @@ body {
       text-align: center;
       color: $text-primary;
       font-size: 4vw;
+      font-weight: 500;
       margin-top: 4vh;
       margin-bottom: 10vh;
 
@@ -350,11 +395,12 @@ body {
       border-radius: 8px;
       align-items: center;
       padding: 10px;
+
       .pro-container {
         border-radius: 8px;
         padding: 16px;
         flex-shrink: 0;
-        width: 45vw;
+        width: 850px;
         height: 40vh;
         display: flex;
         justify-content: space-between;
@@ -365,8 +411,7 @@ body {
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 
         @media (max-width: $breakpoint-md) {
-          width: 80vw;
-          height: 30vh;
+          width: 650px;
         }
 
         .pro-info {
@@ -377,7 +422,7 @@ body {
           header {
             font-size: 1.2vw;
             color: $text-primary;
-            font-weight: 500;
+            font-weight: 600;
 
             @media (max-width: $breakpoint-md) {
               font-size: 2.2vw;
@@ -397,6 +442,7 @@ body {
           .pro-comp {
             font-size: 1vw;
             color: $text-primary;
+            font-weight: 500;
 
             @media (max-width: $breakpoint-md) {
               font-size: 2vw;
@@ -433,7 +479,11 @@ body {
 
         img {
           border-radius: 8px;
-          width: 40%;
+          width: 400px;
+          object-fit: cover;
+          @media (max-width: $breakpoint-md) {
+            width: 300px;
+          }
         }
       }
     }
@@ -443,6 +493,7 @@ body {
     height: 50vh;
     display: grid;
     place-items: center;
+
     @media (max-width: $breakpoint-md) {
       height: 50vh;
     }
@@ -455,6 +506,7 @@ body {
 
       .contact-me-text {
         font-size: 3vw;
+        font-weight: 500;
 
         @media (max-width: $breakpoint-md) {
           font-size: 5vw;

@@ -2,7 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
 
-
+  let jsTl = gsap.timeline( {
+    scrollTrigger: {
+      trigger: ".main-wrapper",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      // markers: true
+    }
+  });
   let sectionOneTL = gsap.timeline();
 
   sectionOneTL.from(".name-container", {
@@ -32,22 +40,49 @@ document.addEventListener("DOMContentLoaded", () => {
     stagger: 0.2,
   });
 
-  gsap.to("#js", {
-    y: "220vh",
-    x: "24vw",
+  jsTl.to("#js", {
+    y: "120vh",
+    // x: "24vw",
     duration: 1,
     rotate: 360,
-    width: "4%",
     ease: "none",
-    scrollTrigger: {
-      trigger: "#section-one",
-      start: "50% 50%",
-      endTrigger: "#section-three",
-      end: "bottom bottom",
-      scrub: true,
-
-    }
   })
+  jsTl.to("#js", {
+    x: "80vw",
+    // y:'180vh',
+    duration: 1,
+    rotate: 360,
+    ease: "none",
+  })
+  jsTl.to("#js", {
+    y: "200vh",
+    // x: "10vw",
+    duration: 1,
+    rotate: 360,
+    ease: "none",
+  })
+  jsTl.to("#js", {
+    y: "300vh",
+    // x: "-24vw",
+    duration: 1,
+    rotate: 360,
+    ease: "none",
+  })
+  jsTl.to("#js", {
+    y: "305vh",
+    duration: 1,
+    rotate: 360,
+    ease: "none",
+  })
+
+  // jsTl.to("#js", {
+  //   y: "120vh",
+  //   // x: "-24vw",
+  //   duration: 1,
+  //   rotate: 360,
+  //   ease: "none",
+  // })
+
   gsap.to("#html", {
     y: "179vh",
     x: "-8vw",
@@ -126,44 +161,62 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  gsap.to("#about-text", {
+  gsap.to("#section-two", {
+    y: -250,
+    duration: 1,
+    opacity: 1,
+    // ease: "power1.out",
+    scrollTrigger: {
+      trigger: "#section-one",
+      start: "bottom 90%",
+      endTrigger: "#section-two",
+      end: "bottom bottom",
+      scrub: 0.8,
+      // markers: true
+    }
+  })
+
+
+  let aboutDescClutter = ""
+  document.getElementById("about-desc").innerHTML.split(" ").forEach((word) => {
+    if (word !== "") aboutDescClutter += `<span>${word}</span>`
+  })
+  document.getElementById("about-desc").innerHTML = aboutDescClutter
+
+
+  // Select all the spans you want to animate
+  const spans = document.querySelectorAll("#about-desc span");
+
+  // Create a timeline with ScrollTrigger
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#about-desc",
+      start: "top 95%",
+      end: "50% 85%",
+      scrub: 1,              // smooth animation tied to scroll position
+      // markers: true           // uncomment to see scroll trigger markers (for debugging)
+    }
+  });
+
+  // Add staggered animations to the timeline
+  spans.forEach((span, i) => {
+    tl.to(span, {
+      ease: "power2.out",
+      color: "#D2D0BA", // your target color
+      duration: 0.1,    // duration of each individual span's color change
+    }, i * 0.05);      // stagger delay (adjust as needed)
+  });
+
+  gsap.to("#section-three", {
     y: -200,
     duration: 1,
     opacity: 1,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: "#section-one",
-      start: "bottom 80%",
-      endTrigger: "#section-two",
-      end: "top 50%",
-      scrub: true,
-      // markers: true
-    }
-  })
-  gsap.to("#about-desc", {
-    y: -170,
-    duration: 1,
-    opacity: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#section-one",
-      start: "bottom 70%",
-      endTrigger: "#section-two",
-      end: "top 50%",
-      scrub: true,
-      // markers: true
-    }
-  })
-  gsap.to("#section-three", {
-    y: -100,
-    duration: 1,
-    opacity: 1,
-    ease: "power2.out",
-    scrollTrigger: {
       trigger: "#section-two",
-      start: "bottom 50%",
+      start: "top 80%",
       endTrigger: "#section-three",
-      end: "top 40%",
+      end: "top 80%",
       scrub: true,
       // markers: true
     }
@@ -171,15 +224,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   gsap.from(".exp-header", {
-    y: 600,
+    y: 400,
     opacity: 0,
     ease: "power2",
     scrollTrigger: {
       trigger: "#section-two",
-      start: "bottom 95%",
+      start: "50% 70%",
       endTrigger: "#section-three",
       end: "to 50%",
       scrub: true,
+      // markers: true
     }
   })
 

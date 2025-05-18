@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ScrollTrigger.create({
             trigger: hightlightSection,
-            start: "top top",
+            start: "top 5%",
             end: () => `+=${getHightContainerScrollWidth() * -1}`,
-            scrub: true,
+            scrub: 1,
             pin: true,
             animation: animate,
             invalidateOnRefresh: true,
