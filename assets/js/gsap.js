@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
 
-  let jsTl = gsap.timeline( {
+  let jsTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".main-wrapper",
       start: "top top",
@@ -75,14 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none",
   })
 
-  // jsTl.to("#js", {
-  //   y: "120vh",
-  //   // x: "-24vw",
-  //   duration: 1,
-  //   rotate: 360,
-  //   ease: "none",
-  // })
-
   gsap.to("#html", {
     y: "179vh",
     x: "-8vw",
@@ -115,8 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
   })
-
-  const hightlightSection = document.querySelector("#section-four");
   const highlightCardsContainer = document.querySelector(".pro-container-wrapper");
 
   function getHightContainerScrollWidth() {
@@ -161,21 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  gsap.to("#section-two", {
-    y: -250,
-    duration: 1,
-    opacity: 1,
-    // ease: "power1.out",
-    scrollTrigger: {
-      trigger: "#section-one",
-      start: "bottom 90%",
-      endTrigger: "#section-two",
-      end: "bottom bottom",
-      scrub: 0.8,
-      // markers: true
-    }
-  })
-
 
   let aboutDescClutter = ""
   document.getElementById("about-desc").innerHTML.split(" ").forEach((word) => {
@@ -191,8 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#about-desc",
-      start: "top 95%",
-      end: "50% 85%",
+      start: "top 80%",
+      end: "50% 70%",
       scrub: 1,              // smooth animation tied to scroll position
       // markers: true           // uncomment to see scroll trigger markers (for debugging)
     }
@@ -207,91 +182,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, i * 0.05);      // stagger delay (adjust as needed)
   });
 
-  gsap.to("#section-three", {
-    y: -200,
-    duration: 1,
-    opacity: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#section-two",
-      start: "top 80%",
-      endTrigger: "#section-three",
-      end: "top 80%",
-      scrub: true,
-      // markers: true
-    }
-  })
 
-
-  gsap.from(".exp-header", {
-    y: 400,
-    opacity: 0,
-    ease: "power2",
-    scrollTrigger: {
-      trigger: "#section-two",
-      start: "50% 70%",
-      endTrigger: "#section-three",
-      end: "to 50%",
-      scrub: true,
-      // markers: true
-    }
-  })
-
-
-  gsap.from(".first-exp", {
-    y: 400,
-    opacity: 0,
-    ease: "power2",
-    scrollTrigger: {
-      trigger: "#section-three",
-      start: "top 50%",
-      end: "top 40%",
-      scrub: true,
-    }
-  })
-  gsap.from(".second-exp", {
-    y: 400,
-    opacity: 0,
-    ease: "power2",
-    scrollTrigger: {
-      trigger: "#section-three",
-      start: "top 30%",
-      end: "top 20%",
-      scrub: true,
-    }
-  })
-  gsap.from(".third-exp", {
-    y: 400,
-    opacity: 0,
-    ease: "power2",
-    scrollTrigger: {
-      trigger: "#section-three",
-      start: "top 20%",
-      end: "top 10%",
-      scrub: true,
-    }
-  })
-  gsap.from(".fourth-exp", {
-    y: 400,
-    opacity: 0,
-    ease: "power2",
-    scrollTrigger: {
-      trigger: "#section-three",
-      start: "top 10%",
-      end: "top 0%",
-      scrub: true,
-    }
-  })
   gsap.from(".pro-header", {
     y: 400,
     opacity: 0,
     ease: "power2",
     scrollTrigger: {
-      trigger: "#section-three",
+      trigger: "#section-two",
       start: "bottom 90%",
       endTrigger: "#section-four",
-      end: "top 20%",
-      scrub: true,
+      end: "top top",
+      scrub: 1,
     }
   })
   gsap.from(".pro-container-wrapper", {
@@ -299,11 +200,71 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 0,
     ease: "power2",
     scrollTrigger: {
-      trigger: "#section-three",
+      trigger: "#section-two",
       start: "bottom 90%",
-      endTrigger: "#section-four",
+      endTrigger: "#section-three",
       end: "top 20%",
-      scrub: true,
+      scrub: 1,
     }
   })
+  const _expElm = document.querySelector("#section-three")
+
+  gsap.to(".exp-header", {
+    top: "10%",
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".exp-header",
+      start: "top 70%",
+      endTrigger: "#section-three",
+      end: "top top",
+      scrub: 1,
+    }
+  })
+
+
+
+  //section three experience animation
+  gsap.to('.exp-card', {
+    top: (index) => `${(50 + (index * 8))}%`,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#section-three",
+      start: "top top",
+      end: () => `+=${_expElm.scrollHeight}`,
+      scrub: 1,
+      pin: true,
+      refreshPriority: -1,
+      anticipatePin: 1, // Helps with smooth transitions
+      // markers: true
+    },
+    stagger: {
+      each: 0.5,
+      from: "start"
+    },
+  })
+
+  const aboutTextTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#section-one",
+      start: "bottom 80%",
+      endTrigger: "#section-two",
+      end: "top 50%",
+      scrub: 1,
+      refreshPriority: -1,
+      anticipatePin: 1, // Helps with smooth transitions
+      // markers: true
+    },
+  });
+  aboutTextTl.from("#about-text", {
+    y: 300,
+    ease: "none",
+    opacity: 0,
+  }).from("#about-desc", {
+    y: 200,
+    ease: "none",
+    opacity: 0,
+  }, "<")
+  
+  window.addEventListener("load", () => ScrollTrigger.refresh());
+  window.addEventListener("resize", () => ScrollTrigger.refresh());
 })

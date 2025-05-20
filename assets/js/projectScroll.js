@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function getHightContainerScrollWidth() {
             let _scrollWidth = highlightCardsContainer.scrollWidth
-            return -((_scrollWidth + 20) - window.innerWidth)
+            return -((_scrollWidth + 60) - window.innerWidth)
         }
 
         const animate = gsap.to(highlightCardsContainer, {
