@@ -141,7 +141,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
-  height: 25vh;
+  height: 20vh;
   display: grid;
   place-items: center;
 }
@@ -155,7 +155,7 @@ body::-webkit-scrollbar-thumb {
 }
 .main-wrapper #skills-section .scrolling-content span {
   display: inline-block;
-  width: 800px;
+  margin-right: 200px;
   flex-shrink: 0;
   font-size: 5rem;
   font-weight: 500;
@@ -487,7 +487,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .main-wrapper #contact {
-  height: 100vh;
+  height: 80vh;
   display: grid;
   place-items: center;
 }

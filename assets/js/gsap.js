@@ -6,13 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 0.7,
     y: -80,
     opacity: 0,
-  })
+  });
 
-  sectionOneTL.to(".description", {
-    delay: 1,
-    duration: 0.7,
-    opacity: 0.5,
-  }, "one");
+  sectionOneTL.to(
+    ".description",
+    {
+      delay: 1,
+      duration: 0.7,
+      opacity: 0.5,
+    },
+    "one"
+  );
 
   const names = gsap.utils.toArray(".name");
   gsap.from(names, {
@@ -22,11 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
     stagger: 0.2,
   });
 
-  let aboutDescClutter = ""
-  document.getElementById("about-desc").innerHTML.split(" ").forEach((word) => {
-    if (word !== "") aboutDescClutter += `<span>${word}</span>`
-  })
-  document.getElementById("about-desc").innerHTML = aboutDescClutter
+  let aboutDescClutter = "";
+  document
+    .getElementById("about-desc")
+    .innerHTML.split(" ")
+    .forEach((word) => {
+      if (word !== "") aboutDescClutter += `<span>${word}</span>`;
+    });
+  document.getElementById("about-desc").innerHTML = aboutDescClutter;
 
   // Select all the spans you want to animate
   const spans = document.querySelectorAll("#about-desc span");
@@ -38,42 +45,39 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 80%",
       end: "50% 70%",
       scrub: 1,
-      // markers: true          
-    }
+      // markers: true
+    },
   });
 
   // Add staggered animations to the timeline
   spans.forEach((span, i) => {
-    tl.to(span, {
-      ease: "power2.out",
-      color: "#D2D0BA",
-      duration: 0.1,
-    }, i * 0.05);
+    tl.to(
+      span,
+      {
+        ease: "power2.out",
+        color: "#D2D0BA",
+        duration: 0.1,
+      },
+      i * 0.05
+    );
   });
-  gsap.to('.scrolling-content', {
-    x: '-100%',
-    duration: 50,
-    yoyo: true,
-    repeat: -1,
-  })
 
-  
-  
-  const _scrollTL = gsap.timeline()
-  
+  const _scrollTL = gsap.timeline();
+
   _scrollTL.to(".exp-header", {
-      top: "8%",
-      opacity: 1,
-      scrollTrigger: {
-        trigger: "#section-three",
-        start: "top 30%",
-        scrub: 1,
-      }
-    })
-  const _expElm = document.querySelector("#section-three")
+    top: "8%",
+    opacity: 1,
+    scrollTrigger: {
+      trigger: "#section-two",
+      start: "bottom 80%",
+      scrub: 1,
+      // markers: true
+    },
+  });
+  const _expElm = document.querySelector("#section-three");
   // section three experience animation
-  _scrollTL.to('.exp-card', {
-    top: (index) => `${(50 + (index * 8))}%`,
+  _scrollTL.to(".exp-card", {
+    top: (index) => `${50 + index * 8}%`,
     ease: "none",
     scale: 1.1,
     scrollTrigger: {
@@ -87,14 +91,14 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     stagger: {
       each: 0.5,
-      from: "start"
+      from: "start",
     },
-  })
+  });
   const hightlightSection = document.querySelector("#section-four");
   const highlightCardsContainer = document.querySelector(".pro-container-wrapper");
   function getHightContainerScrollWidth() {
-    let _scrollWidth = highlightCardsContainer.scrollWidth
-    return -((_scrollWidth + 60) - window.innerWidth)
+    let _scrollWidth = highlightCardsContainer.scrollWidth;
+    return -(_scrollWidth + 60 - window.innerWidth);
   }
   _scrollTL.to(highlightCardsContainer, {
     x: getHightContainerScrollWidth,
@@ -105,10 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: true,
       pin: true,
       invalidateOnRefresh: true,
-    }
-  })
-
-
+    },
+  });
 
   const aboutTextTl = gsap.timeline({
     scrollTrigger: {
@@ -122,14 +124,32 @@ document.addEventListener("DOMContentLoaded", () => {
       // markers: true
     },
   });
-  aboutTextTl.from("#about-text", {
-    y: 300,
-    ease: "none",
-    opacity: 0,
-  }).from("#about-desc", {
-    y: 200,
-    ease: "none",
-    opacity: 0,
-  }, "<")
+  aboutTextTl
+    .from("#about-text", {
+      y: 300,
+      ease: "none",
+      opacity: 0,
+    })
+    .from(
+      "#about-desc",
+      {
+        y: 200,
+        ease: "none",
+        opacity: 0,
+      },
+      "<"
+    );
 
-})
+  const _scroller = document.querySelector("#scroller");
+  console.log(_scroller.scrollWidth);
+  let scrollTl = gsap.timeline({});
+  scrollTl.to("#scroller", {
+    x: `-=${_scroller.scrollWidth}`,
+    repeat: -1,
+    ease: "none",
+    duration: 20,
+  });
+
+  _scroller.addEventListener("mouseenter", () => scrollTl.pause());
+  _scroller.addEventListener("mouseleave", () => scrollTl.play());
+});

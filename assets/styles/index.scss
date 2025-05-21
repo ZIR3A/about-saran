@@ -156,42 +156,45 @@ body {
     }
   }
 
- // Container styling
-#skills-section {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  height: 25vh;
-  display: grid;
-  place-items: center;
-  // The scrolling wrapper
-  // background-color: rgb(90, 90, 90);
-  .scrolling-content {
-    display: flex;
-    align-items: center;
-    transition: all;
-    padding: 12px;
-    border-radius: 8px;
-    height: 100%;
-    // Individual span items
-    span {
-      display: inline-block;
-      width: 800px;
-      flex-shrink: 0;
-      font-size: 5rem;
-      font-weight: 500;
-      color: $primary;
-      font-weight: bold;
-      -webkit-text-stroke: 1px $primary;
-      color: transparent;
-      
-      // Optional hover effect
-      &:hover {
+  // Container styling
+  #skills-section {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 20vh;
+    display: grid;
+    place-items: center;
+
+    // The scrolling wrapper
+    // background-color: rgb(90, 90, 90);
+    .scrolling-content {
+      display: flex;
+      align-items: center;
+      transition: all;
+      padding: 12px;
+      border-radius: 8px;
+      height: 100%;
+
+      // Individual span items
+      span {
+        display: inline-block;
+        margin-right: 200px;
+        flex-shrink: 0;
+        font-size: 5rem;
+        font-weight: 500;
         color: $primary;
+        font-weight: bold;
+        -webkit-text-stroke: 1px $primary;
+        color: transparent;
+
+        // border: 1px solid red;
+        // Optional hover effect
+        &:hover {
+          color: $primary;
+        }
       }
     }
   }
-}
 
   //end of new css
 
@@ -298,8 +301,9 @@ body {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       opacity: 0;
+
       @media (max-width: $breakpoint-md) {
         font-size: 8vw;
         text-wrap: nowrap;
@@ -320,11 +324,13 @@ body {
       position: absolute;
       left: 50%;
       top: 120%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
+
       @media (max-width: $breakpoint-md) {
         width: 80vw;
         height: 25vh;
       }
+
       header {
         font-size: 2vw;
         color: $text-primary;
@@ -332,9 +338,11 @@ body {
         border-bottom: 1px solid $border;
         padding-bottom: 8px;
         margin-bottom: 8px;
+
         @media (max-width: $breakpoint-md) {
           font-size: 2.2vw;
         }
+
         @media (max-width: $breakpoint-sm) {
           font-size: 3vw;
         }
@@ -347,6 +355,7 @@ body {
         @media (max-width: $breakpoint-md) {
           font-size: 2vw;
         }
+
         @media (max-width: $breakpoint-sm) {
           font-size: 2.5vw;
         }
@@ -358,6 +367,7 @@ body {
           @media (max-width: $breakpoint-md) {
             font-size: 1.8vw;
           }
+
           @media (max-width: $breakpoint-sm) {
             font-size: 2vw;
           }
@@ -371,6 +381,7 @@ body {
         @media (max-width: $breakpoint-md) {
           font-size: 1.8vw;
         }
+
         @media (max-width: $breakpoint-sm) {
           font-size: 2vw;
         }
@@ -383,6 +394,7 @@ body {
         @media (max-width: $breakpoint-md) {
           font-size: 1.6vw;
         }
+
         @media (max-width: $breakpoint-sm) {
           font-size: 2vw;
         }
@@ -505,6 +517,7 @@ body {
           border-radius: 8px;
           width: 400px;
           object-fit: cover;
+
           @media (max-width: $breakpoint-md) {
             width: 300px;
           }
@@ -514,7 +527,7 @@ body {
   }
 
   #contact {
-    height: 100vh;
+    height: 80vh;
     display: grid;
     place-items: center;
 
