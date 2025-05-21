@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: "#section-two",
       start: "bottom 90%",
       endTrigger: "#section-four",
-      end: "top top",
+      end: "top 5%",
       scrub: 1,
     }
   })
