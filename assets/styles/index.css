@@ -34,6 +34,7 @@ a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all;
 }
 
 body {
@@ -111,32 +112,6 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   gap: 2vh;
 }
-.main-wrapper #section-one img {
-  position: absolute;
-  width: 6%;
-  opacity: 0;
-}
-.main-wrapper #section-one #js {
-  left: 1%;
-  top: 5%;
-}
-.main-wrapper #section-one #html {
-  left: 15%;
-  top: 55%;
-}
-.main-wrapper #section-one #css {
-  left: 45%;
-  top: 70%;
-}
-.main-wrapper #section-one #react {
-  top: 10%;
-  width: 8%;
-  left: 65%;
-}
-.main-wrapper #section-one #node {
-  width: 7%;
-  left: 85%;
-}
 .main-wrapper #section-one .name-container {
   width: 55%;
   position: relative;
@@ -161,6 +136,36 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 0.8rem;
   text-wrap: nowrap;
   opacity: 0;
+}
+.main-wrapper #skills-section {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 25vh;
+  display: grid;
+  place-items: center;
+}
+.main-wrapper #skills-section .scrolling-content {
+  display: flex;
+  align-items: center;
+  transition: all;
+  padding: 12px;
+  border-radius: 8px;
+  height: 100%;
+}
+.main-wrapper #skills-section .scrolling-content span {
+  display: inline-block;
+  width: 800px;
+  flex-shrink: 0;
+  font-size: 5rem;
+  font-weight: 500;
+  color: #D2D0BA;
+  font-weight: bold;
+  -webkit-text-stroke: 1px #D2D0BA;
+  color: transparent;
+}
+.main-wrapper #skills-section .scrolling-content span:hover {
+  color: #D2D0BA;
 }
 .main-wrapper #section-two {
   display: flex;
@@ -361,7 +366,8 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .main-wrapper #section-four {
-  min-height: 50vh;
+  min-height: 100vh;
+  overflow: hidden;
 }
 @media (max-width: 768px) {
   .main-wrapper #section-four {

@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all;
   // font-family: 'Courier New', Courier, monospace;
 }
 
@@ -93,37 +94,37 @@ body {
     flex-direction: column;
     gap: 2vh;
 
-    img {
-      position: absolute;
-      width: 6%;
-      opacity: 0;
-    }
+    // img {
+    //   position: absolute;
+    //   width: 6%;
+    //   // opacity: 0;
+    // }
 
-    #js {
-      left: 1%;
-      top: 5%;
-    }
+    // #js {
+    //   left: 1%;
+    //   top: 5%;
+    // }
 
-    #html {
-      left: 15%;
-      top: 55%;
-    }
+    // #html {
+    //   left: 15%;
+    //   top: 55%;
+    // }
 
-    #css {
-      left: 45%;
-      top: 70%;
-    }
+    // #css {
+    //   left: 45%;
+    //   top: 70%;
+    // }
 
-    #react {
-      top: 10%;
-      width: 8%;
-      left: 65%;
-    }
+    // #react {
+    //   top: 10%;
+    //   width: 8%;
+    //   left: 65%;
+    // }
 
-    #node {
-      width: 7%;
-      left: 85%;
-    }
+    // #node {
+    //   width: 7%;
+    //   left: 85%;
+    // }
 
     .name-container {
       width: 55%;
@@ -154,6 +155,43 @@ body {
       opacity: 0;
     }
   }
+
+ // Container styling
+#skills-section {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 25vh;
+  display: grid;
+  place-items: center;
+  // The scrolling wrapper
+  // background-color: rgb(90, 90, 90);
+  .scrolling-content {
+    display: flex;
+    align-items: center;
+    transition: all;
+    padding: 12px;
+    border-radius: 8px;
+    height: 100%;
+    // Individual span items
+    span {
+      display: inline-block;
+      width: 800px;
+      flex-shrink: 0;
+      font-size: 5rem;
+      font-weight: 500;
+      color: $primary;
+      font-weight: bold;
+      -webkit-text-stroke: 1px $primary;
+      color: transparent;
+      
+      // Optional hover effect
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
 
   //end of new css
 
@@ -353,9 +391,9 @@ body {
   }
 
   #section-four {
-    // border: 1px solid red;
-    min-height: 50vh;
-    // overflow: hidden;
+    // border: 1px solid blue;
+    min-height: 100vh;
+    overflow: hidden;
 
     @media (max-width: $breakpoint-md) {
       font-size: 8vw;

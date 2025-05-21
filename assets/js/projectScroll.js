@@ -42,15 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ScrollTrigger.create({
             trigger: hightlightSection,
-            start: "top 5%",
-            end: () => `+=${getHightContainerScrollWidth() * -1}`,
-            scrub: 1,
+            start: "top top",
+            end: () => `+=${highlightCardsContainer.scrollWidth}`,
+            scrub: true,
             pin: true,
             animation: animate,
             invalidateOnRefresh: true,
             // markers: true,
-            refreshPriority: -1,
-            anticipatePin: 1, // Helps with smooth transitions
         })
     }
 
