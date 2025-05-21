@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
             animation: animate,
             invalidateOnRefresh: true,
             // markers: true,
+            refreshPriority: -1,
+            anticipatePin: 1, // Helps with smooth transitions
         })
     }
 

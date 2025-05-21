@@ -235,7 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
       pin: true,
       refreshPriority: -1,
       anticipatePin: 1, // Helps with smooth transitions
-      // markers: true
+      // markers: true,
+      invalidateOnRefresh: true,
     },
     stagger: {
       each: 0.5,
@@ -265,6 +266,4 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 0,
   }, "<")
   
-  window.addEventListener("load", () => ScrollTrigger.refresh());
-  window.addEventListener("resize", () => ScrollTrigger.refresh());
 })
