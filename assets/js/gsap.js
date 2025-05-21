@@ -22,19 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
     stagger: 0.2,
   });
 
-  const highlightCardsContainer = document.querySelector(".pro-container-wrapper");
-
-  function getHightContainerScrollWidth() {
-    let _scrollWidth = highlightCardsContainer.scrollWidth
-    return ((_scrollWidth + 20) - window.innerWidth)
-  }
-  const sections = gsap.utils.toArray("section");
   let aboutDescClutter = ""
   document.getElementById("about-desc").innerHTML.split(" ").forEach((word) => {
     if (word !== "") aboutDescClutter += `<span>${word}</span>`
   })
   document.getElementById("about-desc").innerHTML = aboutDescClutter
-
 
   // Select all the spans you want to animate
   const spans = document.querySelectorAll("#about-desc span");
@@ -45,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: "#about-desc",
       start: "top 80%",
       end: "50% 70%",
-      scrub: 1,              // smooth animation tied to scroll position
-      // markers: true           // uncomment to see scroll trigger markers (for debugging)
+      scrub: 1,
+      // markers: true          
     }
   });
 
@@ -54,73 +46,43 @@ document.addEventListener("DOMContentLoaded", () => {
   spans.forEach((span, i) => {
     tl.to(span, {
       ease: "power2.out",
-      color: "#D2D0BA", // your target color
-      duration: 0.1,    // duration of each individual span's color change
-    }, i * 0.05);      // stagger delay (adjust as needed)
+      color: "#D2D0BA",
+      duration: 0.1,
+    }, i * 0.05);
   });
   gsap.to('.scrolling-content', {
     x: '-100%',
     duration: 50,
     yoyo: true,
-    repeat: -1, 
+    repeat: -1,
   })
 
-
-  // gsap.from(".pro-header", {
-  //   y: 400,
-  //   opacity: 0,
-  //   ease: "power2",
-  //   scrollTrigger: {
-  //     trigger: "#section-two",
-  //     start: "bottom 90%",
-  //     endTrigger: "#section-four",
-  //     end: "top 5%",
-  //     scrub: 1,
-  //   }
-  // })
-  // gsap.from(".pro-container-wrapper", {
-  //   y: 400,
-  //   opacity: 0,
-  //   ease: "power2",
-  //   scrollTrigger: {
-  //     trigger: "#section-two",
-  //     start: "bottom 90%",
-  //     endTrigger: "#section-three",
-  //     end: "top 20%",
-  //     scrub: 1,
-  //   }
-  // })
+  
+  
+  const _scrollTL = gsap.timeline()
+  
+  _scrollTL.to(".exp-header", {
+      top: "8%",
+      opacity: 1,
+      scrollTrigger: {
+        trigger: "#section-three",
+        start: "top 30%",
+        scrub: 1,
+      }
+    })
   const _expElm = document.querySelector("#section-three")
-
-  gsap.to(".exp-header", {
-    top: "10%",
-    opacity: 1,
-    scrollTrigger: {
-      trigger: "#skills-section",
-      start: "top 60%",
-      // endTrigger: "#section-three",
-      // end: "top top",
-      scrub: 1,
-      // markers: true
-    }
-  })
-
-
-
   // section three experience animation
-  gsap.to('.exp-card', {
+  _scrollTL.to('.exp-card', {
     top: (index) => `${(50 + (index * 8))}%`,
     ease: "none",
     scale: 1.1,
     scrollTrigger: {
-      trigger: "#section-three",
+      trigger: _expElm,
       start: "top top",
       end: () => `+=${_expElm.scrollWidth}`,
       scrub: 1,
       pin: true,
-      refreshPriority: -1,
       anticipatePin: 1, // Helps with smooth transitions
-      // markers: true,
       invalidateOnRefresh: true,
     },
     stagger: {
@@ -128,6 +90,25 @@ document.addEventListener("DOMContentLoaded", () => {
       from: "start"
     },
   })
+  const hightlightSection = document.querySelector("#section-four");
+  const highlightCardsContainer = document.querySelector(".pro-container-wrapper");
+  function getHightContainerScrollWidth() {
+    let _scrollWidth = highlightCardsContainer.scrollWidth
+    return -((_scrollWidth + 60) - window.innerWidth)
+  }
+  _scrollTL.to(highlightCardsContainer, {
+    x: getHightContainerScrollWidth,
+    scrollTrigger: {
+      trigger: hightlightSection,
+      start: "top top",
+      end: () => `+=${getHightContainerScrollWidth() * -1}`,
+      scrub: true,
+      pin: true,
+      invalidateOnRefresh: true,
+    }
+  })
+
+
 
   const aboutTextTl = gsap.timeline({
     scrollTrigger: {
