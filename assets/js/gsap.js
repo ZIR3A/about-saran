@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       span,
       {
         ease: "power2.out",
-        color: "#D2D0BA",
+        color: "#597DA2",
         duration: 0.1,
       },
       i * 0.05
@@ -74,26 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // markers: true
     },
   });
-  const _expElm = document.querySelector("#section-three");
-  // section three experience animation
-  _scrollTL.to(".exp-card", {
-    top: (index) => `${50 + index * 8}%`,
-    ease: "none",
-    scale: 1.1,
-    scrollTrigger: {
-      trigger: _expElm,
-      start: "top top",
-      end: () => `+=${_expElm.scrollWidth}`,
-      scrub: 1,
-      pin: true,
-      anticipatePin: 1, // Helps with smooth transitions
-      invalidateOnRefresh: true,
-    },
-    stagger: {
-      each: 0.5,
-      from: "start",
-    },
-  });
+  
   const hightlightSection = document.querySelector("#section-four");
   const highlightCardsContainer = document.querySelector(".pro-container-wrapper");
   function getHightContainerScrollWidth() {
@@ -112,33 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  const aboutTextTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#section-one",
-      start: "bottom 80%",
-      endTrigger: "#section-two",
-      end: "top 50%",
-      scrub: 1,
-      refreshPriority: -1,
-      anticipatePin: 1, // Helps with smooth transitions
-      // markers: true
-    },
-  });
-  aboutTextTl
-    .from("#about-text", {
-      y: 300,
-      ease: "none",
-      opacity: 0,
-    })
-    .from(
-      "#about-desc",
-      {
-        y: 200,
-        ease: "none",
-        opacity: 0,
-      },
-      "<"
-    );
+
 
   const _scroller = document.querySelector("#scroller");
   console.log(_scroller.scrollWidth);
