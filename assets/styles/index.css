@@ -263,6 +263,7 @@ body::-webkit-scrollbar-thumb {
   transform: translate(-50%, -50%);
   opacity: 1;
   will-change: transform;
+  transition: all;
 }
 @media (max-width: 768px) {
   .main-wrapper #section-three .exp-header {
@@ -406,6 +407,8 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  will-change: transform;
+  transition: all;
   gap: 8px;
   background-color: #151019;
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
