@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 ScrollSmoother.create({
     smooth: 4,
-    smoothTouch: 0.1,
+    smoothTouch: 2,
     effects: true,
   });
 function animateWholePage() {
