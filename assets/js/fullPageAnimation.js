@@ -134,7 +134,7 @@ function animateWholePage() {
                 trigger: hightlightSection,
                 start: "top 10%",
                 end: () => `+=${getHightContainerScrollWidth() * -1}`,
-                scrub: 2,
+                scrub: 1,
                 pin: true,
                 pinsSpacing: true,
                 invalidateOnRefresh: true,
