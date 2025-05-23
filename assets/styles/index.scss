@@ -161,7 +161,7 @@ body {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    height: 20vh;
+    height: 40vh;
     display: grid;
     place-items: center;
 
@@ -230,7 +230,7 @@ body {
 
     .about-me-desc {
       // text-wrap: wrap;
-      max-width: 100%;
+      max-width: 65%;
       display: flex;
       flex-wrap: wrap;
       text-align: center;
@@ -406,7 +406,7 @@ body {
     // border: 1px solid blue;
     min-height: 100vh;
     overflow: hidden;
-    transform: translateY(20%);
+    // transform: translateY(5%);
 
     @media (max-width: $breakpoint-md) {
       font-size: 8vw;

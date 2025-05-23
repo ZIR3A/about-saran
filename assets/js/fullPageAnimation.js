@@ -48,8 +48,8 @@ function animateWholePage() {
         const aboutDescriptionTextTl = gsap.timeline({
             scrollTrigger: {
                 trigger: "#section-two",
-                start: "top 80%",
-                end: "top 20%",
+                start: "top 60%",
+                end: "bottom bottom",
                 scrub: 1,
                 // markers: true
             },
@@ -90,9 +90,9 @@ function animateWholePage() {
             _expCard.forEach((card) => {
                 _totalHeight += card.offsetHeight;
             });
-            return _totalHeight;
+            return _totalHeight + 100;
         }
-        console.log(totalHeightExpCards());
+        // console.log(totalHeightExpCards());
 
         const expTL = gsap.timeline({
             scrollTrigger: {
@@ -103,13 +103,13 @@ function animateWholePage() {
                 pin: true,
                 anticipatePin: 1, // Helps with smooth transitions
                 invalidateOnRefresh: true,
-                pinsSpacing: true,
+                pinsSpacing: true, // give padding to the pinned element
                 // markers: true
             },
         })
         // section three experience animation
         expTL.to(".exp-card", {
-            top: (index) => `${45 + index * 8}%`,
+            top: (index) => `${35 + index * 7}%`,
             ease: "none",
             scale: 1.3,
             // delay: (index) => index * 0.4,
@@ -123,19 +123,6 @@ function animateWholePage() {
         const hightlightSection = document.querySelector("#section-four");
         const proContainers = gsap.utils.toArray(".pro-container");
 
-        wholePageTL.to(hightlightSection, {
-            y: "0%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: '#section-four',
-                start: "top bottom",
-                end: "top 75%",
-                scrub: true,
-                // markers: true
-            }
-        })
-
-
         function getHightContainerScrollWidth() {
             let _scrollWidth = proContainers[0].offsetWidth * proContainers.length;
             return -(((_scrollWidth) - window.innerWidth) + 100);
@@ -145,13 +132,13 @@ function animateWholePage() {
             x: getHightContainerScrollWidth,
             scrollTrigger: {
                 trigger: hightlightSection,
-                start: "top top",
+                start: "top 10%",
                 end: () => `+=${getHightContainerScrollWidth() * -1}`,
                 scrub: 2,
                 pin: true,
-                pinsSpacing: false,
+                pinsSpacing: true,
                 invalidateOnRefresh: true,
-                anticipatePin: 1,
+                // anticipatePin: -1,
             },
         });
     }

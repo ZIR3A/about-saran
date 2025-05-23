@@ -141,7 +141,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
-  height: 20vh;
+  height: 40vh;
   display: grid;
   place-items: center;
 }
@@ -197,7 +197,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .main-wrapper #section-two .about-me-desc {
-  max-width: 100%;
+  max-width: 65%;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -370,7 +370,6 @@ body::-webkit-scrollbar-thumb {
 .main-wrapper #section-four {
   min-height: 100vh;
   overflow: hidden;
-  transform: translateY(20%);
 }
 @media (max-width: 768px) {
   .main-wrapper #section-four {
