@@ -328,6 +328,7 @@ body {
       will-change: transform;
       @media (max-width: $breakpoint-md) {
         width: 80vw;
+        height: 150px;
       }
 
       header {

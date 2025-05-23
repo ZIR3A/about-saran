@@ -290,6 +290,7 @@ body::-webkit-scrollbar-thumb {
 @media (max-width: 768px) {
   .main-wrapper #section-three .exp-card {
     width: 80vw;
+    height: 150px;
   }
 }
 .main-wrapper #section-three .exp-card header {
