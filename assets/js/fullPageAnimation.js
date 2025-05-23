@@ -3,7 +3,7 @@ ScrollSmoother.create({
     smooth: 3,
     smoothTouch: 1,
     effects: true,
-  });
+});
 function animateWholePage() {
     let wholePageTL = gsap.timeline();
     const sectionOneAnimate = () => {
@@ -72,7 +72,7 @@ function animateWholePage() {
 
     const sectionThreeAnimate = () => {
         wholePageTL.from(".exp-header", {
-            top: "50%",
+            top: "80%",
             opacity: 0,
             scrollTrigger: {
                 trigger: "#section-two",
@@ -84,45 +84,74 @@ function animateWholePage() {
         });
 
         const _expElm = document.querySelector("#section-three");
-        // section three experience animation
-        wholePageTL.to(".exp-card", {
-            top: (index) => `${45 + index * 8}%`,
-            ease: "none",
-            scale: 1.3,
+        const _expCard = gsap.utils.toArray(".exp-card");
+        function totalHeightExpCards() {
+            let _totalHeight = 0;
+            _expCard.forEach((card) => {
+                _totalHeight += card.offsetHeight;
+            });
+            return _totalHeight;
+        }
+        console.log(totalHeightExpCards());
+
+        const expTL = gsap.timeline({
             scrollTrigger: {
                 trigger: _expElm,
                 start: "top top",
-                end: () => `+=${_expElm.scrollWidth}`,
+                end: () => `+=${totalHeightExpCards()}`,
                 scrub: 1,
                 pin: true,
                 anticipatePin: 1, // Helps with smooth transitions
                 invalidateOnRefresh: true,
+                pinsSpacing: true,
+                // markers: true
             },
+        })
+        // section three experience animation
+        expTL.to(".exp-card", {
+            top: (index) => `${45 + index * 8}%`,
+            ease: "none",
+            scale: 1.3,
+            // delay: (index) => index * 0.4,
             stagger: {
                 each: 0.5,
-                from: "start",
             },
         });
     }
     sectionThreeAnimate()
     const sectionFourAnimate = () => {
         const hightlightSection = document.querySelector("#section-four");
-        const highlightCardsContainer = document.querySelector(".pro-container-wrapper");
+        const proContainers = gsap.utils.toArray(".pro-container");
+
+        wholePageTL.to(hightlightSection, {
+            y: "0%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: '#section-four',
+                start: "top bottom",
+                end: "top 75%",
+                scrub: true,
+                // markers: true
+            }
+        })
+
+
         function getHightContainerScrollWidth() {
-            let _scrollWidth = highlightCardsContainer.scrollWidth;
-            return -(_scrollWidth + 60 - window.innerWidth);
+            let _scrollWidth = proContainers[0].offsetWidth * proContainers.length;
+            return -(((_scrollWidth) - window.innerWidth) + 100);
         }
-        wholePageTL.to(highlightCardsContainer, {
+
+        wholePageTL.to(proContainers, {
             x: getHightContainerScrollWidth,
             scrollTrigger: {
                 trigger: hightlightSection,
                 start: "top top",
                 end: () => `+=${getHightContainerScrollWidth() * -1}`,
-                scrub: true,
+                scrub: 2,
                 pin: true,
+                pinsSpacing: false,
                 invalidateOnRefresh: true,
                 anticipatePin: 1,
-                // markers: true
             },
         });
     }

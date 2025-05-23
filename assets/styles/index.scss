@@ -406,6 +406,7 @@ body {
     // border: 1px solid blue;
     min-height: 100vh;
     overflow: hidden;
+    transform: translateY(20%);
 
     @media (max-width: $breakpoint-md) {
       font-size: 8vw;

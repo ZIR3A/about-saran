@@ -370,6 +370,7 @@ body::-webkit-scrollbar-thumb {
 .main-wrapper #section-four {
   min-height: 100vh;
   overflow: hidden;
+  transform: translateY(20%);
 }
 @media (max-width: 768px) {
   .main-wrapper #section-four {
