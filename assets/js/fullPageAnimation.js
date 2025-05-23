@@ -1,8 +1,10 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+ScrollSmoother.create({
+    smooth: 2,
+    effects: false,
+  });
 function animateWholePage() {
     let wholePageTL = gsap.timeline();
-    console.log(wholePageTL);
-
     const sectionOneAnimate = () => {
         wholePageTL.from(".name-container", {
             duration: 0.7,
@@ -118,7 +120,8 @@ function animateWholePage() {
                 scrub: true,
                 pin: true,
                 invalidateOnRefresh: true,
-                anticipatePin: 1
+                anticipatePin: 1,
+                // markers: true
             },
         });
     }

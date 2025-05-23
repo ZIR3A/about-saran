@@ -1,7 +1,7 @@
 const nameElement = document.querySelector(".main-name");
 
 // const _name = "Saran Baral";
-const _name = "Example";
+const _name = "Saran Baral";
 const sectionOne = document.querySelector(".name-container");
 const _splitName = _name.split("");
 _splitName.forEach((_nm) => {
