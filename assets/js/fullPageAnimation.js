@@ -1,7 +1,8 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 ScrollSmoother.create({
-    smooth: 2,
-    effects: false,
+    smooth: 4,
+    smoothTouch: 0.1,
+    effects: true,
   });
 function animateWholePage() {
     let wholePageTL = gsap.timeline();
@@ -85,7 +86,7 @@ function animateWholePage() {
         const _expElm = document.querySelector("#section-three");
         // section three experience animation
         wholePageTL.to(".exp-card", {
-            top: (index) => `${50 + index * 8}%`,
+            top: (index) => `${45 + index * 8}%`,
             ease: "none",
             scale: 1.3,
             scrollTrigger: {
