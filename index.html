@@ -16,15 +16,22 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
-
-
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1933988685009702"
         crossorigin="anonymous"></script> -->
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js",
+                    "three/addons/": "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/"
+                }
+            }
+        </script>
     <title>Saran Baral-(@zirea)</title>
 </head>
 
 <body>
     <main class="main-wrapper">
+        <canvas id="three"></canvas>
         <div id="floating-div"><i class="scroll-icon ri-scroll-to-bottom-line" id="scroll-icon"></i></div>
         <!-- <div align="center" style="position:fixed;width:100vw;height:80px;top:10px">
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1933988685009702"
@@ -263,6 +270,7 @@
                     Send Mail</a>
         </section>
     </main>
+    <script type="module" src="assets/js/three.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/fullPageAnimation.js"></script>
     <script>
