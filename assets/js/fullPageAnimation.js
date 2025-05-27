@@ -173,6 +173,19 @@ function animateWholePage() {
     scrollTextSection()
 }
 
+const sectionFiveAnimate = () => {
+    gsap.from("#contact", {
+        y: 300,
+        scrollTrigger: {
+            trigger: "#skills-section",
+            start: "bottom 50%",
+            scrub: 1,
+            // anticipatePin: -1,
+            // markers: true
+        },
+    });
+}
+sectionFiveAnimate()
 
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -2,7 +2,7 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/controls/OrbitControls.js';
 gsap.registerPlugin(ScrollTrigger);
-var scrollPercentage = 300;
+var scrollPercentage = 0;
 function runThreeAnim() {
     var scene = new THREE.Scene();
     // Create a partial torus
@@ -31,7 +31,7 @@ function runThreeAnim() {
     // cubeMesh.add(axesHelper);
 
     const camera = new THREE.PerspectiveCamera(
-        60,
+        85,
         window.innerWidth / window.innerHeight,
         0.1,
         100
@@ -87,7 +87,7 @@ function runThreeAnim() {
             cubeMesh.geometry = cubeGeometry;
         },
 
-        markers: true
+        // markers: true
     });
 
 }
