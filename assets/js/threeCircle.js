@@ -6,7 +6,7 @@ var scrollPercentage = 0;
 function runThreeAnim() {
     var scene = new THREE.Scene();
     // Create a partial torus
-    const radius = 5;
+    const radius = 3;
     const tube = 1;
     const radialSegments = 30;
     const tubularSegments = 200;
