@@ -65,7 +65,7 @@ function runThreeAnim() {
         window.requestAnimationFrame(renderLoop)
     }
     renderLoop()
-    const _bodyHeight = document.querySelector(".main-wrapper").scrollHeight - window.innerHeight;
+    const _bodyHeight = document.querySelector(".main-wrapper").scrollHeight - window.innerHeight + 400;
 
     // Create scroll trigger without animation, just to track scroll
     ScrollTrigger.create({
