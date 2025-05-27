@@ -554,13 +554,13 @@ body {
     }
 
     #contact {
-      height: 90vh;
+      height: 100vh;
       display: grid;
       place-items: center;
 
-      @media (max-width: $breakpoint-md) {
-        height: 50vh;
-      }
+      // @media (max-width: $breakpoint-md) {
+      //   height: 50vh;
+      // }
 
       .contact-container {
         color: $text-primary;

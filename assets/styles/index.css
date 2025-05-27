@@ -500,14 +500,9 @@ body .main-wrapper #section-four .pro-container-wrapper .pro-container img {
   }
 }
 body .main-wrapper #contact {
-  height: 90vh;
+  height: 100vh;
   display: grid;
   place-items: center;
-}
-@media (max-width: 768px) {
-  body .main-wrapper #contact {
-    height: 50vh;
-  }
 }
 body .main-wrapper #contact .contact-container {
   color: #597DA2;

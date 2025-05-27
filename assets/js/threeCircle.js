@@ -75,7 +75,6 @@ function runThreeAnim() {
         scrub: 1,
         onUpdate: (self) => {
             cubeGeometry.dispose();
-
             // Create new geometry with updated arc
             const arcRadians = THREE.MathUtils.degToRad(self.progress * 360);
             cubeGeometry = new THREE.TorusGeometry(radius,
