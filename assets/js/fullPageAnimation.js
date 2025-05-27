@@ -82,9 +82,21 @@ function animateWholePage() {
                 // markers: true
             },
         });
+        wholePageTL.to(".exp-card-first", {
+            top: "38%",
+            ease: "none",
+            scale: 1.3,
+            scrollTrigger: {
+                trigger: "#section-three",
+                start: "top 60%",
+                end: "top 10%",
+                scrub: 1,
+                // markers: true
+            },
+        });
 
         const _expElm = document.querySelector("#section-three");
-        const _expCard = gsap.utils.toArray(".exp-card");
+        const _expCard = gsap.utils.toArray(".anim-exp-card");
         function totalHeightExpCards() {
             let _totalHeight = 0;
             _expCard.forEach((card) => {
@@ -103,13 +115,13 @@ function animateWholePage() {
                 pin: true,
                 anticipatePin: 1, // Helps with smooth transitions
                 invalidateOnRefresh: true,
-                pinsSpacing: true, // give padding to the pinned element
+                pinsSpacing: false, // give padding to the pinned element
                 // markers: true
             },
         })
         // section three experience animation
-        expTL.to(".exp-card", {
-            top: (index) => `${35 + index * 7}%`,
+        expTL.to(_expCard, {
+            top: (index) => `${46 + index * 7}%`,
             ease: "none",
             scale: 1.3,
             // delay: (index) => index * 0.4,

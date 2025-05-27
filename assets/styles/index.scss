@@ -321,7 +321,6 @@ body {
           text-wrap: nowrap;
         }
       }
-
       .exp-card {
         display: flex;
         flex-direction: column;
@@ -331,14 +330,21 @@ body {
         box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
         padding: 16px;
         width: 50vw;
-        height: 300px;
+        height: calc(100vh - 70vh);
         border-radius: 8px;
         position: absolute;
         left: 50%;
-        top: 120%;
         transform: translate(-50%, -50%);
         will-change: transform;
-
+        top: 110%;
+        // transition: all;
+        // top: 42% !important;
+        // &.exp-card-first {
+        //   top: 35%;
+        // }
+        // &.anim-exp-card {
+        //   top: 120%;
+        // }
         @media (max-width: $breakpoint-md) {
           width: 80vw;
           height: 150px;
