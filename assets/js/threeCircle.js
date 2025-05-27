@@ -31,7 +31,7 @@ function runThreeAnim() {
     // cubeMesh.add(axesHelper);
 
     const camera = new THREE.PerspectiveCamera(
-        85,
+        100,
         window.innerWidth / window.innerHeight,
         0.1,
         100
@@ -46,7 +46,7 @@ function runThreeAnim() {
         canvas: canvas1,
         antialias: true // anti alias remove
     });
-    renderer.setSize(150, 150)
+    renderer.setSize(100, 100)
 
     // initialize orbit controlls
     const controls = new OrbitControls(camera, canvas1);
