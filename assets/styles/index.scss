@@ -14,7 +14,7 @@
 body {
   // background-image: url("../images/coolbackgrounds-particles-compute.png");
   // background-attachment: fixed;
-  padding: 0px 16px;
+  // padding: 0px 16px;
 
   @media (max-width: $breakpoint-md) {
     padding: 0;
@@ -33,16 +33,18 @@ body {
     outline: 1px solid slategrey;
     border-radius: 8px;
   }
-
-  #three {
+  canvas {
     // border: 1px solid red;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 100; /* Ensure it stays on top */
-    pointer-events: none; /* If you want clicks to pass through */
+    pointer-events: auto; /* If you want clicks to pass through */
+    max-height: 150px;
+    max-width: 150px;
   }
 
+  
   .main-wrapper {
     overflow: hidden;
     background-image: url("../images/coolbackgrounds-particles-compute.png");

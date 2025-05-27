@@ -4,6 +4,7 @@ ScrollSmoother.create({
     smoothTouch: 1,
     effects: true,
 });
+
 function animateWholePage() {
     let wholePageTL = gsap.timeline();
     const sectionOneAnimate = () => {
