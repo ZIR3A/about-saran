@@ -4,19 +4,17 @@
 // $primary-4: #81C3D7;
 // $secondary: #D9DCD6;
 
+$background: #D4CBB1;
+
 //colors
-$primary: #597DA2;
-$primary-2: #597da2a2;
-$primary-3: #B8BDB5;
-$primary-4: #597da241;
-$secondary: #414040;
+$primary: #5C4B34;
 //colors
 
 // custom common styles
 $text-primary: $primary;
-$text-secondary: $secondary;
-$background: $secondary;
-$border: #597da2a2;
+$text-secondary: rgba($primary, 0.9);
+$text-tertiary: rgba($primary, 0.5);
+$border: $primary;
 
 $xxs: 0.25rem;
 $xs: 0.5rem;
@@ -36,3 +34,10 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 960px;
 $breakpoint-xl: 1280px;
 $breakpoint-xxl: 1605px;
+
+
+
+//customs
+
+$exp-card-background: #D1CCAB;
+$project-card-background: #D1CCAB;

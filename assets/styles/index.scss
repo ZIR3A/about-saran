@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "components/mixins", "variables/variables", "components/global";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Vast+Shadow&display=swap');
 
 * {
   @include all-body-styles;
@@ -8,24 +9,21 @@
   padding: 0;
   box-sizing: border-box;
   transition: all;
-  // font-family: 'Courier New', Courier, monospace;
+  font-family: "Lato", sans-serif;
+
 }
 
 body {
-  // background-image: url("../images/coolbackgrounds-particles-compute.png");
-  // background-attachment: fixed;
-  // padding: 0px 16px;
-
   @media (max-width: $breakpoint-md) {
     padding: 0;
   }
 
   &::-webkit-scrollbar {
-    width: 0.5em;
+    width: 0;
   }
 
   &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   }
 
   &::-webkit-scrollbar-thumb {
@@ -33,22 +31,98 @@ body {
     outline: 1px solid slategrey;
     border-radius: 8px;
   }
-  canvas {
-    // border: 1px solid red;
+
+  // canvas {
+  //   // border: 1px solid red;
+  //   position: fixed;
+  //   top: 0;
+  //   right: 0;
+  //   z-index: 100; /* Ensure it stays on top */
+  //   pointer-events: auto; /* If you want clicks to pass through */
+  //   max-height: 150px;
+  //   max-width: 150px;
+  // }
+
+  /* From Uiverse.io by Nawsome */
+  .is-fixed {
     position: fixed;
     top: 0;
-    right: 0;
-    z-index: 100; /* Ensure it stays on top */
-    pointer-events: auto; /* If you want clicks to pass through */
-    max-height: 150px;
-    max-width: 150px;
+    left: 0;
+      z-index: 2;
+    .svg-frame {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      transform-style: preserve-3d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+
+      svg {
+        position: absolute;
+        transition: .5s;
+        z-index: calc(1 - (0.2 * var(--j)));
+        transform-origin: center;
+        width: 344px;
+        height: 344px;
+        fill: none;
+      }
+
+      &:hover {
+        svg {
+          transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+
+          #center {
+            // transform: rotate(-30deg) translateX(45px) translateY(-3px);
+          }
+        }
+      }
+
+      #center {
+        transition: .5s;
+        transform-origin: center;
+      }
+
+      #out2 {
+        animation: rotate16 7s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+
+      #out3 {
+        animation: rotate16 3s ease-in-out infinite alternate;
+        transform-origin: center;
+        stroke: #ff0;
+      }
+
+      #inner3,
+      #inner1 {
+        animation: rotate16 4s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+
+      #center1 {
+        fill: #ff0;
+        animation: rotate16 2s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+
+      @keyframes rotate16 {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
   }
 
-  
+
+
+
   .main-wrapper {
     overflow: hidden;
-    background-image: url("../images/coolbackgrounds-particles-compute.png");
-    background-attachment: fixed;
+    background: $background;
+    // background-image: url("../images/coolbackgrounds-particles-compute.png");
+    // background-attachment: fixed;
 
     .flex-center {
       display: flex;
@@ -173,7 +247,7 @@ body {
       width: 100%;
       overflow: hidden;
       white-space: nowrap;
-      height: 40vh;
+      height: 20vh;
       display: grid;
       place-items: center;
 
@@ -194,9 +268,9 @@ body {
           flex-shrink: 0;
           font-size: 5rem;
           font-weight: 500;
-          color: $primary;
+          color: $text-primary;
           font-weight: bold;
-          -webkit-text-stroke: 1px $primary;
+          -webkit-text-stroke: 1px $text-primary;
           color: transparent;
 
           // border: 1px solid red;
@@ -253,6 +327,8 @@ body {
           font-size: 1.5vw;
           font-weight: 500;
           line-height: 3.5rem;
+          opacity: 0.3;
+          color: $primary;
 
           @media (max-width: $breakpoint-lg) {
             margin-left: 0.2rem;
@@ -323,22 +399,24 @@ body {
           text-wrap: nowrap;
         }
       }
+
       .exp-card {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         overflow: hidden;
-        background-color: #151019;
-        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+        background-color: $exp-card-background;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
         padding: 16px;
         width: 50vw;
-        height: calc(100vh - 70vh);
+        height: calc(100vw - 88vw);
         border-radius: 8px;
         position: absolute;
         left: 50%;
         transform: translate(-50%, -50%);
         will-change: transform;
-        top: 110%;
+        top: 120%;
+
         // transition: all;
         // top: 42% !important;
         // &.exp-card-first {
@@ -353,7 +431,7 @@ body {
         }
 
         header {
-          font-size: 1.5vw;
+          font-size: 1.2vw;
           color: $text-primary;
           font-weight: 600;
           border-bottom: 1px solid $border;
@@ -370,8 +448,9 @@ body {
         }
 
         .exp-comp {
-          font-size: 1.2vw;
+          font-size: 1vw;
           color: $text-primary;
+          font-weight: 500;
 
           @media (max-width: $breakpoint-md) {
             font-size: 2vw;
@@ -382,8 +461,8 @@ body {
           }
 
           span {
-            font-size: 1vw;
-            color: $primary-2;
+            font-size: 0.9vw;
+            color: $text-secondary;
 
             @media (max-width: $breakpoint-md) {
               font-size: 1.8vw;
@@ -397,7 +476,8 @@ body {
 
         .exp-location {
           color: $primary;
-          font-size: 1vw;
+          font-size: 0.9vw;
+          font-weight: 500;
 
           @media (max-width: $breakpoint-md) {
             font-size: 1.8vw;
@@ -410,7 +490,7 @@ body {
 
         .exp-role-desc {
           color: $primary;
-          font-size: 1vw;
+          font-size: 0.8vw;
 
           @media (max-width: $breakpoint-md) {
             font-size: 1.6vw;
@@ -449,7 +529,7 @@ body {
 
       .pro-container-wrapper {
         display: flex;
-        gap: 16px;
+        gap: 24px;
         border-radius: 8px;
         align-items: center;
         padding: 10px;
@@ -466,8 +546,8 @@ body {
           will-change: transform;
           transition: all;
           gap: 8px;
-          background-color: #151019;
-          box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+          background-color: $project-card-background;
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 
           @media (max-width: $breakpoint-md) {
             width: 650px;
@@ -489,12 +569,12 @@ body {
             }
 
             .pro-link {
-              color: #ffffff9f;
+              color: $text-secondary;
               font-size: 0.8vw;
               text-decoration: underline;
 
               a {
-                color: #ffffff9f;
+                color: $text-secondary;
               }
 
               @media (max-width: $breakpoint-md) {
@@ -513,7 +593,7 @@ body {
 
               span {
                 font-size: 0.8vw;
-                color: $primary-2;
+                color: $text-secondary;
 
                 @media (max-width: $breakpoint-md) {
                   font-size: 2.5vw;
@@ -522,7 +602,7 @@ body {
             }
 
             .pro-location {
-              color: $primary-4;
+              color: $text-tertiary;
               font-size: 0.8vw;
 
               @media (max-width: $breakpoint-md) {
@@ -532,7 +612,7 @@ body {
 
             .pro-role-desc {
               color: $primary;
-              font-size: 0.8vw;
+              font-size: 0.9vw;
 
               @media (max-width: $breakpoint-md) {
                 font-size: 2.2vw;
@@ -554,7 +634,7 @@ body {
     }
 
     #contact {
-      height: 100vh;
+      height: 50vh;
       display: grid;
       place-items: center;
 

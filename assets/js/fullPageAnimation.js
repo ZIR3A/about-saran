@@ -1,12 +1,13 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 ScrollSmoother.create({
     smooth: 3,
-    smoothTouch: 1,
+    smoothTouch: 3,
     effects: true,
 });
 
 function animateWholePage() {
     let wholePageTL = gsap.timeline();
+
     const sectionOneAnimate = () => {
         wholePageTL.from(".name-container", {
             duration: 0.7,
@@ -60,7 +61,7 @@ function animateWholePage() {
                 span,
                 {
                     ease: "power2.out",
-                    color: "#597DA2",
+                    opacity: 1,
                     duration: 0.1,
 
                 },
@@ -122,12 +123,13 @@ function animateWholePage() {
         })
         // section three experience animation
         expTL.to(_expCard, {
-            top: (index) => `${46 + index * 7}%`,
+            top: (index) => `${46 + index * 7.5}%`,
             ease: "none",
             scale: 1.3,
-            // delay: (index) => index * 0.4,
+            delay: (index) => index * 0.6,
+            duration: 1,
             stagger: {
-                each: 0.5,
+                each: 0.1,
             },
         });
     }
@@ -178,7 +180,7 @@ const sectionFiveAnimate = () => {
         y: 300,
         scrollTrigger: {
             trigger: "#skills-section",
-            start: "bottom 50%",
+            start: "bottom 80%",
             scrub: 1,
             // anticipatePin: -1,
             // markers: true
