@@ -41,7 +41,6 @@ a {
 }
 
 body {
-  overflow: hidden;
   background: black;
 }
 @media (max-width: 768px) {
