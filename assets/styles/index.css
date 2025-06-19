@@ -42,7 +42,6 @@ a {
 
 body {
   background: black;
-  /* From Uiverse.io by Nawsome */
 }
 @media (max-width: 768px) {
   body {
@@ -59,62 +58,6 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(90, 90, 90);
   outline: 1px solid slategrey;
   border-radius: 8px;
-}
-body .is-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-body .is-fixed .svg-frame {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  transform-style: preserve-3d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
-body .is-fixed .svg-frame svg {
-  position: absolute;
-  transition: 0.5s;
-  z-index: calc(1 - 0.2 * var(--j));
-  transform-origin: center;
-  width: 344px;
-  height: 344px;
-  fill: none;
-}
-body .is-fixed .svg-frame:hover svg {
-  transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
-}
-body .is-fixed .svg-frame #center {
-  transition: 0.5s;
-  transform-origin: center;
-}
-body .is-fixed .svg-frame #out2 {
-  animation: rotate16 7s ease-in-out infinite alternate;
-  transform-origin: center;
-}
-body .is-fixed .svg-frame #out3 {
-  animation: rotate16 3s ease-in-out infinite alternate;
-  transform-origin: center;
-  stroke: #ff0;
-}
-body .is-fixed .svg-frame #inner3,
-body .is-fixed .svg-frame #inner1 {
-  animation: rotate16 4s ease-in-out infinite alternate;
-  transform-origin: center;
-}
-body .is-fixed .svg-frame #center1 {
-  fill: #ff0;
-  animation: rotate16 2s ease-in-out infinite alternate;
-  transform-origin: center;
-}
-@keyframes rotate16 {
-  to {
-    transform: rotate(360deg);
-  }
 }
 body .experience-section {
   height: 100%;
@@ -138,9 +81,24 @@ body .experience-section .experience-title h1 {
   font-size: 200px;
   line-height: 90%;
 }
+@media (max-width: 1280px) {
+  body .experience-section .experience-title h1 {
+    font-size: 100px;
+  }
+}
+@media (max-width: 960px) {
+  body .experience-section .experience-title h1 {
+    font-size: 80px;
+  }
+}
 body .experience-section .experience-card {
   height: 100vh;
   width: 100vw;
+}
+@media (max-width: 1280px) {
+  body .experience-section .experience-card {
+    overflow: hidden;
+  }
 }
 body .experience-section .experience-card .experience-card-container {
   padding: 32px;
@@ -160,26 +118,57 @@ body .experience-section .experience-card .experience-card-container {
   gap: 10px;
   letter-spacing: 2px;
 }
+@media (max-width: 1280px) {
+  body .experience-section .experience-card .experience-card-container {
+    height: 70vh;
+    width: 90%;
+  }
+}
 body .experience-section .experience-card .experience-card-container h1 {
   text-align: center;
   font-size: 80px;
+}
+@media (max-width: 1280px) {
+  body .experience-section .experience-card .experience-card-container h1 {
+    font-size: 30px;
+  }
 }
 body .experience-section .experience-card .experience-card-container .exp-comp {
   text-align: center;
   font-size: 50px;
 }
+@media (max-width: 1280px) {
+  body .experience-section .experience-card .experience-card-container .exp-comp {
+    font-size: 20px;
+  }
+}
 body .experience-section .experience-card .experience-card-container .exp-comp span {
   font-size: 30px;
   opacity: 0.7;
+}
+@media (max-width: 1280px) {
+  body .experience-section .experience-card .experience-card-container .exp-comp span {
+    font-size: 20px;
+  }
 }
 body .experience-section .experience-card .experience-card-container .exp-location {
   text-align: center;
   font-size: 30px;
 }
+@media (max-width: 1280px) {
+  body .experience-section .experience-card .experience-card-container .exp-location {
+    font-size: 20px;
+  }
+}
 body .experience-section .experience-card .experience-card-container .exp-role-desc {
   text-align: center;
   font-size: 20px;
   line-height: 32px;
+}
+@media (max-width: 1280px) {
+  body .experience-section .experience-card .experience-card-container .exp-role-desc {
+    font-size: 1.2vh;
+  }
 }
 body .experience-section .experience-card.scroll {
   position: relative;
@@ -200,9 +189,19 @@ body .hero-section h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media (max-width: 768px) {
+  body .hero-section h1 {
+    font-size: 60px;
+  }
+}
 body .description-section {
   height: 100vh;
   width: 100vw;
+}
+@media (max-width: 768px) {
+  body .description-section {
+    overflow: hidden;
+  }
 }
 body .description-section h1 {
   color: #fff;
@@ -212,17 +211,38 @@ body .description-section h1 {
   font-weight: 400;
   margin-bottom: 10vh;
 }
+@media (max-width: 768px) {
+  body .description-section h1 {
+    font-size: 60px;
+  }
+}
 body .description-section div {
-  max-width: 70vw;
+  max-width: 80vw;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
+@media (max-width: 1605px) {
+  body .description-section div {
+    max-width: 95vw;
+    gap: 8px;
+  }
+}
 body .description-section span {
   color: #fff;
   letter-spacing: 4px;
   font-size: 32px;
+}
+@media (max-width: 960px) {
+  body .description-section span {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  body .description-section span {
+    font-size: 1rem;
+  }
 }
 body .projects-section {
   height: 100vh;
@@ -237,6 +257,11 @@ body .projects-section .pro-header {
   font-size: 120px;
   font-weight: 400;
   margin-bottom: 10vh;
+}
+@media (max-width: 768px) {
+  body .projects-section .pro-header {
+    font-size: 60px;
+  }
 }
 body .projects-section .pro-container-wrapper {
   display: flex;
@@ -271,62 +296,34 @@ body .projects-section .pro-container-wrapper .pro-container .pro-info {
   gap: 6px;
 }
 body .projects-section .pro-container-wrapper .pro-container .pro-info header {
-  font-size: 1.5vw;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 1px;
 }
-@media (max-width: 768px) {
-  body .projects-section .pro-container-wrapper .pro-container .pro-info header {
-    font-size: 3vw;
-  }
-}
 body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-link {
-  font-size: 0.8vw;
+  font-size: 15px;
   text-decoration: underline;
   font-style: italic;
 }
 body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-link a {
   color: #fff;
 }
-@media (max-width: 768px) {
-  body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-link {
-    font-size: 2vw;
-  }
-}
 body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-comp {
-  font-size: 1vw;
+  font-size: 18px;
   letter-spacing: 2px;
-}
-@media (max-width: 768px) {
-  body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-comp {
-    font-size: 2.5vw;
-  }
 }
 body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-comp span {
   font-size: 0.8vw;
 }
-@media (max-width: 768px) {
-  body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-comp span {
-    font-size: 2.5vw;
-  }
-}
-body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-location {
-  font-size: 0.8vw;
-}
-@media (max-width: 768px) {
-  body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-location {
-    font-size: 2.5vw;
-  }
-}
 body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-role-desc {
-  font-size: 0.9vw;
+  font-size: 14px;
   letter-spacing: 1px;
   line-height: 1.5rem;
   opacity: 0.7;
 }
 @media (max-width: 768px) {
   body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-role-desc {
-    font-size: 2.2vw;
+    font-size: 12px;
   }
 }
 body .projects-section .pro-container-wrapper .pro-container img {

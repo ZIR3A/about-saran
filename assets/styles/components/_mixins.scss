@@ -20,6 +20,10 @@
   letter-spacing: -6px;
   font-size: 120px;
   font-weight: 400;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 60px;
+  }
 }
 
 @mixin center-element {
