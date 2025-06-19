@@ -13,6 +13,12 @@ let _descText = `A seasoned frontend React developer experience in designing
             advancements in frontend technologies and explore new frameworks and libraries.`;
 
 document.addEventListener("DOMContentLoaded", () => {
+  gsap.to(".hero-anim", {
+    opacity: 1,
+    duration: 2,
+    ease: "power2.out",
+  });
+
   const sectionTwoAnimaate = () => {
     let aboutDescClutter = "";
     _descText.split(" ").forEach((word) => {
@@ -79,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.fromTo(
         container,
         {
-          scale: 1.2,
+          scale: 1.1,
         },
         {
           scale: 1,

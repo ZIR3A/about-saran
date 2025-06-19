@@ -15,6 +15,7 @@
 }
 
 body {
+  overflow: hidden;
   background: black;
 
   @media (max-width: $breakpoint-md) {
@@ -33,6 +34,60 @@ body {
     background-color: rgb(90, 90, 90);
     outline: 1px solid slategrey;
     border-radius: 8px;
+  }
+
+  .hero-section {
+    @include full-width-height;
+
+    .hero-anim {
+      opacity: 0;
+
+      h1 {
+        @include title;
+        @include center-element;
+      }
+    }
+  }
+
+  .description-section {
+    padding: 16px;
+    @include full-width-height;
+
+    @media (max-width: $breakpoint-md) {
+      // overflow: hidden;
+    }
+
+    h1 {
+      @include title;
+      margin-bottom: 10vh;
+    }
+
+    div {
+      max-width: calc(100vw - 20vw);
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      @media (max-width: $breakpoint-xxl) {
+        max-width: calc(100vw - 5vw);
+        gap: 8px;
+      }
+    }
+
+    span {
+      color: #fff;
+      letter-spacing: 4px;
+      font-size: 32px;
+
+      @media (max-width: $breakpoint-lg) {
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1rem;
+      }
+    }
   }
 
   .experience-section {
@@ -144,57 +199,6 @@ body {
     }
   }
 
-  .hero-section {
-    @include full-width-height;
-
-    h1 {
-      @include title;
-      @include center-element;
-    }
-  }
-
-  .description-section {
-    @include full-width-height;
-
-    @media (max-width: $breakpoint-md) {
-      overflow: hidden;
-    }
-
-    h1 {
-      @include title;
-      margin-bottom: 10vh;
-    }
-
-    div {
-      max-width: calc(100vw - 20vw);
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-
-      @media (max-width: $breakpoint-xxl) {
-        max-width: calc(100vw - 5vw);
-        gap: 8px;
-      }
-    }
-
-    span {
-      color: #fff;
-      letter-spacing: 4px;
-      font-size: 32px;
-
-      @media (max-width: $breakpoint-lg) {
-        font-size: 1.2rem;
-      }
-
-      @media (max-width: $breakpoint-md) {
-        font-size: 1rem;
-      }
-    }
-  }
-
-
-
   .projects-section {
     @include full-width-height;
     overflow: hidden;
@@ -288,14 +292,12 @@ body {
 
   .footer {
     height: 50vh;
+
     .slider {
       width: 100%;
       height: var(--height);
       overflow: hidden;
-      mask-image: linear-gradient(to right,
-          transparent,
-          #000 30% 60%,
-          transparent);
+      mask-image: linear-gradient(to right, transparent, #000 30% 60%, transparent);
 
       &:hover {
         .list {
