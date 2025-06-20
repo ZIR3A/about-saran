@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
           scale: 1.1,
         },
         {
-          scale: 1,
+          scale: index === (sections.length - 1)  ? 1.1 : 1,
           scrollTrigger: {
             trigger: section,
             start: "top top",
