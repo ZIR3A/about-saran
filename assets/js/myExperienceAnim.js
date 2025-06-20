@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const animateExperience = () => {
     const nextElement = document.querySelector(".experience-end");
-    const lastCard = document.querySelector(".experience-card.scroll");
+    const lastCard = document.querySelector(".experience-card.isend");
     const pinnedSelections = gsap.utils.toArray(".pinned");
     gsap.to(".experience-title", {
       scrollTrigger: {
