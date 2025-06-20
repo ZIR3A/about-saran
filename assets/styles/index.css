@@ -180,19 +180,20 @@ body .experience-section .experience-card .experience-card-container {
   width: 80%;
   height: 400px;
   background: rgba(0, 0, 0, 0.568);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   color: #fff;
   display: flex;
   flex-direction: column;
   gap: 10px;
   letter-spacing: 2px;
+  box-shadow: 0 0 8px rgba(168, 166, 166, 0.3);
 }
 @media (max-width: 1280px) {
   body .experience-section .experience-card .experience-card-container {
     height: 400px;
     width: 90%;
-    padding: 8px;
+    padding: 16px 0px 0px 0px;
   }
 }
 body .experience-section .experience-card .experience-card-container h1 {
@@ -337,26 +338,23 @@ body .projects-section .pro-container-wrapper .pro-container img {
     width: 300px;
   }
 }
-body .footer {
-  height: 50vh;
-}
-body .footer .slider {
+body .slider {
   width: 100%;
   height: var(--height);
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 30% 60%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 30% 60%, transparent);
 }
-body .footer .slider:hover .list .item {
+body .slider:hover .list .item {
   animation-play-state: paused;
 }
-body .footer .slider .list {
+body .slider .list {
   display: flex;
   width: 100%;
   min-width: calc(var(--width) * var(--quantity));
   position: relative;
 }
-body .footer .slider .list .item {
+body .slider .list .item {
   width: var(--width);
   height: var(--height);
   position: absolute;
@@ -364,7 +362,7 @@ body .footer .slider .list .item {
   animation: autoRun 12s linear infinite;
   animation-delay: calc(12s / var(--quantity) * (var(--position) - 1));
 }
-body .footer .slider .list .item span {
+body .slider .list .item span {
   width: 100%;
   color: #fff;
   font-size: 64px;
