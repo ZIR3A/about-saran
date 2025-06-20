@@ -190,8 +190,9 @@ body .experience-section .experience-card .experience-card-container {
 }
 @media (max-width: 1280px) {
   body .experience-section .experience-card .experience-card-container {
-    height: 70vh;
+    height: 400px;
     width: 90%;
+    padding: 8px;
   }
 }
 body .experience-section .experience-card .experience-card-container h1 {
@@ -218,7 +219,7 @@ body .experience-section .experience-card .experience-card-container .exp-comp s
 }
 @media (max-width: 1280px) {
   body .experience-section .experience-card .experience-card-container .exp-comp span {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 body .experience-section .experience-card .experience-card-container .exp-location {
@@ -227,7 +228,7 @@ body .experience-section .experience-card .experience-card-container .exp-locati
 }
 @media (max-width: 1280px) {
   body .experience-section .experience-card .experience-card-container .exp-location {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 body .experience-section .experience-card .experience-card-container .exp-role-desc {
