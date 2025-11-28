@@ -2,10 +2,95 @@ gsap.registerPlugin(ScrollTrigger);
 let _descText = `With over 4 years of hands-on experience as a Frontend Developer, I specialize in crafting exceptional web applications using React and Node.js. My expertise lies in building intuitive user interfaces, architecting scalable solutions, and collaborating with cross-functional teams to deliver high-quality products. I excel at implementing modern best practices, optimizing performance, and ensuring accessibility and responsiveness across all devices. Skilled in React (including hooks, context, and advanced patterns), state management, and seamless integration with Node.js backends, I am passionate about delivering maintainable, future-proof solutions and continuously advancing my skill set to stay at the forefront of web technologies.`;
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Hero animation
   gsap.to(".hero-anim", {
     opacity: 1,
     duration: 2,
     ease: "power2.out",
+  });
+
+  // Smooth scroll for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Navbar scroll effect
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // Theme toggle
+  const themeToggle = document.querySelector('.theme-toggle');
+  const themeIcon = themeToggle.querySelector('i');
+  let isDarkMode = true;
+
+  themeToggle.addEventListener('click', () => {
+    isDarkMode = !isDarkMode;
+    document.body.classList.toggle('light-mode');
+    
+    if (isDarkMode) {
+      themeIcon.classList.remove('ri-moon-line');
+      themeIcon.classList.add('ri-sun-line');
+    } else {
+      themeIcon.classList.remove('ri-sun-line');
+      themeIcon.classList.add('ri-moon-line');
+    }
+  });
+
+  // Scroll to top button
+  const scrollToTopBtn = document.querySelector('.scroll-to-top');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Contact form submission
+  const contactForm = document.querySelector('.contact-form');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    // Send email using mailto (opens user's default email client)
+    const recipient = 'saranbrl352gmail.com';
+    const subject = encodeURIComponent(`Portfolio Contact Form Message from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    // Open mailto link
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+    // Optionally reset the form (won't work if browser navigates away)
+    contactForm.reset();
   });
 
   const sectionTwoAnimaate = () => {

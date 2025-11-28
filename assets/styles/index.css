@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Vast+Shadow&display=swap");
 @import url("https://fonts.cdnfonts.com/css/pp-acma");
 li {
@@ -27,14 +28,21 @@ a {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "PP Acma", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all;
+  font-family: "PP Acma", sans-serif;
 }
 
 body {
   background: black;
+  transition: background-color 0.3s ease;
 }
 @media (max-width: 768px) {
   body {
@@ -52,12 +60,130 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid slategrey;
   border-radius: 8px;
 }
+body.light-mode {
+  background: #f5f5f5;
+}
+body.light-mode .navbar {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+body.light-mode .navbar .nav-link, body.light-mode .navbar .nav-logo, body.light-mode .navbar .theme-toggle {
+  color: #000;
+}
+body.light-mode .hero-section h1, body.light-mode .hero-section h2, body.light-mode .hero-section h3, body.light-mode .hero-section p, body.light-mode .hero-section span, body.light-mode .hero-section .skill-text, body.light-mode .hero-section .nav-link, body.light-mode .hero-section .contact-info, body.light-mode .hero-section label, body.light-mode .hero-section .pro-container, body.light-mode .hero-section .pro-link a, body.light-mode .hero-section .list .item a, body.light-mode .description-section h1, body.light-mode .description-section h2, body.light-mode .description-section h3, body.light-mode .description-section p, body.light-mode .description-section span, body.light-mode .description-section .skill-text, body.light-mode .description-section .nav-link, body.light-mode .description-section .contact-info, body.light-mode .description-section label, body.light-mode .description-section .pro-container, body.light-mode .description-section .pro-link a, body.light-mode .description-section .list .item a, body.light-mode .experience-card h1, body.light-mode .experience-card h2, body.light-mode .experience-card h3, body.light-mode .experience-card p, body.light-mode .experience-card span, body.light-mode .experience-card .skill-text, body.light-mode .experience-card .nav-link, body.light-mode .experience-card .contact-info, body.light-mode .experience-card label, body.light-mode .experience-card .pro-container, body.light-mode .experience-card .pro-link a, body.light-mode .experience-card .list .item a, body.light-mode .experience-title h1, body.light-mode .experience-title h2, body.light-mode .experience-title h3, body.light-mode .experience-title p, body.light-mode .experience-title span, body.light-mode .experience-title .skill-text, body.light-mode .experience-title .nav-link, body.light-mode .experience-title .contact-info, body.light-mode .experience-title label, body.light-mode .experience-title .pro-container, body.light-mode .experience-title .pro-link a, body.light-mode .experience-title .list .item a, body.light-mode .projects-section h1, body.light-mode .projects-section h2, body.light-mode .projects-section h3, body.light-mode .projects-section p, body.light-mode .projects-section span, body.light-mode .projects-section .skill-text, body.light-mode .projects-section .nav-link, body.light-mode .projects-section .contact-info, body.light-mode .projects-section label, body.light-mode .projects-section .pro-container, body.light-mode .projects-section .pro-link a, body.light-mode .projects-section .list .item a, body.light-mode .contact-section h1, body.light-mode .contact-section h2, body.light-mode .contact-section h3, body.light-mode .contact-section p, body.light-mode .contact-section span, body.light-mode .contact-section .skill-text, body.light-mode .contact-section .nav-link, body.light-mode .contact-section .contact-info, body.light-mode .contact-section label, body.light-mode .contact-section .pro-container, body.light-mode .contact-section .pro-link a, body.light-mode .contact-section .list .item a {
+  color: #000 !important;
+}
+body.light-mode .experience-card-container, body.light-mode .pro-container, body.light-mode .contact-form {
+  background: rgba(0, 0, 0, 0.07) !important;
+}
+body.light-mode .footer .copy-right {
+  color: #000;
+}
+body.light-mode .scroll-to-top {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+body .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+body .navbar.scrolled {
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+body .navbar .nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  body .navbar .nav-container {
+    padding: 0 1rem;
+  }
+}
+body .navbar .nav-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+body .navbar .nav-logo:hover {
+  color: #81C3D7;
+}
+body .navbar .nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  body .navbar .nav-menu {
+    gap: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  body .navbar .nav-menu {
+    display: none;
+  }
+}
+body .navbar .nav-link {
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+body .navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #81C3D7;
+  transition: width 0.3s ease;
+}
+body .navbar .nav-link:hover {
+  color: #81C3D7;
+}
+body .navbar .nav-link:hover::after {
+  width: 100%;
+}
+body .navbar .theme-toggle {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+body .navbar .theme-toggle:hover {
+  background: #fff;
+  color: #000;
+  transform: rotate(180deg);
+}
 body .hero-section {
   height: 100vh;
   width: 100vw;
 }
 body .hero-section .hero-anim {
   opacity: 0;
+  text-align: center;
 }
 body .hero-section .hero-anim h1 {
   color: #fff;
@@ -70,10 +196,23 @@ body .hero-section .hero-anim h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-bottom: 1rem;
 }
 @media (max-width: 768px) {
   body .hero-section .hero-anim h1 {
     font-size: 60px;
+  }
+}
+body .hero-section .hero-anim .hero-subtitle {
+  color: #81C3D7;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: 1rem;
+}
+@media (max-width: 768px) {
+  body .hero-section .hero-anim .hero-subtitle {
+    font-size: 1rem;
   }
 }
 body .description-section {
@@ -370,6 +509,148 @@ body .slider .list .item span {
     left: calc(var(--width) * -1);
   }
 }
+body .contact-section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  body .contact-section {
+    padding: 2rem 1rem;
+  }
+}
+body .contact-section .contact-header {
+  color: #fff;
+  text-align: center;
+  letter-spacing: -6px;
+  font-size: 120px;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+@media (max-width: 768px) {
+  body .contact-section .contact-header {
+    font-size: 60px;
+  }
+}
+body .contact-section .contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+@media (max-width: 960px) {
+  body .contact-section .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+body .contact-section .contact-info h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+@media (max-width: 768px) {
+  body .contact-section .contact-info h3 {
+    font-size: 1.8rem;
+  }
+}
+body .contact-section .contact-info p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+  body .contact-section .contact-info p {
+    font-size: 1rem;
+  }
+}
+body .contact-section .contact-info .social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+body .contact-section .contact-info .social-links a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+body .contact-section .contact-info .social-links a:hover {
+  background: #81C3D7;
+  border-color: #81C3D7;
+  transform: translateY(-5px);
+}
+body .contact-section .contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+body .contact-section .contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+body .contact-section .contact-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+body .contact-section .contact-form .form-group input, body .contact-section .contact-form .form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+body .contact-section .contact-form .form-group input:focus, body .contact-section .contact-form .form-group textarea:focus {
+  outline: none;
+  border-color: #81C3D7;
+  background: rgba(255, 255, 255, 0.15);
+}
+body .contact-section .contact-form .form-group input::-moz-placeholder, body .contact-section .contact-form .form-group textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+body .contact-section .contact-form .form-group input::placeholder, body .contact-section .contact-form .form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+body .contact-section .contact-form .form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+body .contact-section .contact-form .submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #81C3D7;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+body .contact-section .contact-form .submit-btn:hover {
+  background: #3A7CA5;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(129, 195, 215, 0.4);
+}
 body .footer .copy-right {
   text-align: center;
   font-size: 1rem;
@@ -382,5 +663,45 @@ body .footer .copy-right {
 @media (max-width: 768px) {
   body .footer .copy-right {
     font-size: 8px;
+  }
+}
+body .scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+body .scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+body .scroll-to-top:hover {
+  background: #81C3D7;
+  border-color: #81C3D7;
+  transform: translateY(-5px);
+}
+@media (max-width: 768px) {
+  body .scroll-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 }/*# sourceMappingURL=index.css.map */
