@@ -49,7 +49,7 @@ body {
     }
     
     .hero-section, .description-section, .experience-card, .experience-title, .projects-section, .contact-section {
-      h1, h2, h3, p, span, .skill-text, .nav-link, .contact-info, label, .pro-container, .pro-link a, .list .item a {
+      h1, h2, h3, p, span, .skill-text, .nav-link, .contact-info, label, input, textarea, .pro-container, .pro-link a, .list .item a {
         color: #000 !important;
       }
     }
@@ -66,6 +66,21 @@ body {
     .scroll-to-top {
       background: rgba(255, 255, 255, 0.9);
       color: #000;
+    }
+    .social-links a {
+      border-color: #0000003f !important;
+      background: #00000010 !important;
+      &:hover {
+      background: #000 !important;
+      border-color: #81C3D7 !important;
+      color: #81C3D7 !important;
+      }
+    }
+
+    input, textarea {
+      background: #00000010 !important;
+      border-color: #0000003f !important;
+      color: #fff !important;
     }
   }
 
