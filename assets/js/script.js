@@ -71,25 +71,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Contact form submission
   const contactForm = document.querySelector('.contact-form');
+  // Use a simple user feedback (no mailto) since mailto is unreliable on many browsers
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    // Simple validation (optional)
     const formData = new FormData(contactForm);
     const name = formData.get('name');
     const email = formData.get('email');
     const message = formData.get('message');
 
-    // Send email using mailto (opens user's default email client)
-    const recipient = 'saranbrl352gmail.com';
-    const subject = encodeURIComponent(`Portfolio Contact Form Message from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
+    // Here you could send an AJAX request to your backend (if you have one)
+    // For now, just show a user-friendly message and reset form
 
-    // Open mailto link
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    // Show a thank you message to the user
+    const thankYouMsg = document.createElement('div');
+    thankYouMsg.textContent = "Thank you for your message! I'll get back to you soon.";
+    thankYouMsg.style.background = "#81C3D7";
+    thankYouMsg.style.color = "#000";
+    thankYouMsg.style.padding = "1em";
+    thankYouMsg.style.borderRadius = "10px";
+    thankYouMsg.style.marginTop = "1em";
+    thankYouMsg.style.textAlign = "center";
+    thankYouMsg.setAttribute('id', 'contact-thank-you');
 
-    // Optionally reset the form (won't work if browser navigates away)
+    // Remove existing thank you message if any
+    const prevMsg = document.querySelector('#contact-thank-you');
+    if (prevMsg) prevMsg.remove();
+
+    // Send mail to saranbrl35@gmail.com using EmailJS (client-side solution)
+    // Please make sure to configure EmailJS on your account & in your HTML add user and service/template ids.
+    // This code only runs if emailjs is loaded globally.
+
+    // Optionally, show a spinner or disable button here
+
+    if (window.emailjs) {
+      emailjs.send(
+        'service_jghwlng', // Replace with your EmailJS Service ID
+        'template_0x6po1m', // Replace with your EmailJS Template ID
+        {
+          name: name,
+          email: email,
+          message: message
+        },
+        'KTdf5SnwKDO_90aY3' // Replace with your EmailJS Public key/User ID
+      ).then(function(response) {
+        // Success, do nothing, thankYouMsg already shown
+      }, function(error) {
+        thankYouMsg.textContent = "Message failed to send. Please email me directly at saranbrl35@gmail.com";
+        thankYouMsg.style.background = "#f66";
+        thankYouMsg.style.color = "#fff";
+      });
+    } else {
+      // If emailjs not available, just show fallback
+      thankYouMsg.textContent += " (Message not sent. Please email me at saranbrl35@gmail.com)";
+      thankYouMsg.style.background = "#f66";
+      thankYouMsg.style.color = "#fff";
+    }
+
+    contactForm.parentNode.appendChild(thankYouMsg);
+
     contactForm.reset();
   });
 
