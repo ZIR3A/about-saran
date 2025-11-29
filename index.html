@@ -2,15 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no">
+    <meta name="description" content="Portfolio of Saran Baral (@zirea): Frontend & Fullstack Developer. Explore projects, experiences, and skills including React, Next.js, Node.js, and more.">
+    <meta name="keywords" content="Saran Baral, zirea, portfolio, web developer, frontend, fullstack, React, Next.js, Node.js, JavaScript, HTML, CSS, Pokhara, Kathmandu, internship, projects">
+    <meta name="author" content="Saran Baral">
+    <meta property="og:title" content="Saran Baral - Portfolio">
+    <meta property="og:description" content="Portfolio of Saran Baral (@zirea): Frontend & Fullstack Developer. Explore projects and experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-domain.com/">
+    <meta property="og:image" content="https://your-portfolio-domain.com/assets/images/preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="preload" href="./assets/styles/index.css" as="style">
+    <link rel="stylesheet" href="./assets/styles/index.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
         integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <title>Saran Baral-(@zirea)</title>
 </head>
 
@@ -86,6 +100,21 @@
     <section class="projects-section">
         <div class="pro-header">Projects</div>
         <div class="pro-container-wrapper">
+            <div class="pro-container">
+                <div class="pro-info">
+                    <header>Eye Wear-SaaS</header>
+                    <p class="pro-comp">NextJs, MongoDB, Tailwind CSS, Framer Motion</p>
+                    <p class="pro-link"><a href="https://eye-can-see-you.vercel.app/" target="_blank" rel="noopener noreferrer">Visit Site</a></p>
+                    <p class="pro-role-desc">
+                        Eye Wear-SaaS is a modern web application offering a seamless eyewear shopping experience.
+                        Leveraging Next.js for server-side rendering and static site generation, Tailwind CSS for rapid
+                        styling, and Framer Motion for fluid animations, it delivers fast performance and rich
+                        interactivity. The project emphasizes scalability and maintainability, featuring authentication,
+                        dynamic product listings, and responsive design optimized for all devices.
+                    </p>
+                </div>
+                <img class="work-item-image" src="/assets/images/eye-wear.PNG" alt="Eye Wear SaaS project screenshot" width="400" height="300" loading="lazy" />
+            </div>
             <div class="pro-container">
                 <div class="pro-info">
                     <header>Oneplus Pad Site Clone</header>
@@ -232,6 +261,17 @@
         </div>
     </section>
     <footer class="footer">
+        <div class="social-links" style="margin-top: 2rem; display: flex; gap: 1.5rem; justify-content: center;">
+            <a href="https://github.com/ZIR3A" target="_blank" rel="noopener" aria-label="GitHub" style="font-size: 2rem;">
+                <i class="ri-github-fill"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/saran-baral-708046210" target="_blank" rel="noopener" aria-label="LinkedIn" style="font-size: 2rem;">
+                <i class="ri-linkedin-box-fill"></i>
+            </a>
+            <a href="mailto:saranbrl35@gmail.com" target="_blank" rel="noopener" aria-label="Email" style="font-size: 2rem;">
+                <i class="ri-mail-fill"></i>
+            </a>
+        </div>
         <p class="copy-right">Created with ❤️ by Saran Baral <br> Copyright © 2026</p>
     </footer>
     <script type="module" src="assets/js/myExperienceAnim.js"></script>
