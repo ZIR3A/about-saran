@@ -1,16 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
-let _descText = `A seasoned frontend React developer experience in designing
-            and building
-            innovative web applications. My expertise spans the entire web development lifecycle, from
-            collaborating
-            with
-            designers to create intuitive user interfaces to optimizing code for performance and
-            scalability.
-            I'm proficient in using React's core concepts, state management libraries (like Redux or Context
-            API), and popular tools like TypeScript, Jest, and Webpack. I have a strong understanding of
-            modern web standards and best practices, ensuring that the applications I develop are accessible,
-            responsive, and maintainable. My passion for continuous learning drives me to stay updated with the latest
-            advancements in frontend technologies and explore new frameworks and libraries.`;
+let _descText = `With over 4 years of hands-on experience as a Frontend Developer, I specialize in crafting exceptional web applications using React and Node.js. My expertise lies in building intuitive user interfaces, architecting scalable solutions, and collaborating with cross-functional teams to deliver high-quality products. I excel at implementing modern best practices, optimizing performance, and ensuring accessibility and responsiveness across all devices. Skilled in React (including hooks, context, and advanced patterns), state management, and seamless integration with Node.js backends, I am passionate about delivering maintainable, future-proof solutions and continuously advancing my skill set to stay at the forefront of web technologies.`;
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.to(".hero-anim", {
