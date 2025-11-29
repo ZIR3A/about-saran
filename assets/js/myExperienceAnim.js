@@ -47,22 +47,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Scroll to top button
-  const scrollToTopBtn = document.querySelector('.scroll-to-top');
+  // const scrollToTopBtn = document.querySelector('.scroll-to-top');
   
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-      scrollToTopBtn.classList.add('show');
-    } else {
-      scrollToTopBtn.classList.remove('show');
-    }
-  });
+  // window.addEventListener('scroll', () => {
+  //   if (window.scrollY > 500) {
+  //     scrollToTopBtn.classList.add('show');
+  //   } else {
+  //     scrollToTopBtn.classList.remove('show');
+  //   }
+  // });
 
-  scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+  // scrollToTopBtn.addEventListener('click', () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth'
+  //   });
+  // });
 
 
 
