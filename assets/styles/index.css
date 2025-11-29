@@ -103,7 +103,7 @@ body .navbar {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.95);
+  background: transparent;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   padding: 1rem 0;
@@ -302,16 +302,6 @@ body .experience-section .experience-title h1 {
     font-size: 60px;
   }
 }
-@media (max-width: 1280px) {
-  body .experience-section .experience-title h1 {
-    font-size: 100px;
-  }
-}
-@media (max-width: 960px) {
-  body .experience-section .experience-title h1 {
-    font-size: 80px;
-  }
-}
 body .experience-section .experience-card {
   height: 100vh;
   width: 100vw;
@@ -329,7 +319,7 @@ body .experience-section .experience-card .experience-card-container {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  height: 30vw;
+  height: 500px;
   background: rgba(0, 0, 0, 0.568);
   -webkit-backdrop-filter: blur(18px);
           backdrop-filter: blur(18px);
@@ -343,7 +333,7 @@ body .experience-section .experience-card .experience-card-container {
 }
 @media (max-width: 1280px) {
   body .experience-section .experience-card .experience-card-container {
-    height: 50vw;
+    height: 500px;
     width: 80%;
     padding: 16px 0px 0px 0px;
   }
@@ -372,7 +362,7 @@ body .experience-section .experience-card .experience-card-container .exp-comp s
 }
 @media (max-width: 1280px) {
   body .experience-section .experience-card .experience-card-container .exp-comp span {
-    font-size: 1.8vw;
+    font-size: 2.5vw;
   }
 }
 body .experience-section .experience-card .experience-card-container .exp-location {
@@ -381,7 +371,7 @@ body .experience-section .experience-card .experience-card-container .exp-locati
 }
 @media (max-width: 1280px) {
   body .experience-section .experience-card .experience-card-container .exp-location {
-    font-size: 1.8vw;
+    font-size: 2vw;
   }
 }
 body .experience-section .experience-card .experience-card-container .exp-role-desc {
@@ -392,7 +382,7 @@ body .experience-section .experience-card .experience-card-container .exp-role-d
 }
 @media (max-width: 1280px) {
   body .experience-section .experience-card .experience-card-container .exp-role-desc {
-    font-size: 2vw;
+    font-size: 3vw;
   }
 }
 body .experience-section .experience-card.scroll {
@@ -465,6 +455,12 @@ body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-link
 body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-comp {
   font-size: 18px;
   letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.4862745098);
+}
+@media (max-width: 768px) {
+  body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-comp {
+    font-size: 4vw;
+  }
 }
 body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-comp span {
   font-size: 0.8vw;
@@ -472,12 +468,11 @@ body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-comp
 body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-role-desc {
   font-size: 14px;
   letter-spacing: 1px;
-  line-height: 1.5rem;
-  opacity: 0.7;
+  color: rgba(255, 255, 255, 0.4862745098);
 }
 @media (max-width: 768px) {
   body .projects-section .pro-container-wrapper .pro-container .pro-info .pro-role-desc {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 body .projects-section .pro-container-wrapper .pro-container img {
@@ -544,7 +539,7 @@ body .contact-section .contact-header {
   color: #fff;
   text-align: center;
   letter-spacing: -6px;
-  font-size: 120px;
+  font-size: 8vw;
   font-weight: 400;
   margin-bottom: 4rem;
 }

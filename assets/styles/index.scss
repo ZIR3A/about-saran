@@ -91,7 +91,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.95);
+    background: transparent;
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     transition: all 0.3s ease;
@@ -266,14 +266,6 @@ body {
         @include title;
         @include center-element;
         width: 100%;
-
-        @media (max-width: $breakpoint-xl) {
-          font-size: 100px;
-        }
-
-        @media (max-width: $breakpoint-lg) {
-          font-size: 80px;
-        }
       }
     }
 
@@ -292,7 +284,7 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
-        height: 30vw;
+        height: 500px;
         background: rgba(0, 0, 0, 0.568);
         backdrop-filter: blur(18px);
         color: #fff;
@@ -305,7 +297,7 @@ body {
         box-shadow: 0 0 8px rgba(168, 166, 166, 0.623);
 
         @media (max-width: $breakpoint-xl) {
-          height: 50vw;
+          height: 500px;
           width: 80%;
           padding: 16px 0px 0px 0px;
         }
@@ -332,7 +324,7 @@ body {
             opacity: 0.7;
 
             @media (max-width: $breakpoint-xl) {
-              font-size: 1.8vw;
+              font-size: 2.5vw;
             }
           }
         }
@@ -342,7 +334,7 @@ body {
           font-size: 1.4vw;
 
           @media (max-width: $breakpoint-xl) {
-            font-size: 1.8vw;
+            font-size: 2vw;
           }
         }
 
@@ -353,7 +345,7 @@ body {
           color: #ffffff7c;
 
           @media (max-width: $breakpoint-xl) {
-            font-size: 2vw;
+            font-size: 3vw;
           }
         }
       }
@@ -423,7 +415,10 @@ body {
           .pro-comp {
             font-size: 18px;
             letter-spacing: 2px;
-
+            color: #ffffff7c;
+            @media (max-width: $breakpoint-md) {
+              font-size: 4vw;
+            }
             span {
               font-size: 0.8vw;
             }
@@ -432,11 +427,9 @@ body {
           .pro-role-desc {
             font-size: 14px;
             letter-spacing: 1px;
-            line-height: 1.5rem;
-            opacity: 0.7;
-
+            color: #ffffff7c;
             @media (max-width: $breakpoint-md) {
-              font-size: 12px;
+              font-size: 14px;
             }
           }
         }
