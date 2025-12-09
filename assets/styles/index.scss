@@ -131,7 +131,7 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
-        height: 400px;
+        height: 450px;
         background: rgba(0, 0, 0, 0.568);
         backdrop-filter: blur(12px);
         color: #fff;
@@ -143,8 +143,13 @@ body {
         // background-color: rgba(0, 0, 0, 0);
         box-shadow: 0 0 8px rgba(168, 166, 166, 0.3);
 
-        @media (max-width: $breakpoint-xl) {
-          height: 400px;
+        @media (max-width: $breakpoint-lg) {
+          height: 420px;
+          width: 90%;
+          padding: 16px 0px 0px 0px;
+        }
+        @media (max-width: $breakpoint-sm) {
+          height: 60vh;
           width: 90%;
           padding: 16px 0px 0px 0px;
         }
@@ -224,7 +229,7 @@ body {
         padding: 16px;
         flex-shrink: 0;
         width: 850px;
-        height: 40vh;
+        height: 36vh;
         display: flex;
         justify-content: space-between;
         overflow: hidden;
